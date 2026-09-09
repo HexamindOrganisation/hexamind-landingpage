@@ -27,6 +27,7 @@
   /* Accents */
   --color-accent: #b02509;
   --color-accent-ink: #8f1f07;
+  --color-accent-bright: #d6300f; /* accent for use on dark (navy/teal) surfaces */
   --color-blue: #2563eb;
   --color-blue-strong: #1d4ed8;
   --color-teal: #2a6a82;

@@ -1,8 +1,12 @@
 # Hexamind — Landing page
 
 Marketing site for [Hexamind](https://hexamind.ai), built with the Next.js App
-Router. This is an early work in progress: the **Vision** page is designed, and
-the remaining pages are branded placeholders while their designs land.
+Router.
+
+The **content** (page structure and copy) was ported from the previous website
+(a Lovable/Vite project) with no content loss; the **design** follows the newer
+Claude Design direction. The original design export lives in `design/` for
+reference.
 
 ## Stack
 
@@ -37,22 +41,36 @@ src/
 │   ├── layout.tsx            # fonts, metadata, Header + Footer shell
 │   ├── globals.css           # Tailwind import + design tokens (@theme)
 │   ├── icon.png              # favicon (owl mark)
-│   ├── page.tsx              # / — placeholder home
-│   ├── vision/               # /vision — the designed page
-│   ├── qui-sommes-nous/      # /qui-sommes-nous — placeholder
-│   └── nous-rejoindre/       # /nous-rejoindre — placeholder
+│   ├── page.tsx              # /                — home
+│   ├── vision/               # /vision
+│   ├── offres/               # /offres          — conseil, développement, modules IA
+│   ├── qui-sommes-nous/      # /qui-sommes-nous — valeurs, équipe
+│   ├── nous-rejoindre/       # /nous-rejoindre  — raisons, postes ouverts
+│   ├── contact/              # /contact         — formulaire (mailto)
+│   ├── mentions-legales/     # /mentions-legales
+│   └── not-found.tsx         # 404
 ├── components/
-│   ├── layout/               # Header, Footer
-│   ├── sections/             # page sections (ContactCta, PagePlaceholder, vision/*)
-│   └── ui/                   # primitives (Container, Eyebrow, SmartLink)
+│   ├── layout/               # Header, Footer, NewsletterForm
+│   ├── sections/             # ContactCta, ContactForm, MitStats
+│   └── ui/                   # Container, Eyebrow, Section, SectionHeader,
+│                             #   Button, Disclosure, SmartLink, icons
 └── lib/
     ├── site.ts               # nav links, contact details, site config
     └── utils.ts              # small helpers (cn)
 public/
-└── logo-owl.png              # full-size logo
+├── logo-owl.png              # logo
+├── clients/  team/  vision/  modules/   # content images
 design/
-└── Hexamind - Vision.html    # original Claude Design export (source of truth)
+└── Hexamind - Vision.html    # original Claude Design export (design reference)
 ```
+
+## Content notes
+
+- **Mentions légales** — the "Hébergeur" section still names Lovable. Update it
+  to your new host (Vercel) before going live.
+- **Contact form** and **newsletter** are front-end only. The contact form opens
+  the visitor's mail client (`mailto:`); the newsletter just acknowledges. Wire
+  both to a backend / email provider when ready.
 
 ## Design system
 

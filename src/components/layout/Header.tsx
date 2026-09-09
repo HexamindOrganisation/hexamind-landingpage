@@ -3,67 +3,125 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
-import { mailto, mainNav, site } from "@/lib/site";
+import { LinkedInIcon } from "@/components/ui/icons";
+import { mainNav, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Header() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  const isActive = (href: string) => pathname === href;
 
   return (
     <header className="sticky top-0 z-40 border-b border-line-soft bg-sable/85 backdrop-blur-md">
-      <Container className="flex flex-wrap items-center gap-x-8 gap-y-5 py-[18px]">
-        <Link href="/" className="flex items-center gap-3 text-ink">
+      <Container className="flex h-16 items-center justify-between gap-4">
+        <Link href="/" className="flex items-center gap-3 text-ink" onClick={() => setOpen(false)}>
           <Image
             src="/logo-owl.png"
             alt=""
             width={30}
             height={33}
             priority
-            className="h-[33px] w-[30px] object-contain"
+            className="h-8 w-8 object-contain"
           />
-          <span className="font-serif text-[23px] font-medium leading-none">
+          <span className="font-serif text-xl font-medium leading-none">
             {site.name}
           </span>
         </Link>
 
-        <nav className="ml-auto flex flex-wrap items-center gap-x-6 gap-y-3 text-[15px] text-mid">
-          {mainNav.map((item) => {
-            const target = item.href.split("#")[0];
-            const active = item.href.startsWith("/") && pathname === target;
-            return (
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-8 md:flex">
+          {mainNav.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              className={cn(
+                "text-[15px] font-medium transition-colors hover:text-accent-ink",
+                isActive(item.href) ? "text-accent-ink" : "text-mid",
+              )}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Desktop actions */}
+        <div className="hidden items-center gap-4 md:flex">
+          <a
+            href={site.linkedinUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn Hexamind"
+            className="text-mid transition-colors hover:text-accent-ink"
+          >
+            <LinkedInIcon />
+          </a>
+          <Link
+            href="/contact"
+            className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(15_31_74_/_0.5)] transition duration-200 hover:-translate-y-px hover:bg-accent-ink"
+          >
+            Nous contacter
+          </Link>
+        </div>
+
+        {/* Mobile toggle */}
+        <button
+          type="button"
+          aria-label="Menu"
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          className="text-ink md:hidden"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            aria-hidden
+            className="size-6"
+          >
+            {open ? (
+              <path d="M6 6l12 12M18 6L6 18" />
+            ) : (
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            )}
+          </svg>
+        </button>
+      </Container>
+
+      {/* Mobile panel */}
+      {open ? (
+        <div className="border-t border-line-soft bg-sable md:hidden">
+          <Container className="flex flex-col gap-3 py-4">
+            {mainNav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                aria-current={active ? "page" : undefined}
+                onClick={() => setOpen(false)}
+                aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
-                  "whitespace-nowrap transition-colors hover:text-ink",
-                  active ? "font-semibold text-accent-ink" : "font-normal",
+                  "text-base",
+                  isActive(item.href) ? "text-accent-ink" : "text-ink",
                 )}
               >
                 {item.label}
               </Link>
-            );
-          })}
-        </nav>
-
-        <div className="flex flex-none items-center gap-3">
-          <a
-            href={site.hexgateUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-[10px] border border-line bg-panel px-4 py-[9px] text-sm font-medium text-ink transition-colors hover:border-blue hover:bg-white hover:text-blue-strong"
-          >
-            Hexgate
-          </a>
-          <a
-            href={mailto}
-            className="rounded-[10px] bg-accent px-[18px] py-[10px] text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(15_31_74_/_0.5)] transition duration-200 hover:-translate-y-px hover:bg-accent-ink active:translate-y-px"
-          >
-            Nous contacter
-          </a>
+            ))}
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white"
+            >
+              Nous contacter
+            </Link>
+          </Container>
         </div>
-      </Container>
+      ) : null}
     </header>
   );
 }
