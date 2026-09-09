@@ -1,5 +1,6 @@
 import { Hero } from "@/components/sections/home/Hero";
 import { WorkflowDiagram } from "@/components/sections/home/WorkflowDiagram";
+import { Clients } from "@/components/sections/home/Clients";
 import { StartOptions } from "@/components/sections/home/StartOptions";
 import { DevModes } from "@/components/sections/home/DevModes";
 import { Modules } from "@/components/sections/home/Modules";
@@ -10,6 +11,7 @@ export default function HomePage() {
     <>
       <Hero />
       <WorkflowDiagram />
+      <Clients />
       <StartOptions />
       <DevModes />
       <Modules />
