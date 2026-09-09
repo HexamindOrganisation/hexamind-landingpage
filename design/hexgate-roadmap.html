@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hexgate · Feuille de route</title>
+<style>
+  :root {
+    --paper: #f3ebdd;
+    --paper-2: #fbf6ee;
+    --paper-3: #ede2d0;
+    --line: rgba(43, 38, 32, 0.13);
+    --line-2: rgba(43, 38, 32, 0.22);
+
+    --ink: #2b2620;
+    --ink-1: #463f37;
+    --ink-2: #786d5e;
+    --ink-3: #a3957f;
+
+    --plum: #8a4f7d;
+    --plum-deep: #6c3a61;
+    --plum-wash: rgba(138, 79, 125, 0.1);
+
+    --allow: #3f9166; --allow-bg: #dceadf; --allow-line: rgba(63,145,102,.4);
+    --deny: #c84d62; --deny-bg: #f5dbdd; --deny-line: rgba(200,77,98,.4);
+    --hold: #b9802a; --hold-bg: #f4e6c6; --hold-line: rgba(185,128,42,.42);
+    --wip: #3d6fb0; --wip-bg: #dbe6f4; --wip-deep: #2c5488;
+
+    --sans: "Helvetica Neue", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --mono: "SF Mono", "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: var(--plum); color: #fff; }
+  .doc { max-width: 800px; margin: 0 auto; padding: 0 30px; }
+
+  h1 { font-size: clamp(34px, 6vw, 58px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.02; margin: 0; text-wrap: balance; }
+  h2 { font-size: 20px; font-weight: 750; letter-spacing: -0.015em; margin: 0; }
+  p { margin: 0; color: var(--ink-1); }
+  b, strong { color: var(--ink); font-weight: 650; }
+  em { font-style: italic; }
+  mark { background: linear-gradient(transparent 56%, rgba(194,132,43,0.32) 0); color: inherit; padding: 0 1px; font-weight: 550; }
+  mark.p { background: linear-gradient(transparent 56%, rgba(138,79,125,0.26) 0); }
+  .mono { font-family: var(--mono); font-size: 0.92em; }
+
+  header.top { padding: 66px 0 34px; }
+  .kicker { font-family: var(--mono); font-size: 13px; color: var(--plum); margin: 0 0 20px; display: flex; align-items: center; gap: 9px; }
+  header.top h1 { margin-bottom: 20px; }
+  .lede { font-size: clamp(18px, 2.3vw, 21px); color: var(--ink-1); line-height: 1.45; max-width: 46ch; }
+  .legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 26px; font-family: var(--mono); font-size: 12.5px; color: var(--ink-2); }
+  .legend span { display: inline-flex; align-items: center; gap: 8px; }
+  .legend i { width: 11px; height: 11px; border-radius: 50%; }
+
+  section { padding: 20px 0 60px; }
+
+  /* roadmap timeline */
+  .roadmap { position: relative; padding-left: 36px; }
+  .roadmap::before { content: ""; position: absolute; left: 9px; top: 10px; bottom: 10px; width: 2px; background: var(--line-2); }
+  .rm-item { position: relative; padding-bottom: 30px; }
+  .rm-item:last-child { padding-bottom: 0; }
+  .rm-dot { position: absolute; left: -33px; top: 3px; width: 16px; height: 16px; border-radius: 50%; border: 3px solid var(--paper); }
+  .rm-dot.now { background: var(--allow); }
+  .rm-dot.wip { background: var(--wip); }
+  .rm-dot.next { background: var(--plum); }
+  .rm-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 7px; }
+  .rm-status { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; padding: 3px 10px; border-radius: 999px; font-weight: 600; text-transform: uppercase; }
+  .rm-status.now { background: var(--allow-bg); color: #2e7350; }
+  .rm-status.wip { background: var(--wip-bg); color: var(--wip-deep); }
+  .rm-status.next { background: var(--plum-wash); color: var(--plum-deep); }
+  .rm-item > p { font-size: 15.5px; color: var(--ink-1); max-width: 640px; line-height: 1.5; }
+
+  .group-label { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin: 0 0 22px; display: flex; align-items: center; gap: 10px; }
+  .group-label::before { content: ""; width: 22px; height: 2px; background: var(--plum); }
+  .group-label.g2 { margin-top: 8px; }
+
+  /* details toggle */
+  details { border: 1px solid var(--line); border-radius: 11px; background: var(--paper-2); margin-top: 13px; overflow: hidden; max-width: 660px; }
+  details[open] { border-color: var(--plum-wash); }
+  summary { cursor: pointer; padding: 11px 15px; font-family: var(--mono); font-size: 12.5px; color: var(--plum-deep); font-weight: 600; list-style: none; display: flex; align-items: center; gap: 9px; user-select: none; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "▸"; transition: transform 0.2s ease; color: var(--plum); }
+  details[open] summary::before { transform: rotate(90deg); }
+  summary:focus-visible { outline: 2px solid var(--plum); outline-offset: 2px; }
+  .d-body { padding: 4px 15px 16px; }
+
+  /* code */
+  .code { background: #2a241f; color: #ece3d4; border-radius: 10px; font-family: var(--mono); font-size: 12px; line-height: 1.62; padding: 16px 18px; overflow-x: auto; }
+  .code pre { margin: 0; }
+  .c-key { color: #d49ac8; } .c-str { color: #b3cd95; } .c-com { color: #8b7f72; } .c-fn { color: #e6b87a; }
+  .d-note { font-size: 13.5px; color: var(--ink-2); margin: 12px 0 0; line-height: 1.5; }
+  .d-note b { color: var(--ink-1); }
+  .grammar { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .grammar .g { font-family: var(--mono); font-size: 11px; background: var(--paper-3); border: 1px solid var(--line); border-radius: 5px; padding: 3px 8px; color: var(--ink-1); }
+
+  /* mcp schema */
+  .flow { display: flex; align-items: stretch; overflow-x: auto; padding: 4px 0; }
+  .node { flex: none; font-family: var(--mono); font-size: 11.5px; line-height: 1.3; background: var(--paper); border: 1px solid var(--line-2); border-radius: 9px; padding: 9px 12px; min-height: 46px; display: flex; align-items: center; text-align: center; color: var(--ink-1); }
+  .node.ext { background: var(--paper-3); }
+  .node.gate { background: var(--plum); border-color: var(--plum); color: #fff; font-weight: 600; }
+  .arr { flex: none; align-self: center; padding: 0 8px; color: var(--ink-3); font-family: var(--mono); font-size: 14px; }
+  .outcomes { display: flex; flex-direction: column; gap: 7px; justify-content: center; }
+  .oc { font-family: var(--mono); font-size: 11.5px; padding: 7px 11px; border-radius: 8px; border: 1px solid; display: flex; align-items: center; gap: 8px; }
+  .oc.a { background: var(--allow-bg); border-color: var(--allow-line); color: #2e7350; }
+  .oc.d { background: var(--deny-bg); border-color: var(--deny-line); color: #a23347; }
+  .oc.h { background: var(--hold-bg); border-color: var(--hold-line); color: #8a5d16; }
+  .oc .t { font-size: 9px; letter-spacing: .06em; text-transform: uppercase; font-weight: 700; padding: 2px 6px; border-radius: 999px; }
+  .oc.a .t { background: var(--allow); color: #fff; } .oc.d .t { background: var(--deny); color: #fff; } .oc.h .t { background: var(--hold); color: #fff; }
+
+  /* ---- aperçu dashboard audit (sombre) ---- */
+  .dash { background: #0a0d14; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; color: #e6e9ef; margin-top: 2px; }
+  .dash-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+  .dash-top h4 { margin: 0 0 3px; font-size: 17px; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+  .dash-top .sb { margin: 0; font-size: 12px; color: #8a93a3; }
+  .dash-top .sb code { font-family: var(--mono); color: #c7cdd8; }
+  .seg { display: flex; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; overflow: hidden; font-family: var(--mono); font-size: 11px; }
+  .seg span { padding: 6px 10px; color: #8a93a3; }
+  .seg span.on { background: rgba(255,255,255,0.09); color: #fff; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  @media (max-width: 640px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+  .kpi { background: #11151f; border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 12px; }
+  .kpi .lab { font-size: 12px; color: #8a93a3; margin-bottom: 6px; }
+  .kpi .big { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1; font-variant-numeric: tabular-nums; }
+  .kpi .sub { font-size: 11px; color: #6b7382; margin-top: 5px; }
+  .kpi .spark { display: block; width: 100%; height: 32px; margin-top: 9px; }
+  .kpi.dec .big { color: #fff; }
+  .kpi.al .big, .kpi.al .lab { color: #4ade80; }
+  .kpi.de .big, .kpi.de .lab { color: #f1646f; }
+  .kpi.ap .big, .kpi.ap .lab { color: #f5b13d; }
+  .dash-charts { display: grid; grid-template-columns: 1.5fr 1fr; gap: 10px; margin-top: 10px; }
+  @media (max-width: 640px) { .dash-charts { grid-template-columns: 1fr; } }
+  .panel { background: #11151f; border: 1px solid rgba(255,255,255,0.07); border-radius: 10px; padding: 14px; }
+  .panel .ph { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .panel .ph h5 { margin: 0; font-size: 13px; color: #c7cdd8; font-weight: 600; }
+  .dleg { display: flex; gap: 10px; font-size: 11px; color: #8a93a3; flex-wrap: wrap; }
+  .dleg span { display: inline-flex; align-items: center; gap: 5px; }
+  .dleg i { width: 8px; height: 8px; border-radius: 2px; }
+  .area-svg { display: block; width: 100%; height: 150px; }
+  .xaxis { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; color: #6b7382; margin-top: 5px; }
+  .donut-wrap { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .dlegend { display: flex; flex-direction: column; gap: 8px; font-size: 12px; }
+  .dlegend .r { display: grid; grid-template-columns: 12px 58px 32px 34px; align-items: center; gap: 8px; color: #c7cdd8; font-variant-numeric: tabular-nums; }
+  .dlegend i { width: 9px; height: 9px; border-radius: 3px; }
+  .dlegend .pct { color: #8a93a3; text-align: right; }
+  .anomaly { display: flex; gap: 10px; align-items: center; background: rgba(241,100,111,0.1); border: 1px solid rgba(241,100,111,0.3); border-radius: 9px; padding: 10px 12px; margin-top: 10px; font-size: 12.5px; color: #f0a5ad; }
+  .anomaly .ic { flex: none; width: 22px; height: 22px; border-radius: 6px; background: #f1646f; color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 13px; }
+  .anomaly b { color: #fff; }
+  .dash-disc { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); margin: 9px 0 0; }
+
+  /* ---- aperçu éditeur multi-fichiers (sombre) ---- */
+  .ed { background: #0a0d14; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; color: #e6e9ef; margin-top: 2px; font-family: var(--mono); }
+  .ed-bar { display: flex; align-items: center; gap: 7px; padding: 9px 13px; border-bottom: 1px solid rgba(255,255,255,0.07); font-size: 11px; color: #8a93a3; }
+  .ed-bar i { width: 10px; height: 10px; border-radius: 50%; }
+  .ed-grid { display: grid; grid-template-columns: 148px 1fr 168px; min-height: 232px; }
+  @media (max-width: 640px) { .ed-grid { grid-template-columns: 116px 1fr; } .ed-insp { display: none; } }
+  .ed-tree { border-right: 1px solid rgba(255,255,255,0.06); padding: 9px 0; font-size: 11px; background: #0c1019; }
+  .ed-tree .fh { color: #6b7382; padding: 4px 12px; letter-spacing: .04em; }
+  .ed-tree .f { padding: 3px 12px 3px 20px; color: #b6bdca; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ed-tree .f.sel { background: rgba(109,159,240,0.16); color: #cfe0fb; border-left: 2px solid var(--wip); padding-left: 18px; }
+  .ed-tree .f.roles { color: #d49ac8; }
+  .ed-main { padding: 12px 15px; font-size: 12px; line-height: 1.6; overflow-x: auto; }
+  .ed-main .ln { color: #4a5261; display: inline-block; width: 16px; text-align: right; margin-right: 12px; user-select: none; }
+  .ed-insp { border-left: 1px solid rgba(255,255,255,0.06); padding: 11px 12px; font-size: 11px; background: #0c1019; }
+  .ed-insp .ih { color: #8a93a3; font-size: 10px; letter-spacing: .05em; text-transform: uppercase; margin-bottom: 9px; display: flex; align-items: center; justify-content: space-between; }
+  .ed-insp .pill { background: rgba(109,159,240,0.16); color: #cfe0fb; border-radius: 999px; padding: 2px 8px; font-size: 10px; }
+  .ed-insp .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .ed-insp .row:last-child { border-bottom: 0; }
+  .ed-insp .tool { color: #c7cdd8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ed-insp .tool.ag { color: #d49ac8; }
+  .ed-insp .v { font-size: 9px; letter-spacing: .05em; text-transform: uppercase; font-weight: 700; padding: 2px 6px; border-radius: 999px; flex: none; }
+  .ed-insp .v.a { background: rgba(74,222,128,0.18); color: #6ee7a0; }
+  .ed-insp .v.d { background: rgba(241,100,111,0.18); color: #f5959f; }
+  .ed-disc { font-family: var(--mono); font-size: 10.5px; color: var(--ink-3); margin: 9px 0 0; }
+
+  /* ---- aperçu testeur de décision (sombre) ---- */
+  .tp { background: #0a0d14; border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; overflow: hidden; color: #e6e9ef; margin-top: 14px; font-family: var(--mono); }
+  .tp-body { display: grid; grid-template-columns: 1fr 156px; gap: 12px; padding: 13px; }
+  @media (max-width: 640px) { .tp-body { grid-template-columns: 1fr; } }
+  .tp-in { display: flex; flex-direction: column; gap: 8px; }
+  .tp-field { font-size: 11px; color: #8a93a3; }
+  .tp-field b { color: #cfe0fb; font-weight: 600; }
+  .tp-call { background: #11151f; border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 9px 11px; font-size: 11.5px; color: #c7cdd8; line-height: 1.65; }
+  .tp-call .k { color: #d49ac8; } .tp-call .s { color: #b3cd95; } .tp-call .n { color: #e6b87a; }
+  .tp-out { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; justify-content: center; }
+  .tp-verdict { font-size: 15px; font-weight: 800; letter-spacing: 0.06em; padding: 7px 16px; border-radius: 8px; }
+  .tp-verdict.a { background: rgba(74,222,128,0.15); color: #6ee7a0; border: 1px solid rgba(74,222,128,0.4); }
+  .tp-why { font-size: 10.5px; color: #8a93a3; line-height: 1.55; }
+  .tp-why b { color: #9fb0c4; }
+  .tp-recent { border-top: 1px solid rgba(255,255,255,0.07); padding: 9px 13px 11px; }
+  .tp-recent .rh { font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase; color: #6b7382; margin-bottom: 6px; }
+  .tp-recent .tr { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 4px 0; font-size: 11px; color: #b6bdca; }
+  .tp-recent .v { font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; padding: 2px 7px; border-radius: 999px; white-space: nowrap; flex: none; }
+  .tp-recent .v.a { background: rgba(74,222,128,0.16); color: #6ee7a0; }
+  .tp-recent .v.d { background: rgba(241,100,111,0.16); color: #f5959f; }
+
+  /* ---- graphe agent → outils / sous-agents ---- */
+  .agraph { width: 100%; height: auto; display: block; margin-top: 2px; }
+  .agraph text { font-family: var(--mono); }
+  .aglegend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; font-family: var(--mono); font-size: 11px; color: var(--ink-2); }
+  .aglegend span { display: inline-flex; align-items: center; gap: 6px; }
+  .aglegend svg { flex: none; }
+
+  footer { padding: 0 0 60px; }
+  footer p { font-family: var(--mono); font-size: 12px; color: var(--ink-3); margin: 0; }
+
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity .55s ease, transform .55s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } summary::before, details[open] summary::before { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="doc">
+    <p class="kicker">
+      <svg width="20" height="20" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 2.5 27.5 9v14L16 29.5 4.5 23V9L16 2.5Z" stroke="#8a4f7d" stroke-width="1.8" fill="rgba(138,79,125,0.16)"/>
+        <path d="M16 9.5 21.5 12.7v6.6L16 22.5 10.5 19.3v-6.6L16 9.5Z" stroke="#8a4f7d" stroke-width="1.4" fill="none"/>
+        <circle cx="16" cy="16" r="2.1" fill="#8a4f7d"/>
+      </svg>
+      Hexgate · Feuille de route
+    </p>
+    <h1>Feuille de route</h1>
+    <p class="lede">Ce qui est livré, et ce qui arrive. On étend le <mark class="p">même point de décision</mark> (la politique à l'appel) plus loin dans la pile.</p>
+    <div class="legend">
+      <span><i style="background:var(--allow)"></i>Livré</span>
+      <span><i style="background:var(--wip)"></i>En cours</span>
+      <span><i style="background:var(--plum)"></i>Prévu</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="doc">
+    <p class="group-label">Livré</p>
+    <div class="roadmap reveal">
+
+      <div class="rm-item">
+        <span class="rm-dot now"></span>
+        <div class="rm-head"><h2>Enforcement déterministe à l'appel d'outil</h2><span class="rm-status now">Livré</span></div>
+        <p>Le SDK emballe l'agent (OpenAI, LangChain, Google ADK, Pydantic AI) et applique la politique à <mark>chaque appel d'outil</mark>, avant exécution. Identité « act as » atténuée par token, bundles signés, audit par décision.</p>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot now"></span>
+        <div class="rm-head"><h2>Langage de politique enrichi</h2><span class="rm-status now">Livré</span></div>
+        <p>Au-delà du simple allow/deny : <mark>contraintes sur les arguments</mark> avec quantificateurs, fonctions de chaîne, champs croisés, constantes et rôles hérités. Deux moteurs (dev &amp; prod) rendent des décisions identiques.</p>
+        <details>
+          <summary>Voir un exemple de politique</summary>
+          <div class="d-body">
+            <div class="code">
+<pre><span class="c-key">version:</span> 1
+
+<span class="c-key">consts:</span>
+  <span class="c-key">max_recipients:</span> 5
+  <span class="c-key">prod_env:</span> <span class="c-str">"production"</span>
+
+<span class="c-key">roles:</span>
+  <span class="c-key">base:</span>                         <span class="c-com"># mixin partagé</span>
+    <span class="c-key">is_mixin:</span> true
+    <span class="c-key">consts:</span> { <span class="c-key">max_recipients:</span> 5 }
+
+  <span class="c-key">default:</span>
+    <span class="c-key">inherits:</span> [base]
+    <span class="c-key">default_policy:</span> { <span class="c-key">mode:</span> deny }   <span class="c-com"># deny par défaut</span>
+    <span class="c-key">tools:</span>
+      <span class="c-key">send_email:</span>
+        <span class="c-key">mode:</span> allow
+        <span class="c-key">constraints:</span>
+          - <span class="c-fn">count</span>(args.to) <= consts.max_recipients      <span class="c-com"># count() + const</span>
+          - <span class="c-fn">every</span>(args.to, <span class="c-fn">endswith</span>(., <span class="c-str">"@acme.com"</span>))    <span class="c-com"># quantificateur</span>
+      <span class="c-key">refund:</span>
+        <span class="c-key">mode:</span> allow
+        <span class="c-key">constraints:</span>
+          - args.amount <= args.limit                    <span class="c-com"># champ croisé</span>
+          - <span class="c-fn">matches</span>(args.ticket, <span class="c-str">"^INC-[0-9]+$"</span>)         <span class="c-com"># regex</span>
+      <span class="c-key">read_file:</span>
+        <span class="c-key">mode:</span> allow
+        <span class="c-key">constraints:</span>
+          - <span class="c-fn">startswith</span>(args.path, <span class="c-str">"/srv/"</span>) and not <span class="c-fn">contains</span>(args.path, <span class="c-str">".."</span>)
+      <span class="c-key">deploy:</span>
+        <span class="c-key">mode:</span> approval_required
+        <span class="c-key">constraints:</span>
+          - args.env != consts.prod_env or role == <span class="c-str">"admin"</span>   <span class="c-com"># or + rôle</span>
+
+  <span class="c-key">admin:</span>
+    <span class="c-key">inherits:</span> [base]
+    <span class="c-key">tools:</span>
+      <span class="c-key">deploy:</span> { <span class="c-key">mode:</span> allow }</pre>
+            </div>
+            <div class="grammar">
+              <span class="g">count() · any() · every()</span>
+              <span class="g">champ croisé</span>
+              <span class="g">matches · startswith · endswith · contains</span>
+              <span class="g">and / or / not</span>
+              <span class="g">consts</span>
+              <span class="g">rôles + héritage</span>
+            </div>
+            <p class="d-note"><b>Deux moteurs, mêmes verdicts :</b> pydantic en dev, WASM signé en prod, testé au niveau parité.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot now"></span>
+        <div class="rm-head"><h2>MCP gate</h2><span class="rm-status now">Livré</span></div>
+        <p>Un agent qui se branche à un <mark>serveur MCP tiers</mark> hérite de <em>tous</em> ses outils. Hexgate les fait passer par la même politique que les outils natifs : <mark class="p">deny par défaut</mark>, allowlist, et contraintes par argument.</p>
+        <details>
+          <summary>Voir le schéma</summary>
+          <div class="d-body">
+            <div class="flow">
+              <div class="node ext">Serveur MCP<br>tiers (stdio / HTTP)</div>
+              <div class="arr">›</div>
+              <div class="node">MCPToolset<br>énumère + namespace<br><span style="color:var(--ink-3)">mcp-&lt;srv&gt;-&lt;tool&gt;</span></div>
+              <div class="arr">›</div>
+              <div class="node gate">PolicyEnforcer<br>decide(role, tool, args)</div>
+              <div class="arr">›</div>
+              <div class="outcomes">
+                <div class="oc a"><span class="t">allow</span>atteint le serveur</div>
+                <div class="oc d"><span class="t">deny</span>bloqué avant le serveur</div>
+                <div class="oc h"><span class="t">approval</span>tenu pour un humain</div>
+              </div>
+            </div>
+            <p class="d-note">Les outils sont auto-énumérés à la connexion et namespacés, donc gater un outil MCP est identique à gater un outil natif. <b>Deny par défaut</b> : un serveur qui expose 50 outils ne peut pas en faufiler 47 non validés. Un appel refusé <b>n'atteint jamais</b> le serveur.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot now"></span>
+        <div class="rm-head"><h2>Ban gate (coupe-circuit)</h2><span class="rm-status now">Livré</span></div>
+        <p>Un <mark>coupe-circuit</mark>. Une interdiction visant un <b>agent</b> ou un <b>utilisateur</b>, vérifiée à chaque invocation <mark class="p">avant même que le LLM ne tourne</mark>, indépendamment de la politique. Créée et révoquée depuis le dashboard (une seule active par cible), avec un panneau des bans actifs et des tentatives bloquées. Le prolongement naturel de la détection d'anomalies : détecter, puis bannir.</p>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot now"></span>
+        <div class="rm-head"><h2>Audit &amp; journaux de décision</h2><span class="rm-status now">Livré</span></div>
+        <p>Chaque décision (<span class="mono">allow / deny / approval</span>) et chaque invocation LLM sont journalisées en <mark>événements typés</mark>. Un dashboard les explore : KPI, décisions dans le temps, répartition, filtres (agent / rôle / outil / date / utilisateur) et une première <mark class="p">carte de détection d'anomalies</mark>.</p>
+        <details>
+          <summary>Voir le dashboard</summary>
+          <div class="d-body">
+            <div class="dash">
+              <div class="dash-top">
+                <div><h4>Audit</h4><p class="sb">Chaque décision de politique · projet <code>support-bot</code></p></div>
+                <div class="seg"><span>24h</span><span>7j</span><span class="on">30j</span><span>90j</span></div>
+              </div>
+              <div class="kpis">
+                <div class="kpi dec"><div class="lab">Décisions</div><div class="big">861</div><div class="sub">29 / jour</div><svg class="spark" viewBox="0 0 120 32" data-spark="decisions"></svg></div>
+                <div class="kpi al"><div class="lab">✓ Autorisées</div><div class="big">495</div><div class="sub">57 %</div><svg class="spark" viewBox="0 0 120 32" data-spark="allow"></svg></div>
+                <div class="kpi de"><div class="lab">✕ Refusées</div><div class="big">245</div><div class="sub">28,5 %</div><svg class="spark" viewBox="0 0 120 32" data-spark="deny"></svg></div>
+                <div class="kpi ap"><div class="lab">◌ Approbation</div><div class="big">121</div><div class="sub">14 %</div><svg class="spark" viewBox="0 0 120 32" data-spark="approval"></svg></div>
+              </div>
+              <div class="dash-charts">
+                <div class="panel">
+                  <div class="ph"><h5>Décisions dans le temps</h5><div class="dleg"><span><i style="background:#4ade80"></i>allow</span><span><i style="background:#f5b13d"></i>approval</span><span><i style="background:#f1646f"></i>deny</span></div></div>
+                  <svg class="area-svg" id="areaChart" viewBox="0 0 520 150" preserveAspectRatio="none">
+                    <g stroke="rgba(255,255,255,0.06)" stroke-width="1"><line x1="0" y1="40" x2="520" y2="40"/><line x1="0" y1="80" x2="520" y2="80"/><line x1="0" y1="120" x2="520" y2="120"/></g>
+                    <path id="aAllow" fill="rgba(74,222,128,0.22)"/><path id="aAppr" fill="rgba(245,177,61,0.22)"/><path id="aDeny" fill="rgba(241,100,111,0.24)"/>
+                    <path id="lDeny" fill="none" stroke="#f1646f" stroke-width="1.5"/><path id="lAppr" fill="none" stroke="#f5b13d" stroke-width="1.5"/><path id="lAllow" fill="none" stroke="#4ade80" stroke-width="1.5"/>
+                  </svg>
+                  <div class="xaxis"><span>4 mai</span><span>18 mai</span><span>2 juin</span></div>
+                </div>
+                <div class="panel">
+                  <div class="ph"><h5>Répartition</h5></div>
+                  <div class="donut-wrap">
+                    <svg width="130" height="130" viewBox="0 0 148 148">
+                      <g transform="rotate(-90 74 74)" fill="none" stroke-width="17">
+                        <circle cx="74" cy="74" r="52" stroke="#4ade80" stroke-dasharray="186.2 140.5" stroke-dashoffset="0"/>
+                        <circle cx="74" cy="74" r="52" stroke="#f5b13d" stroke-dasharray="45.7 281" stroke-dashoffset="-186.2"/>
+                        <circle cx="74" cy="74" r="52" stroke="#f1646f" stroke-dasharray="94.8 232" stroke-dashoffset="-231.9"/>
+                      </g>
+                      <text x="74" y="70" text-anchor="middle" fill="#fff" font-size="26" font-weight="800" font-family="Helvetica Neue, Segoe UI, system-ui, sans-serif">861</text>
+                      <text x="74" y="89" text-anchor="middle" fill="#8a93a3" font-size="11" font-family="Helvetica Neue, Segoe UI, system-ui, sans-serif">décisions</text>
+                    </svg>
+                    <div class="dlegend">
+                      <div class="r"><i style="background:#4ade80"></i><span>allow</span><span>495</span><span class="pct">57 %</span></div>
+                      <div class="r"><i style="background:#f5b13d"></i><span>approval</span><span>121</span><span class="pct">14 %</span></div>
+                      <div class="r"><i style="background:#f1646f"></i><span>deny</span><span>245</span><span class="pct">28 %</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="anomaly"><span class="ic">!</span><span><b>Anomalie détectée</b> · alice : 12 remboursements aujourd'hui (moyenne 2 / jour)</span></div>
+              <p class="dash-disc">Aperçu (reproduction) du dashboard Audit de la plateforme</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+    </div>
+
+    <p class="group-label g2">En cours</p>
+    <div class="roadmap reveal">
+
+      <div class="rm-item">
+        <span class="rm-dot wip"></span>
+        <div class="rm-head"><h2>Éditeur de politique multi-fichiers</h2><span class="rm-status wip">En cours</span></div>
+        <p>La politique n'est plus un seul fichier : on la compose en <mark>modules</mark> — des <b>boundaries</b> (plafonds, côté sécurité) et des <b>capabilities</b> (permissions réutilisables) — reliés par une matrice <mark class="p">(rôle, agent)</mark>. Un éditeur dans le dashboard : arborescence de fichiers, aperçu live de la politique résolue, lints, et un testeur de décision par agent.</p>
+        <details>
+          <summary>Voir l'éditeur</summary>
+          <div class="d-body">
+            <div class="ed">
+              <div class="ed-bar"><i style="background:#f1646f"></i><i style="background:#f5b13d"></i><i style="background:#4ade80"></i><span style="margin-left:6px">Éditeur de politique · projet support-bot</span></div>
+              <div class="ed-grid">
+                <div class="ed-tree">
+                  <div class="fh">policies/boundaries/</div>
+                  <div class="f">org_core.yaml</div>
+                  <div class="fh">policies/capabilities/</div>
+                  <div class="f">read_only.yaml</div>
+                  <div class="f sel">payments.yaml</div>
+                  <div class="f">delegate_billing.yaml</div>
+                  <div class="f roles">roles.yaml</div>
+                </div>
+                <div class="ed-main">
+<div><span class="ln">1</span><span class="c-com"># capabilities/payments.yaml</span></div>
+<div><span class="ln">2</span><span class="c-key">tools:</span></div>
+<div><span class="ln">3</span>  <span class="c-key">refund_order:</span></div>
+<div><span class="ln">4</span>    <span class="c-key">mode:</span> allow</div>
+<div><span class="ln">5</span>    <span class="c-key">constraints:</span></div>
+<div><span class="ln">6</span>      - args.amount &lt;= 1000</div>
+<div><span class="ln">7</span>      - args.currency <span class="c-key">in</span> [<span class="c-str">"USD"</span>, <span class="c-str">"EUR"</span>]</div>
+                </div>
+                <div class="ed-insp">
+                  <div class="ih"><span>Résolu</span><span class="pill">billing / *</span></div>
+                  <div class="row" style="border:0;padding-bottom:2px"><span class="tool">refund_order</span><span class="v a">allow</span></div>
+                  <div style="font-size:10px;color:#6b7382;padding:0 0 7px;border-bottom:1px solid rgba(255,255,255,0.05);line-height:1.5">amount ≤ 1000<br>· currency ∈ [USD,EUR]</div>
+                  <div class="row"><span class="tool">view_orders</span><span class="v a">allow</span></div>
+                  <div class="row"><span class="tool">lookup_order</span><span class="v a">allow</span></div>
+                </div>
+              </div>
+            </div>
+            <p class="d-note">Une <b>capability</b> n'accorde que des permissions (<span class="mono">allow</span> / <span class="mono">approval_required</span>, jamais <span class="mono">deny</span>). Ici <span class="mono">payments</span> accorde <span class="mono">refund_order</span> ; le plafond <span class="mono">org_core</span> y ajoute <span class="mono">amount ≤ 1000</span>, donc <b>les deux contraintes</b> s'appliquent à l'appel.</p>
+            <div class="tp">
+              <div class="ed-bar"><i style="background:#f1646f"></i><i style="background:#f5b13d"></i><i style="background:#4ade80"></i><span style="margin-left:6px">Testeur de décision · projet support-bot</span></div>
+              <div class="tp-body">
+                <div class="tp-in">
+                  <div class="tp-field">rôle <b>billing</b> · agent <b>*</b></div>
+                  <div class="tp-call">{ <span class="k">"tool"</span>: <span class="s">"refund_order"</span>,<br>&nbsp;&nbsp;<span class="k">"args"</span>: { <span class="k">"amount"</span>: <span class="n">500</span>, <span class="k">"currency"</span>: <span class="s">"USD"</span> } }</div>
+                </div>
+                <div class="tp-out">
+                  <div class="tp-verdict a">ALLOW</div>
+                  <div class="tp-why"><b>refund_order</b> · les 2 contraintes passent</div>
+                </div>
+              </div>
+              <div class="tp-recent">
+                <div class="rh">Essais</div>
+                <div class="tr"><span>amount 500 · USD</span><span class="v a">allow</span></div>
+                <div class="tr"><span>amount 5000 · USD</span><span class="v d">deny · amount ≤ 1000</span></div>
+                <div class="tr"><span>amount 500 · GBP</span><span class="v d">deny · currency ∈ [USD,EUR]</span></div>
+              </div>
+            </div>
+            <p class="ed-disc">Aperçu (reproduction) de l'éditeur et du testeur de la plateforme</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot wip"></span>
+        <div class="rm-head"><h2>Enforcement au niveau agent</h2><span class="rm-status wip">En cours</span></div>
+        <p>La <mark>même décision</mark> allow / deny / approval, posée désormais sur les <b>agents</b> eux-mêmes : <mark class="p">admission</mark> (ce rôle peut-il lancer cet agent ?) à l'entrée, et <mark class="p">reach</mark> (un agent peut-il en atteindre un autre ?) au moment d'une délégation. Deux façons d'atteindre, gouvernées séparément par le mode <span class="mono">via</span> : <b>agent-outil</b> (on garde la main) et <b>handoff</b> (on transfère la conversation).</p>
+        <details>
+          <summary>Voir le schéma</summary>
+          <div class="d-body">
+            <svg class="agraph" viewBox="0 0 540 248" role="img" aria-label="Graphe : un agent vers ses outils et ses sous-agents">
+              <text x="360" y="22" fill="#a3957f" font-size="9.5" letter-spacing="0.1em">OUTILS</text>
+              <text x="360" y="112" fill="#a3957f" font-size="9.5" letter-spacing="0.1em">SOUS-AGENTS</text>
+              <g fill="none" stroke-width="1.8">
+                <path d="M140 124 C 250 124 250 44 360 44" stroke="#3f9166"/>
+                <path d="M140 124 C 250 124 250 82 360 82" stroke="#3f9166"/>
+                <path d="M140 124 C 250 124 250 140 360 140" stroke="#3f9166"/>
+                <path d="M140 124 C 250 124 250 178 360 178" stroke="#b9802a" stroke-dasharray="5 4"/>
+                <path d="M140 124 C 250 124 250 216 360 216" stroke="#c84d62" stroke-dasharray="5 4"/>
+              </g>
+              <g>
+                <path d="M351 40 L360 44 L351 48 Z" fill="#3f9166"/>
+                <path d="M351 78 L360 82 L351 86 Z" fill="#3f9166"/>
+                <path d="M351 136 L360 140 L351 144 Z" fill="#3f9166"/>
+                <path d="M351 174 L360 178 L351 182 Z" fill="#b9802a"/>
+                <path d="M351 212 L360 216 L351 220 Z" fill="#c84d62"/>
+              </g>
+              <rect x="14" y="100" width="126" height="48" rx="10" fill="#8a4f7d" stroke="#6c3a61"/>
+              <text x="77" y="121" text-anchor="middle" fill="#fff" font-size="12.5" font-weight="700">triage_bot</text>
+              <text x="77" y="136" text-anchor="middle" fill="rgba(255,255,255,0.82)" font-size="9.5">agent · rôle billing</text>
+              <g font-size="11.5" fill="#2b2620">
+                <rect x="360" y="30" width="166" height="28" rx="8" fill="#f3ebdd" stroke="rgba(43,38,32,0.22)"/>
+                <text x="372" y="48">get_order_status</text>
+                <rect x="360" y="68" width="166" height="28" rx="8" fill="#f3ebdd" stroke="rgba(43,38,32,0.22)"/>
+                <text x="372" y="86">lookup_order</text>
+              </g>
+              <rect x="360" y="122" width="166" height="36" rx="8" fill="rgba(138,79,125,0.10)" stroke="rgba(138,79,125,0.45)"/>
+              <text x="372" y="137" font-size="11.5" fill="#2b2620" font-weight="600">billing_bot</text>
+              <text x="372" y="150" font-size="9.5" fill="#786d5e">via: tool · allow</text>
+              <rect x="360" y="160" width="166" height="36" rx="8" fill="#f4e6c6" stroke="rgba(185,128,42,0.42)"/>
+              <text x="372" y="175" font-size="11.5" fill="#2b2620" font-weight="600">escalation_bot</text>
+              <text x="372" y="188" font-size="9.5" fill="#786d5e">via: handoff · approval</text>
+              <rect x="360" y="198" width="166" height="36" rx="8" fill="#f5dbdd" stroke="rgba(200,77,98,0.4)"/>
+              <text x="372" y="213" font-size="11.5" fill="#2b2620" font-weight="600">admin_bot</text>
+              <text x="372" y="226" font-size="9.5" fill="#786d5e">deny · hors d'atteinte</text>
+            </svg>
+            <div class="aglegend">
+              <span><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="#3f9166" stroke-width="2"/></svg>outil / autorisé</span>
+              <span><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="#b9802a" stroke-width="2" stroke-dasharray="5 4"/></svg>handoff · approbation</span>
+              <span><svg width="22" height="8"><line x1="0" y1="4" x2="22" y2="4" stroke="#c84d62" stroke-width="2" stroke-dasharray="5 4"/></svg>refusé</span>
+            </div>
+            <div class="code" style="margin-top:13px">
+<pre><span class="c-key">roles:</span>
+  <span class="c-key">support:</span>
+    <span class="c-key">admission:</span> { <span class="c-key">mode:</span> allow }         <span class="c-com"># ce rôle peut lancer l'agent</span>
+    <span class="c-key">agents:</span>                             <span class="c-com"># quels agents il peut atteindre</span>
+      <span class="c-key">billing_bot:</span>
+        <span class="c-key">via:</span> [tool]                     <span class="c-com"># agent-outil : garde la main</span>
+        <span class="c-key">mode:</span> allow
+      <span class="c-key">escalation_bot:</span>
+        <span class="c-key">via:</span> [handoff]                  <span class="c-com"># handoff : transfère la conversation</span>
+        <span class="c-key">mode:</span> approval_required         <span class="c-com"># ... avec accord humain</span>
+      <span class="c-key">admin_bot:</span>
+        <span class="c-key">mode:</span> deny                      <span class="c-com"># interdit, quel que soit le mode</span></pre>
+            </div>
+            <p class="d-note"><b>Même moteur que les outils :</b> une règle d'agent est abaissée en clé <span class="mono">agent.run</span> / <span class="mono">agent.tool:&lt;cible&gt;</span> / <span class="mono">agent.handoff:&lt;cible&gt;</span>, décidée par le <span class="mono">decide()</span> qui gate déjà chaque appel d'outil. Non listé = <b>refusé</b> (closed-world). Enforcé sur OpenAI Agents et Google ADK.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot wip"></span>
+        <div class="rm-head"><h2>Plugins &amp; hooks (guards pré / post outil)</h2><span class="rm-status wip">En cours</span></div>
+        <p>Une extensibilité <mark>programmable</mark> en complément de la politique déclarative : des hooks <span class="mono">@before_tool</span> / <span class="mono">@after_tool</span> autour de chaque appel. Un guard voit l'appel (et, après, son résultat), et peut <b>réécrire</b> les arguments (redaction, normalisation), <mark class="p">laisser passer</mark> (<span class="mono">Proceed</span>) ou <mark class="p">refuser</mark> (<span class="mono">Halt</span>). On les enregistre en une liste <span class="mono">guards=[…]</span>, scindée pré / post par le décorateur.</p>
+        <details>
+          <summary>Voir un exemple de guard</summary>
+          <div class="d-body">
+            <div class="code">
+<pre><span class="c-key">@before_tool</span>(tool_names=[<span class="c-str">"send_email"</span>])
+<span class="c-key">def</span> <span class="c-fn">redact_pii</span>(call):
+    body = <span class="c-fn">strip_pii</span>(call.args[<span class="c-str">"body"</span>])          <span class="c-com"># nettoie AVANT l'appel</span>
+    <span class="c-key">return</span> <span class="c-fn">Proceed</span>(args={**call.args, <span class="c-str">"body"</span>: body})
+
+<span class="c-key">@after_tool</span>
+<span class="c-key">def</span> <span class="c-fn">block_secrets</span>(call, outcome):
+    <span class="c-key">if</span> <span class="c-fn">has_secret</span>(outcome.result):
+        <span class="c-key">return</span> <span class="c-fn">Halt</span>(<span class="c-str">"secret dans la sortie"</span>)      <span class="c-com"># refuse APRÈS coup</span>
+
+agent = <span class="c-fn">create_agent</span>(..., guards=[redact_pii, block_secrets])</pre>
+            </div>
+            <p class="d-note">Le <b>point de décision reste la politique</b> ; les guards sont le crochet programmable autour d'elle — pour ce qu'une règle déclarative n'exprime pas (redaction, transformation, contrôles maison). <span class="mono">Proceed</span> (éventuellement en réécrivant) ou <span class="mono">Halt</span>, avant ou après l'appel.</p>
+          </div>
+        </details>
+      </div>
+
+    </div>
+
+    <p class="group-label g2">Prévu</p>
+    <div class="roadmap reveal">
+
+      <div class="rm-item">
+        <span class="rm-dot next"></span>
+        <div class="rm-head"><h2>Contrôle d'accès fin aux ressources</h2><span class="rm-status next">Prévu</span></div>
+        <p>Étendre la politique au-delà des outils, jusqu'aux <mark>ressources</mark> qu'un appel atteint : <b>egress internet</b> (domaines), <b>endpoints d'API</b>, et <b>base de données</b> (tables, lecture / écriture). Un outil autorisé ne peut pas joindre une ressource interdite.</p>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot next"></span>
+        <div class="rm-head"><h2>Détection d'anomalies avancée</h2><span class="rm-status next">Prévu</span></div>
+        <p>Des algorithmes plus fins sur l'historique d'audit : seuils adaptatifs, profil de comportement par utilisateur, détection de dérive, qui déclenchent un <mark class="p">resserrement automatique</mark> de la politique (ex. « trop de remboursements aujourd'hui → approbation »).</p>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot next"></span>
+        <div class="rm-head"><h2>Proxy d'interception</h2><span class="rm-status next">Prévu</span></div>
+        <p>Un serveur proxy pour intercepter les requêtes des agents et serveurs MCP qu'on <mark>ne contrôle pas en code</mark>. C'est le pendant transparent du wrapper SDK : même politique, même audit, sans toucher au code de l'agent.</p>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot next"></span>
+        <div class="rm-head"><h2>Routage LLM + guardrails</h2><span class="rm-status next">Prévu</span></div>
+        <p>Router les appels modèle (multi-fournisseurs, fallback, budgets) et appliquer des <mark>guardrails</mark> d'entrée / sortie : le canal texte, en complément du canal action déjà couvert.</p>
+      </div>
+
+      <div class="rm-item">
+        <span class="rm-dot next"></span>
+        <div class="rm-head"><h2>DLP (Data Loss Prevention)</h2><span class="rm-status next">Prévu</span></div>
+        <p>Détecter et bloquer la fuite de <mark>données sensibles</mark> (PII, secrets) dans les entrées / sorties et les arguments d'appels, au même point de décision que la politique. <em>Inspiré d'AGT (Microsoft), proche de notre approche.</em></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="doc">
+    <p>Hexgate · feuille de route · politique déterministe au point d'appel, des outils aux ressources</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  })();
+
+  // ---- aperçu dashboard audit : courbes à partir de données figées ----
+  (function () {
+    var D = {
+      allow:    [26,34,30,28,40,24,38,30,34,27,42,25,40,30,44,38],
+      approval: [ 6,10, 5, 8, 7, 9, 6,11, 5, 8, 7,10, 6, 9, 8,12],
+      deny:     [14,20,11,18,22,12,24,15,20,11,19,13,28,16, 9,24]
+    };
+    var n = D.allow.length;
+    function spark(el, vals, color) {
+      var W = 120, H = 32, p = 3;
+      var mn = Math.min.apply(null, vals), mx = Math.max.apply(null, vals), rng = (mx - mn) || 1;
+      var x = function (i) { return p + i * (W - 2 * p) / (n - 1); };
+      var y = function (v) { return H - p - ((v - mn) / rng) * (H - 2 * p - 2); };
+      var line = '', i;
+      for (i = 0; i < n; i++) line += (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(vals[i]).toFixed(1) + ' ';
+      var area = 'M' + x(0).toFixed(1) + ' ' + H;
+      for (i = 0; i < n; i++) area += ' L' + x(i).toFixed(1) + ' ' + y(vals[i]).toFixed(1);
+      area += ' L' + x(n - 1).toFixed(1) + ' ' + H + ' Z';
+      el.innerHTML =
+        '<path d="' + area + '" fill="' + color + '" opacity="0.16"/>' +
+        '<path d="' + line + '" fill="none" stroke="' + color + '" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/>' +
+        '<circle cx="' + x(n - 1).toFixed(1) + '" cy="' + y(vals[n - 1]).toFixed(1) + '" r="2.4" fill="' + color + '"/>';
+    }
+    var totals = D.allow.map(function (a, i) { return a + D.approval[i] + D.deny[i]; });
+    var colors = { decisions: '#6aa0f5', allow: '#4ade80', deny: '#f1646f', approval: '#f5b13d' };
+    var series = { decisions: totals, allow: D.allow, deny: D.deny, approval: D.approval };
+    document.querySelectorAll('.spark[data-spark]').forEach(function (el) {
+      spark(el, series[el.getAttribute('data-spark')], colors[el.getAttribute('data-spark')]);
+    });
+    var svg = document.getElementById('areaChart');
+    if (svg) {
+      var W = 520, H = 150, padB = 5, padT = 8;
+      var maxT = Math.max.apply(null, totals) * 1.08;
+      var x = function (i) { return i * W / (n - 1); };
+      var y = function (v) { return H - padB - (v / maxT) * (H - padB - padT); };
+      var b1 = D.allow.slice();
+      var b2 = D.allow.map(function (a, i) { return a + D.approval[i]; });
+      var zeros = D.allow.map(function () { return 0; });
+      function area(lower, upper) {
+        var pts = [], i;
+        for (i = 0; i < n; i++) pts.push((i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(upper[i]).toFixed(1));
+        for (i = n - 1; i >= 0; i--) pts.push('L' + x(i).toFixed(1) + ' ' + y(lower[i]).toFixed(1));
+        return pts.join(' ') + ' Z';
+      }
+      function line(vals) { var d = '', i; for (i = 0; i < n; i++) d += (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(vals[i]).toFixed(1) + ' '; return d; }
+      document.getElementById('aAllow').setAttribute('d', area(zeros, b1));
+      document.getElementById('aAppr').setAttribute('d', area(b1, b2));
+      document.getElementById('aDeny').setAttribute('d', area(b2, totals));
+      document.getElementById('lAllow').setAttribute('d', line(b1));
+      document.getElementById('lAppr').setAttribute('d', line(b2));
+      document.getElementById('lDeny').setAttribute('d', line(totals));
+    }
+  })();
+</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
@@ -100,6 +101,28 @@ export function Modules() {
                     ↳ chaque appel d&rsquo;outil passe par la policy
                   </span>
                 </pre>
+              </div>
+
+              {/* Product showcase — audit dashboard + policy editor */}
+              <div className="mt-6 grid gap-4">
+                <figure className="overflow-hidden rounded-xl border border-cream/15">
+                  <Image
+                    src="/hexgate/audit-dashboard.png"
+                    alt="Hexgate — tableau de bord d'audit : chaque décision de politique (autorisée, refusée, validation requise)"
+                    width={1256}
+                    height={1162}
+                    className="h-auto w-full"
+                  />
+                </figure>
+                <figure className="overflow-hidden rounded-xl border border-cream/15">
+                  <Image
+                    src="/hexgate/policy-editor.png"
+                    alt="Hexgate — éditeur de politique : capabilities, contraintes sur les arguments et permissions résolues par rôle"
+                    width={1256}
+                    height={542}
+                    className="h-auto w-full"
+                  />
+                </figure>
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
