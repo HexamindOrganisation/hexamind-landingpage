@@ -68,11 +68,11 @@ export function DevModes() {
           à votre budget et à votre besoin de flexibilité.
         </p>
 
-        <div className="mt-13 grid border-l border-t border-line md:grid-cols-2">
+        <div className="mt-13 grid gap-4 md:grid-cols-2">
           {modes.map((m) => (
             <div
               key={m.n}
-              className="border-b border-r border-line p-9 md:p-10"
+              className="rounded-3xl border border-line bg-panel p-9 md:p-10"
             >
               <div className="flex items-baseline gap-4">
                 <span className="font-sans text-2xl font-bold text-accent-ink">

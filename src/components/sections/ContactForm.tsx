@@ -28,7 +28,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-2xl border border-line bg-panel p-8"
+      className="rounded-3xl border border-line bg-panel p-8"
     >
       <div className="grid gap-5 md:grid-cols-2">
         <div>

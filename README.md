@@ -14,7 +14,10 @@ reference.
 - TypeScript
 - [Tailwind CSS v4](https://tailwindcss.com) — design tokens live in
   [`src/app/globals.css`](src/app/globals.css)
-- Fonts via `next/font/google`: Hanken Grotesk, Playfair Display, JetBrains Mono
+- Fonts via `next/font/google`: Hanken Grotesk (headings + body) + IBM Plex Mono
+  — matching Hexgate's type system
+- Warm royal-blue accent (Hexgate-inspired) on a warm sable base; all colors are
+  tokens in `globals.css`
 
 ## Getting started
 

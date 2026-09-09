@@ -57,7 +57,7 @@ const team = [
     name: "Quang LE",
     role: "CPO",
     fullRole: "Chief Product Officer",
-    bio: ["(début 01/04)", "Polytechnique '15", "7 années XP en startup IA"],
+    bio: ["Polytechnique '15", "7 années XP en startup IA"],
   },
 ];
 
@@ -88,7 +88,7 @@ export default function QuiSommesNousPage() {
           {values.map((v) => (
             <div
               key={v.title}
-              className="rounded-2xl border border-cream/10 bg-cream/5 p-10"
+              className="rounded-3xl border border-cream/10 bg-cream/5 p-10"
             >
               <h3 className="font-serif text-2xl text-cream">{v.title}</h3>
               <p className="mt-4 leading-relaxed text-cream/80">{v.body}</p>

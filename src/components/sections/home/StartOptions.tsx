@@ -69,7 +69,7 @@ export function StartOptions() {
             <div
               key={c.id}
               className={cn(
-                "flex min-h-[340px] flex-col border p-9 transition duration-200 hover:-translate-y-1 hover:shadow-[0_22px_44px_-26px_rgb(15_31_74_/_0.5)]",
+                "flex min-h-[340px] flex-col rounded-3xl border p-9 transition duration-200 hover:-translate-y-1 hover:shadow-[0_22px_44px_-26px_rgb(15_31_74_/_0.5)]",
                 c.card,
               )}
             >

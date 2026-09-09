@@ -8,9 +8,10 @@
 */
 @theme {
   /* Font families — the `--font-*-src` variables are provided by next/font (see layout.tsx). */
+  /* Hexgate uses Hanken Grotesk everywhere (incl. headings) + IBM Plex Mono. */
   --font-sans: var(--font-hanken), "Helvetica Neue", Arial, sans-serif;
-  --font-serif: var(--font-playfair), Georgia, serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+  --font-serif: var(--font-hanken), "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-plex), ui-monospace, SFMono-Regular, monospace;
 
   /* Surfaces */
   --color-sable: #e7e5d6;
@@ -24,12 +25,12 @@
   --color-mid: #394665;
   --color-dim: #4c5878;
 
-  /* Accents */
-  --color-accent: #b02509;
-  --color-accent-ink: #8f1f07;
-  --color-accent-bright: #d6300f; /* accent for use on dark (navy/teal) surfaces */
-  --color-accent-warm: #f0603c; /* warm coral for labels/eyebrows on dark surfaces */
-  --color-verm: #a82409; /* vermilion used in the workflow diagram */
+  /* Accents — warm royal blue (Hexgate-inspired, warmer than its azure) */
+  --color-accent: #3f5fe0;
+  --color-accent-ink: #2b3fae; /* text / eyebrows on light surfaces (AA on sable) */
+  --color-accent-bright: #6d86f6; /* accent for use on dark (navy/teal) surfaces */
+  --color-accent-warm: #93a6fb; /* lightest — labels/eyebrows on dark surfaces */
+  --color-verm: #3f5fe0; /* accent used in the workflow diagram */
   --color-blue: #2563eb;
   --color-blue-strong: #1d4ed8;
   --color-teal: #2a6a82;
@@ -74,7 +75,7 @@
   }
 
   ::selection {
-    background-color: rgb(176 37 9 / 0.2);
+    background-color: rgb(63 95 224 / 0.18);
   }
 }
 

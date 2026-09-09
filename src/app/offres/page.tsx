@@ -231,7 +231,7 @@ export default function OffresPage() {
             <div
               key={o.id}
               id={o.id}
-              className="flex flex-col rounded-2xl border border-line bg-panel p-8"
+              className="flex flex-col rounded-3xl border border-line bg-panel p-8"
             >
               <div className="font-serif text-3xl text-ink">{o.name}</div>
               <div className="mt-2 text-sm uppercase tracking-wider text-accent-ink">
@@ -286,7 +286,7 @@ export default function OffresPage() {
           {modes.map((m) => (
             <div
               key={m.n}
-              className="rounded-2xl border border-line bg-panel p-8"
+              className="rounded-3xl border border-line bg-panel p-8"
             >
               <div className="flex items-baseline gap-4">
                 <span className="font-mono text-2xl font-bold text-accent-ink">

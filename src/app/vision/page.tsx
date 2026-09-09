@@ -164,7 +164,7 @@ export default function VisionPage() {
           {obstacles.map((o) => (
             <div
               key={o.n}
-              className="flex flex-col rounded-2xl border border-line bg-panel p-8"
+              className="flex flex-col rounded-3xl border border-line bg-panel p-8"
             >
               <div className="flex items-baseline gap-4">
                 <span className="font-mono text-2xl font-bold text-accent-ink">
@@ -199,7 +199,7 @@ export default function VisionPage() {
           {layers.map((l) => (
             <div
               key={l.n}
-              className="rounded-2xl border border-cream/15 bg-cream/5 p-8"
+              className="rounded-3xl border border-cream/15 bg-cream/5 p-8"
             >
               <div className="flex items-baseline gap-4">
                 <span className="font-mono text-2xl font-bold text-accent-bright">
@@ -221,7 +221,7 @@ export default function VisionPage() {
           peuvent être apportées sans changer l&rsquo;interface.
         </p>
 
-        <div className="mt-10 max-w-4xl rounded-2xl border border-cream/15 bg-cream/5 p-8">
+        <div className="mt-10 max-w-4xl rounded-3xl border border-cream/15 bg-cream/5 p-8">
           <h3 className="font-serif text-2xl text-cream">Cas d&rsquo;usage bancaire</h3>
           <p className="mt-3 leading-relaxed text-cream/85">
             Quels gains apportés par l&rsquo;approche en trois couches pour

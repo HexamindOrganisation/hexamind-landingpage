@@ -131,7 +131,7 @@ export default function NousRejoindrePage() {
           {reasons.map((r) => (
             <div
               key={r.title}
-              className="rounded-2xl border border-cream/10 bg-cream/5 p-10"
+              className="rounded-3xl border border-cream/10 bg-cream/5 p-10"
             >
               <h3 className="font-serif text-2xl text-cream">{r.title}</h3>
               <p className="mt-4 leading-relaxed text-cream/80">{r.body}</p>

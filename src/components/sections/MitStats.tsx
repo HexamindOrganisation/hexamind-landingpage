@@ -31,7 +31,7 @@ export function MitStats({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex flex-wrap overflow-hidden rounded-2xl border border-line bg-panel",
+        "flex flex-wrap overflow-hidden rounded-3xl border border-line bg-panel",
         className,
       )}
     >

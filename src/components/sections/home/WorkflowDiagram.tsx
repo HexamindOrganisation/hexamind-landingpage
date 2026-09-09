@@ -30,7 +30,7 @@ export function WorkflowDiagram() {
     <section className="px-0 pb-28 pt-5">
       <Container>
         <div
-          className="relative overflow-hidden rounded-[20px] border border-line p-8 md:p-[44px] md:pt-14"
+          className="relative overflow-hidden rounded-[28px] border border-line p-8 md:p-[44px] md:pt-14"
           style={{
             background:
               "linear-gradient(180deg,var(--color-panel) 0%,var(--color-panel-2) 100%)",
@@ -62,7 +62,7 @@ export function WorkflowDiagram() {
 
             {/* Animated band */}
             <div
-              className="relative mt-[34px] h-[230px] overflow-hidden rounded-2xl"
+              className="relative mt-[34px] h-[230px] overflow-hidden rounded-3xl"
               style={{
                 background:
                   "linear-gradient(90deg,rgba(42,106,130,.05),rgba(214,48,15,.06))",
