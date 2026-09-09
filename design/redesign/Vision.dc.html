@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#E7E5D6; --bg2:#EDEDE2; --panel:#F5F4EC; --panel2:#FBFAF4;
+  --line:rgba(15,31,74,.16); --line2:rgba(15,31,74,.09);
+  --ink:#0F1F4A; --mid:#394665; --dim:#4C5878;
+  --blue:#2563EB; --blue2:#1D4ED8; --verm:#A82409; --verm-lg:#D6300F; --teal:#2A6A82;
+  --green:#12705A; --amber:#B45309; --code:#0B1533;
+  --serif:'Playfair Display',Georgia,serif; --accent:#B02509; --accent-ink:#8F1F07; --display:'Hanken Grotesk','Helvetica Neue',sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+body{font-family:'Hanken Grotesk','Helvetica Neue',Arial,sans-serif}
+a{color:var(--blue2);text-decoration:none}
+a:hover{color:#0F1F4A}
+::selection{background:rgba(176,37,9,.2)}
+@keyframes flow{0%{background-position:0 0}100%{background-position:220px 0}}
+@keyframes glowpulse{0%,100%{opacity:.35;transform:scale(1)}50%{opacity:.8;transform:scale(1.06)}}
+@keyframes dot{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes sweep{0%{transform:translateX(-30%)}100%{transform:translateX(430%)}}
+@keyframes drift{0%{background-position:0 0}100%{background-position:26px 13px}}
+@keyframes bloom{0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(15,31,74,0)}45%{transform:scale(1.18);box-shadow:0 0 0 9px rgba(15,31,74,.06)}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="min-height:100vh;background:var(--bg);overflow-x:hidden">
+
+  <header data-screen-label="Nav" style="position:sticky;top:0;z-index:40;background:rgba(231,229,214,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line2)">
+    <div style="max-width:1240px;margin:0 auto;padding:18px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:20px 32px">
+      <a href="Hexamind%20Homepage.dc.html" style="display:flex;align-items:center;gap:12px;color:var(--ink)">
+        <img src="assets/hexamind-owl.png" alt="" style="width:30px;height:33px;object-fit:contain;display:block" />
+        <span style="font-family:var(--serif);font-weight:500;font-size:23px;line-height:1">Hexamind</span>
+      </a>
+      <nav style="display:flex;flex-wrap:wrap;gap:12px 26px;margin-left:auto;font-size:15px;color:var(--mid)">
+        <a href="Vision.dc.html" style="color:var(--accent-ink);font-weight:600;white-space:nowrap;transition:color .16s ease" style-hover="color:var(--ink)">Vision</a>
+        <a href="Hexamind%20Homepage.dc.html#offres" style="color:var(--mid);font-weight:400;white-space:nowrap;transition:color .16s ease" style-hover="color:var(--ink)">Nos offres</a>
+        <a href="Qui-sommes-nous.dc.html" style="color:var(--mid);font-weight:400;white-space:nowrap;transition:color .16s ease" style-hover="color:var(--ink)">Qui sommes-nous</a>
+        <a href="Nous-rejoindre.dc.html" style="color:var(--mid);font-weight:400;white-space:nowrap;transition:color .16s ease" style-hover="color:var(--ink)">Nous rejoindre</a>
+      </nav>
+      <div style="display:flex;gap:12px;align-items:center;flex:none">
+        <a href="https://hexgate.ai" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);font-size:14px;font-weight:500;transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease;" style-hover="background:#fff;border-color:var(--blue);color:var(--blue2)">
+          Hexgate
+        </a>
+        <a href="mailto:hello@hexamind.ai" style="padding:10px 18px;border-radius:10px;background:var(--accent);color:#fff;font-size:14px;font-weight:600;box-shadow:0 6px 18px -8px rgba(15,31,74,.5);transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease;" style-hover="background:var(--accent-ink);box-shadow:0 10px 22px -8px rgba(15,31,74,.55);transform:translateY(-1px)" style-active="transform:translateY(1px);box-shadow:0 3px 10px -6px rgba(15,31,74,.5)">Nous contacter</a>
+      </div>
+    </div>
+  </header>
+
+  <section data-screen-label="Titre" style="position:relative;padding:96px 32px 64px;overflow:hidden">
+    <div style="position:absolute;top:-60px;right:-60px;width:720px;height:460px;background-image:radial-gradient(var(--teal) 1.3px,transparent 1.3px);background-size:12px 12px;mask-image:radial-gradient(50% 56% at 96% 4%,#000 0%,transparent 76%);opacity:.6"></div>
+    <div style="position:relative;max-width:1240px;margin:0 auto">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
+        <span style="width:34px;height:1px;background:var(--accent)"></span>
+        <span style="font:500 13px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--accent-ink)">VISION</span>
+      </div>
+      <h1 style="margin:0;max-width:24ch;font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.6vw,76px);line-height:1.03;letter-spacing:-.01em;text-wrap:balance;color:var(--ink)">Une IA utile, modeste et maîtrisée.</h1>
+      <p style="margin:28px 0 0;max-width:70ch;font-size:18.5px;line-height:1.7;color:var(--mid)">Nous vous accompagnons dans vos projets de transformation IA en conseil, en développement sur mesure et grâce à nos propres modules d'IA.</p>
+    </div>
+  </section>
+
+  <section id="mission" data-screen-label="Mission" style="padding:20px 32px 110px">
+    <div style="max-width:1240px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:56px 80px;align-items:start">
+      <div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px">
+          <span style="width:34px;height:1px;background:var(--accent)"></span>
+          <span style="font:500 13px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:var(--accent-ink)">NOTRE MISSION</span>
+        </div>
+        <h2 style="margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.4vw,58px);line-height:1.08;letter-spacing:-.005em;text-wrap:pretty">
+          Selon le MIT, <span style="color:var(--accent)">5 %</span> seulement des organisations obtiennent un retour concret sur l'IA générative.
+        </h2>
+        <div style="display:flex;flex-wrap:wrap;gap:0;margin-top:48px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel)">
+          <div style="flex:1;min-width:180px;padding:26px 24px;border-right:1px solid var(--line)">
+            <div style="font:700 clamp(28px,3vw,38px)/1.15 var(--display);color:var(--accent)">30–40 Md$</div>
+            <div style="margin-top:8px;font-size:13.5px;color:var(--dim)">investis dans l'IA générative</div>
+          </div>
+          <div style="flex:1;min-width:180px;padding:26px 24px;border-right:1px solid var(--line)">
+            <div style="font:700 clamp(28px,3vw,38px)/1.15 var(--display)">5 %</div>
+            <div style="margin-top:8px;font-size:13.5px;color:var(--dim)">en tirent un retour concret</div>
+          </div>
+          <div style="flex:1;min-width:180px;padding:26px 24px">
+            <div style="font:700 clamp(28px,3vw,38px)/1.15 var(--display);color:var(--green)">Vous</div>
+            <div style="margin-top:8px;font-size:13.5px;color:var(--dim)">notre mission : vous mettre dans ces 5 %</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding-top:6px">
+        <p style="margin:0;font-size:17.5px;line-height:1.75;color:var(--mid)">L'Intelligence Artificielle est une réalité opérationnelle et un <strong style="color:var(--ink);font-weight:600">moteur de transformation</strong> majeur. Pourtant, son essor en entreprise reste décevant face aux attentes générées par les offres grand public.</p>
+        <p style="margin:22px 0 0;font-size:17.5px;line-height:1.75;color:var(--mid)">Un récent rapport du MIT indique que malgré 30 à 40 milliards de dollars investis dans l'IA générative, <strong style="color:var(--ink);font-weight:600">seulement 5 %</strong> des organisations en obtiennent un retour concret. Notre mission : faire en sorte que vous soyez dans ces 5 %.</p>
+        <p style="margin:22px 0 0;font-size:17.5px;line-height:1.75;color:var(--mid)">Nous pensons qu'une architecture adaptée — qui découple les fonctions très adhérentes à l'IA des fonctions plus stables — libère les organisations de leurs freins.</p>
+        <a href="Hexamind%20Homepage.dc.html#offres" style="display:inline-flex;align-items:center;gap:10px;margin-top:30px;padding:14px 24px;border-radius:12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-size:15px;font-weight:500;transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .18s ease,box-shadow .18s ease;" style-hover="background:#fff;border-color:var(--ink);transform:translateY(-2px)" style-active="transform:translateY(0)">Découvrir nos offres <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-screen-label="Contact" style="padding:130px 32px;background:var(--teal)">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px">
+      <div style="min-width:0">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px">
+          <span style="width:34px;height:1px;background:rgba(237,235,222,.9)"></span>
+          <span style="font:500 13px/1 'JetBrains Mono',monospace;letter-spacing:.22em;color:rgba(237,235,222,.9)">TRAVAILLONS ENSEMBLE</span>
+        </div>
+        <h2 style="margin:0;font-family:var(--serif);font-weight:500;font-size:clamp(38px,5vw,68px);line-height:1.05;color:#EDEBDE">Une question, un projet ?</h2>
+      </div>
+      <a href="mailto:hello@hexamind.ai" style="display:inline-flex;align-items:center;gap:12px;flex:none;padding:17px 32px;border-radius:999px;background:#EDEBDE;color:var(--ink);font-size:17px;font-weight:500;transition:transform .2s ease,box-shadow .2s ease,background-color .18s ease,border-color .18s ease;" style-hover="background:#fff;transform:translateY(-2px);box-shadow:0 16px 34px -16px rgba(0,0,0,.45)" style-active="transform:translateY(0)">Nous contacter <span>→</span></a>
+    </div>
+  </section>
+
+  <footer data-screen-label="Footer" style="padding:56px 32px 40px;border-top:1px solid var(--line2)">
+    <div style="max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;gap:32px;align-items:center">
+      <a href="Hexamind%20Homepage.dc.html" style="display:flex;align-items:center;gap:12px;color:var(--ink)">
+        <img src="assets/hexamind-owl.png" alt="" style="width:26px;height:29px;object-fit:contain;display:block" />
+        <span style="font-family:var(--serif);font-weight:500;font-size:20px;line-height:1">Hexamind</span>
+      </a>
+      <nav style="display:flex;flex-wrap:wrap;gap:26px;margin-left:auto;font-size:14.5px;color:var(--mid)">
+        <a href="Vision.dc.html" style="color:var(--mid);transition:color .16s ease" style-hover="color:var(--ink)">Vision</a>
+        <a href="Hexamind%20Homepage.dc.html#offres" style="color:var(--mid);transition:color .16s ease" style-hover="color:var(--ink)">Nos offres</a>
+        <a href="Hexamind%20Homepage.dc.html#modules" style="color:var(--mid);transition:color .16s ease" style-hover="color:var(--ink)">Modules IA</a>
+        <a href="https://hexgate.ai" style="color:var(--mid);transition:color .16s ease" style-hover="color:var(--ink)">Hexgate</a>
+        <a href="Nous-rejoindre.dc.html" style="color:var(--mid);transition:color .16s ease" style-hover="color:var(--ink)">Nous rejoindre</a>
+        <a href="mailto:hello@hexamind.ai" style="color:var(--mid);transition:color .16s ease" style-hover="color:var(--ink)">Contact</a>
+      </nav>
+      <div style="width:100%;padding-top:26px;border-top:1px solid var(--line2);display:flex;flex-wrap:wrap;gap:16px;font:400 12.5px/1.6 'JetBrains Mono',monospace;color:var(--dim)">
+        <span>© 2026 Hexamind · We make AI work for you.</span>
+        <span style="margin-left:auto">Paris · hello@hexamind.ai</span>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#D6300F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#D6300F&quot;,&quot;#2A6A82&quot;,&quot;#0F1F4A&quot;],&quot;section&quot;:&quot;Direction&quot;},&quot;serifDisplay&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Direction&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Direction&quot;}}">
+class Component extends DCLogic {
+  // darken until the colour clears 4.5:1 on the sable canvas
+  darken(hex) {
+    const m = /^#?([0-9a-f]{6})$/i.exec(hex.trim());
+    if (!m) return hex;
+    let [r, g, b] = [0, 2, 4].map(i => parseInt(m[1].slice(i, i + 2), 16));
+    const lum = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+    const rel = () => 0.2126 * lum(r) + 0.7152 * lum(g) + 0.0722 * lum(b);
+    const bg = 0.2126 * lum(231) + 0.7152 * lum(229) + 0.0722 * lum(214);
+    let guard = 0;
+    while ((bg + 0.05) / (rel() + 0.05) < 4.6 && guard++ < 40) {
+      r = Math.round(r * 0.92); g = Math.round(g * 0.92); b = Math.round(b * 0.92);
+    }
+    return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('');
+  }
+  apply() {
+    const r = document.documentElement.style;
+    const a = this.props.accent ?? '#B02509';
+    r.setProperty('--accent', a);
+    r.setProperty('--accent-ink', this.darken(a));
+    r.setProperty('--display', (this.props.serifDisplay ?? false)
+      ? "'Playfair Display',Georgia,serif"
+      : "'Hanken Grotesk','Helvetica Neue',sans-serif");
+    document.querySelectorAll('[style*="animation"]').forEach(el => {
+      el.style.animationPlayState = (this.props.motion ?? true) ? 'running' : 'paused';
+    });
+  }
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
