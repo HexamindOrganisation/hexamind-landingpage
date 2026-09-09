@@ -132,7 +132,40 @@ const modes = [
   },
 ];
 
-const modules = [
+type ModuleLink = { label: string; href: string; primary?: boolean };
+
+type ModuleItem = {
+  id: string;
+  name: string;
+  tagline: string;
+  body: string;
+  benefits: string[];
+  badge?: string;
+  links?: ModuleLink[];
+  preview?: { image: string; href: string; alt: string } | null;
+};
+
+const modules: ModuleItem[] = [
+  {
+    id: "hexgate",
+    name: "Hexgate",
+    tagline: "L'autorisation de vos agents IA",
+    body: "Autorisation par utilisateur pour les agents IA : chaque appel d'outil est filtré selon le rôle de l'appelant, via une policy appliquée en local depuis un bundle WASM signé — sans latence ajoutée. Chaque décision (autoriser, refuser, validation requise) part dans le journal d'audit. Compatible OpenAI Agents, LangChain, Google ADK et Pydantic AI.",
+    benefits: [
+      "Contrôle fin : rôles, contraintes sur les arguments et décisions typées (allow / deny / approval-required)",
+      "Zéro latence ajoutée : la policy est évaluée en local, depuis un bundle WASM signé",
+      "Traçabilité : chaque décision est journalisée avec l'identité de l'appelant",
+    ],
+    badge: "OPEN SOURCE · MIT",
+    links: [
+      {
+        label: "Try the cloud version →",
+        href: "https://app.hexgate.ai",
+        primary: true,
+      },
+      { label: "GitHub", href: "https://github.com/HexamindOrganisation/hexgate" },
+    ],
+  },
   {
     id: "pascal",
     name: "Pascal",
@@ -299,6 +332,11 @@ export default function OffresPage() {
                 <p className="mt-2 text-sm uppercase tracking-wider text-accent-bright">
                   {m.tagline}
                 </p>
+                {m.badge ? (
+                  <span className="mt-4 inline-block rounded-md border border-cream/35 px-2.5 py-[5px] font-mono text-[10.5px] font-medium tracking-[0.12em] text-cream/80">
+                    {m.badge}
+                  </span>
+                ) : null}
               </div>
               <div className="space-y-6 lg:col-span-8">
                 <p className="text-lg leading-relaxed text-cream/85">{m.body}</p>
@@ -310,6 +348,25 @@ export default function OffresPage() {
                     </li>
                   ))}
                 </ul>
+                {m.links ? (
+                  <div className="flex flex-wrap gap-3">
+                    {m.links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={
+                          l.primary
+                            ? "rounded-full bg-accent px-[22px] py-3 text-[15px] font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-14px_rgb(0_0_0_/_0.6)]"
+                            : "rounded-full border border-cream/35 px-[22px] py-3 text-[15px] text-cream transition-colors hover:border-cream hover:bg-cream/10"
+                        }
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
                 {m.preview ? (
                   <a
                     href={m.preview.href}

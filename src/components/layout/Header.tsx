@@ -60,6 +60,14 @@ export function Header() {
           >
             <LinkedInIcon />
           </a>
+          <a
+            href={site.hexgateUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-line bg-panel px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-blue hover:bg-white hover:text-blue-strong"
+          >
+            Hexgate
+          </a>
           <Link
             href="/contact"
             className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(15_31_74_/_0.5)] transition duration-200 hover:-translate-y-px hover:bg-accent-ink"
@@ -112,6 +120,15 @@ export function Header() {
                 {item.label}
               </Link>
             ))}
+            <a
+              href={site.hexgateUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setOpen(false)}
+              className="text-base text-ink"
+            >
+              Hexgate
+            </a>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}

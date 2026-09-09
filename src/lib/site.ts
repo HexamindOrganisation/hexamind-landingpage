@@ -7,6 +7,7 @@ export const site = {
   tagline: "We make AI work for you.",
   email: "hello@hexamind.ai",
   location: "Paris",
+  hexgateUrl: "https://hexgate.ai",
   linkedinUrl:
     "https://www.linkedin.com/search/results/all/?keywords=hexamind%20%3A%20l%27ia%20utile%20et%20ma%C3%AEtris%C3%A9e&origin=RICH_QUERY_SEARCH_HOME_HISTORY&heroEntityKey=urn%3Ali%3Aorganization%3A74674214",
 } as const;
