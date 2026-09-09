@@ -113,7 +113,7 @@ export default function QuiSommesNousPage() {
                   className="size-full object-cover"
                 />
               </div>
-              <div className="-mt-3 rounded-md bg-teal px-5 py-1.5 text-sm font-semibold text-cream">
+              <div className="-mt-3 rounded-md bg-clay px-5 py-1.5 text-sm font-semibold text-cream">
                 {m.name}
               </div>
               <div className="mt-4 font-bold text-foreground">{m.role}</div>
@@ -127,7 +127,7 @@ export default function QuiSommesNousPage() {
           ))}
         </div>
         <div className="mt-12 flex justify-center">
-          <p className="max-w-2xl rounded-md bg-teal px-8 py-4 text-center text-cream">
+          <p className="max-w-2xl rounded-md bg-clay px-8 py-4 text-center text-cream">
             + équipe technique initiale de 10+ ingénieurs et chercheurs issus des
             meilleurs écoles et universités
           </p>

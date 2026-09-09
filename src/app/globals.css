@@ -7,7 +7,7 @@
   bg-card, text-muted-foreground, border-border, …).
 
   Palette: warm "paper" base + plum primary (inspired by the Hexgate roadmap
-  artifact), with teal / green / blue kept as secondary + status accents.
+  artifact), with clay / green / blue kept as secondary + status accents.
 */
 :root {
   /* Core surfaces & text */
@@ -48,7 +48,7 @@
   --accent-warm: #d0a7c7;
 
   /* Secondary & status accents */
-  --teal: #2a6a82;
+  --clay: #a3542f; /* warm terracotta secondary (replaces the old cool teal) */
   --green: #3f9166; /* allow */
   --blue: #3d6fb0; /* wip */
   --blue-strong: #2c5488;
@@ -89,7 +89,7 @@
   --color-line-soft: var(--line-soft);
   --color-accent-bright: var(--accent-bright);
   --color-accent-warm: var(--accent-warm);
-  --color-teal: var(--teal);
+  --color-clay: var(--clay);
   --color-green: var(--green);
   --color-blue: var(--blue);
   --color-blue-strong: var(--blue-strong);

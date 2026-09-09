@@ -13,7 +13,7 @@ const variants: Record<Variant, string> = {
   // Outline on light surfaces.
   outline:
     "border border-border px-6 py-3 text-foreground hover:border-ink hover:bg-white",
-  // Cream fill — primary CTA on dark (navy/teal) surfaces.
+  // Cream fill — primary CTA on dark (ink/clay) surfaces.
   cream:
     "bg-cream px-6 py-3 text-foreground hover:-translate-y-0.5 hover:bg-white",
   // Outline on dark surfaces.

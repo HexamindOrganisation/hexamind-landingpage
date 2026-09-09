@@ -25,7 +25,7 @@ export function Hero() {
         className="pointer-events-none absolute -right-20 -top-10 h-[620px] w-[900px] opacity-70"
         style={{
           backgroundImage:
-            "radial-gradient(var(--color-teal) 1.3px,transparent 1.3px)",
+            "radial-gradient(var(--color-clay) 1.3px,transparent 1.3px)",
           backgroundSize: "11px 11px",
           maskImage:
             "radial-gradient(58% 62% at 92% 8%,#000 0%,rgba(0,0,0,.5) 45%,transparent 78%)",

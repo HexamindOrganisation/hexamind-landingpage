@@ -33,7 +33,7 @@ const cards: Card[] = [
     name: "BOOSTAI",
     tagline: "ACCULTURATION & FORMATION IA",
     desc: "Trois parcours progressifs selon votre maturité, pour rendre vos équipes autonomes avec l'IA dès le premier jour.",
-    card: "bg-teal border-teal",
+    card: "bg-clay border-clay",
     title: "text-cream",
     tag: "text-cream/90",
     body: "text-cream/90",

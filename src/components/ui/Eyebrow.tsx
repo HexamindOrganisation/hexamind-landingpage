@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Small section label: a short rule followed by mono, letter-spaced text.
- * `tone="cream"` is used on dark (teal) backgrounds.
+ * `tone="cream"` is used on dark (ink/clay) backgrounds.
  */
 export function Eyebrow({
   children,

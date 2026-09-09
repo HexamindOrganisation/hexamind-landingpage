@@ -3,10 +3,10 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
-/** Full-width teal call-to-action band. Reused across pages. */
+/** Full-width clay call-to-action band. Reused across pages. */
 export function ContactCta() {
   return (
-    <section id="contact" className="bg-teal py-24 md:py-28">
+    <section id="contact" className="bg-clay py-24 md:py-28">
       <Reveal>
         <Container className="flex flex-wrap items-center justify-between gap-10">
         <div className="min-w-0">

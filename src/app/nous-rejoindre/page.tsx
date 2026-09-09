@@ -164,7 +164,7 @@ export default function NousRejoindrePage() {
                   <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                     {items.map((i) => (
                       <li key={i} className="flex gap-2">
-                        <span className="text-teal">•</span>
+                        <span className="text-clay">•</span>
                         {i}
                       </li>
                     ))}

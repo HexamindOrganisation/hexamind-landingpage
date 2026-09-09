@@ -2,13 +2,13 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
-export type SectionTone = "sable" | "panel" | "ink" | "teal";
+export type SectionTone = "sable" | "panel" | "ink" | "clay";
 
 const toneClass: Record<SectionTone, string> = {
   sable: "bg-background text-foreground",
   panel: "bg-card text-foreground",
   ink: "bg-ink text-cream",
-  teal: "bg-teal text-cream",
+  clay: "bg-clay text-cream",
 };
 
 /**

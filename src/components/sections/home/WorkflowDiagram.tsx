@@ -5,7 +5,7 @@ const HEX_CLIP = "polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)";
 
 const steps = [
   { n: "01", word: "CADRER", color: "var(--color-verm)", delay: "0s" },
-  { n: "02", word: "CONSTRUIRE", color: "var(--color-teal)", delay: "1.1s" },
+  { n: "02", word: "CONSTRUIRE", color: "var(--color-clay)", delay: "1.1s" },
   { n: "03", word: "INDUSTRIALISER", color: "var(--color-green)", delay: "2.2s" },
 ];
 
@@ -67,16 +67,16 @@ export function WorkflowDiagram() {
               className="relative mt-[34px] h-[230px] overflow-hidden rounded-3xl"
               style={{
                 background:
-                  "linear-gradient(90deg,rgba(42,106,130,.05),rgba(124,72,112,.07))",
+                  "linear-gradient(90deg,rgba(163,84,47,.06),rgba(124,72,112,.07))",
               }}
             >
-              {/* Drifting teal dots */}
+              {/* Drifting clay dots */}
               <div
                 aria-hidden
                 className="absolute inset-0 opacity-75"
                 style={{
                   backgroundImage:
-                    "radial-gradient(var(--color-teal) 1.6px,transparent 1.6px)",
+                    "radial-gradient(var(--color-clay) 1.6px,transparent 1.6px)",
                   backgroundSize: "24px 24px",
                   maskImage:
                     "linear-gradient(90deg,#000 0%,rgba(0,0,0,.4) 44%,transparent 64%)",

@@ -190,7 +190,7 @@ export default function VisionPage() {
       </Section>
 
       {/* La proposition Hexamind */}
-      <Section tone="teal">
+      <Section tone="clay">
         <SectionHeader
           tone="dark"
           eyebrow="LA PROPOSITION HEXAMIND"
