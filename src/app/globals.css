@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/*
+  Hexamind design tokens.
+  These map the values from the Claude Design source (design/Hexamind - Vision.html)
+  onto Tailwind's theme so components use semantic utilities like `bg-sable`,
+  `text-ink`, `text-accent`, `font-serif`, `text-hero`, etc.
+*/
+@theme {
+  /* Font families — the `--font-*-src` variables are provided by next/font (see layout.tsx). */
+  --font-sans: var(--font-hanken), "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, monospace;
+
+  /* Surfaces */
+  --color-sable: #e7e5d6;
+  --color-sable-2: #edede2;
+  --color-panel: #f5f4ec;
+  --color-panel-2: #fbfaf4;
+  --color-cream: #edebde;
+
+  /* Ink / text */
+  --color-ink: #0f1f4a;
+  --color-mid: #394665;
+  --color-dim: #4c5878;
+
+  /* Accents */
+  --color-accent: #b02509;
+  --color-accent-ink: #8f1f07;
+  --color-blue: #2563eb;
+  --color-blue-strong: #1d4ed8;
+  --color-teal: #2a6a82;
+  --color-green: #12705a;
+  --color-amber: #b45309;
+
+  /* Hairlines (navy at low alpha) */
+  --color-line: rgb(15 31 74 / 0.16);
+  --color-line-soft: rgb(15 31 74 / 0.09);
+
+  /* Type scale — sizes paired with their line-heights */
+  --text-eyebrow: 0.8125rem; /* 13px */
+
+  --text-body: 1.09375rem; /* 17.5px */
+  --text-body--line-height: 1.75;
+
+  --text-body-lg: 1.15625rem; /* 18.5px */
+  --text-body-lg--line-height: 1.7;
+
+  --text-stat: clamp(1.75rem, 3vw, 2.375rem); /* 28 → 38px */
+  --text-stat--line-height: 1.15;
+
+  --text-h2: clamp(2.125rem, 4.4vw, 3.625rem); /* 34 → 58px */
+  --text-h2--line-height: 1.08;
+
+  --text-h2-lg: clamp(2.375rem, 5vw, 4.25rem); /* 38 → 68px */
+  --text-h2-lg--line-height: 1.05;
+
+  --text-hero: clamp(2.5rem, 5.6vw, 4.75rem); /* 40 → 76px */
+  --text-hero--line-height: 1.03;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-sable);
+    color: var(--color-ink);
+  }
+
+  ::selection {
+    background-color: rgb(176 37 9 / 0.2);
+  }
+}
