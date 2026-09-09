@@ -32,10 +32,10 @@ export function WorkflowDiagram() {
       <Reveal>
         <Container>
         <div
-          className="relative overflow-hidden rounded-[28px] border border-line p-5 sm:p-8 md:p-[44px] md:pt-14"
+          className="relative overflow-hidden rounded-[28px] border border-border p-5 sm:p-8 md:p-[44px] md:pt-14"
           style={{
             background:
-              "linear-gradient(180deg,var(--color-panel) 0%,var(--color-panel-2) 100%)",
+              "linear-gradient(180deg,var(--color-card) 0%,var(--color-card) 100%)",
           }}
         >
           {/* Grid texture */}
@@ -54,7 +54,7 @@ export function WorkflowDiagram() {
 
           <div className="relative">
             <div className="flex flex-wrap items-baseline gap-3">
-              <span className="font-mono text-xs font-medium tracking-[0.2em] text-accent-ink">
+              <span className="font-mono text-xs font-medium tracking-[0.2em] text-primary">
                 NOTRE FAÇON DE TRAVAILLER
               </span>
               <span className="text-[15px] text-dim">
@@ -67,7 +67,7 @@ export function WorkflowDiagram() {
               className="relative mt-[34px] h-[230px] overflow-hidden rounded-3xl"
               style={{
                 background:
-                  "linear-gradient(90deg,rgba(42,106,130,.05),rgba(214,48,15,.06))",
+                  "linear-gradient(90deg,rgba(42,106,130,.05),rgba(124,72,112,.07))",
               }}
             >
               {/* Drifting teal dots */}
@@ -91,7 +91,7 @@ export function WorkflowDiagram() {
                 className="absolute inset-0 opacity-50"
                 style={{
                   backgroundImage:
-                    "radial-gradient(var(--color-accent) 1.5px,transparent 1.5px)",
+                    "radial-gradient(var(--color-primary) 1.5px,transparent 1.5px)",
                   backgroundSize: "11px 11px",
                   maskImage:
                     "linear-gradient(90deg,transparent 34%,rgba(0,0,0,.25) 52%,#000 88%)",
@@ -115,7 +115,7 @@ export function WorkflowDiagram() {
                 className="absolute inset-x-0 bottom-[52px] h-px"
                 style={{
                   background:
-                    "linear-gradient(90deg,transparent,var(--color-line),var(--color-line),transparent)",
+                    "linear-gradient(90deg,transparent,var(--color-border),var(--color-border),transparent)",
                 }}
               />
 
@@ -153,13 +153,13 @@ export function WorkflowDiagram() {
 
               {/* Corner pills */}
               <div
-                className="absolute left-2 top-4 rounded-full px-2.5 py-[7px] font-mono text-[10px] text-mid sm:left-[18px] sm:px-3 sm:text-[11.5px]"
+                className="absolute left-2 top-4 rounded-full px-2.5 py-[7px] font-mono text-[10px] text-muted-foreground sm:left-[18px] sm:px-3 sm:text-[11.5px]"
                 style={{ background: "rgba(255,255,255,.72)" }}
               >
                 votre enjeu métier
               </div>
               <div
-                className="absolute right-2 top-4 flex items-center gap-2 rounded-full px-2.5 py-[7px] font-mono text-[10px] text-ink sm:right-[18px] sm:px-3 sm:text-[11.5px]"
+                className="absolute right-2 top-4 flex items-center gap-2 rounded-full px-2.5 py-[7px] font-mono text-[10px] text-foreground sm:right-[18px] sm:px-3 sm:text-[11.5px]"
                 style={{ background: "rgba(255,255,255,.72)" }}
               >
                 <span
@@ -174,10 +174,10 @@ export function WorkflowDiagram() {
             <div className="mt-8 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
               {columns.map((c) => (
                 <div key={c.title}>
-                  <h3 className="font-sans text-[19px] font-semibold leading-[1.3] tracking-[-0.01em] text-ink">
+                  <h3 className="font-sans text-[19px] font-semibold leading-[1.3] tracking-[-0.01em] text-foreground">
                     {c.title}
                   </h3>
-                  <p className="mt-2.5 text-[14.5px] leading-[1.65] text-mid">
+                  <p className="mt-2.5 text-[14.5px] leading-[1.65] text-muted-foreground">
                     {c.body}
                   </p>
                 </div>
@@ -194,12 +194,12 @@ export function WorkflowDiagram() {
               {schools.map((s) => (
                 <span
                   key={s}
-                  className="rounded-xl border border-line bg-panel-2 px-5 py-[11px] text-[14.5px] text-mid"
+                  className="rounded-xl border border-border bg-card px-5 py-[11px] text-[14.5px] text-muted-foreground"
                 >
                   {s}
                 </span>
               ))}
-              <span className="rounded-xl border border-dashed border-line px-5 py-[11px] font-mono text-[13px] text-dim">
+              <span className="rounded-xl border border-dashed border-border px-5 py-[11px] font-mono text-[13px] text-dim">
                 + doctorats
               </span>
             </div>

@@ -9,13 +9,13 @@ const base =
 const variants: Record<Variant, string> = {
   // Accent fill — primary call to action.
   primary:
-    "bg-accent px-6 py-3 font-semibold text-white hover:-translate-y-0.5 hover:bg-accent-ink",
+    "bg-primary px-6 py-3 font-semibold text-white hover:-translate-y-0.5 hover:bg-primary-deep",
   // Outline on light surfaces.
   outline:
-    "border border-line px-6 py-3 text-ink hover:border-ink hover:bg-white",
+    "border border-border px-6 py-3 text-foreground hover:border-ink hover:bg-white",
   // Cream fill — primary CTA on dark (navy/teal) surfaces.
   cream:
-    "bg-cream px-6 py-3 text-ink hover:-translate-y-0.5 hover:bg-white",
+    "bg-cream px-6 py-3 text-foreground hover:-translate-y-0.5 hover:bg-white",
   // Outline on dark surfaces.
   "outline-cream":
     "border border-cream/40 px-6 py-3 text-cream hover:bg-cream/10",
@@ -77,7 +77,7 @@ export function ArrowLink({
         "group inline-flex items-center gap-2 text-sm font-medium transition-colors",
         tone === "cream"
           ? "text-cream hover:text-white"
-          : "text-accent-ink hover:text-accent",
+          : "text-primary hover:text-primary",
         className,
       )}
     >

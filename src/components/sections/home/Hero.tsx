@@ -49,33 +49,33 @@ export function Hero() {
 
       <Container className="relative">
         {/* Status pill */}
-        <div className="inline-flex items-center gap-2.5 rounded-full border border-line bg-panel px-4 py-2 font-mono text-[13px] text-mid">
+        <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-2 font-mono text-[13px] text-muted-foreground">
           <span
             className="size-[7px] flex-none rounded-full bg-green"
             style={{ animation: "hx-dot 2.2s ease-in-out infinite" }}
           />
           <span>
-            IA <span className="font-bold text-ink">déployée en production</span>,
+            IA <span className="font-bold text-foreground">déployée en production</span>,
             pas juste un prototype
           </span>
         </div>
 
         {/* Eyebrow */}
         <div className="mb-5 mt-[34px] flex items-center gap-4">
-          <span className="h-px w-[34px] bg-accent" />
-          <span className="font-mono text-[13px] font-medium tracking-[0.22em] text-accent-ink">
+          <span className="h-px w-[34px] bg-primary" />
+          <span className="font-mono text-[13px] font-medium tracking-[0.22em] text-primary">
             HEXAMIND
           </span>
         </div>
 
         <h1
-          className="max-w-[16ch] text-balance font-serif font-bold tracking-[-0.01em] text-ink"
+          className="max-w-[16ch] text-balance font-serif font-bold tracking-[-0.01em] text-foreground"
           style={{ fontSize: "clamp(52px,7.2vw,100px)", lineHeight: 1 }}
         >
-          We make <span className="text-accent">AI work</span> for you.
+          We make <span className="text-primary">AI work</span> for you.
         </h1>
 
-        <p className="mt-8 max-w-[60ch] text-[19px] leading-[1.65] text-mid">
+        <p className="mt-8 max-w-[60ch] text-[19px] leading-[1.65] text-muted-foreground">
           Nous vous accompagnons dans vos projets de transformation IA en
           conseil, en développement sur mesure et grâce à nos propres modules
           d&rsquo;IA.
@@ -84,17 +84,17 @@ export function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-3.5">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2.5 rounded-xl bg-accent px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(15_31_74_/_0.5)] transition duration-200 hover:-translate-y-0.5 hover:bg-accent-ink"
+            className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(15_31_74_/_0.5)] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-deep"
           >
             Discuter de votre projet <span aria-hidden>→</span>
           </Link>
           <Link
             href="/vision"
-            className="inline-flex items-center gap-2.5 rounded-xl border border-line bg-panel px-[26px] py-[15px] text-base font-medium text-ink transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-white"
+            className="inline-flex items-center gap-2.5 rounded-xl border border-border bg-card px-[26px] py-[15px] text-base font-medium text-foreground transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-white"
           >
             Découvrir notre vision
           </Link>
-          <code className="ml-1 rounded-xl border border-line bg-panel-2 px-[18px] py-[13px] font-mono text-sm text-mid">
+          <code className="ml-1 rounded-xl border border-border bg-card px-[18px] py-[13px] font-mono text-sm text-muted-foreground">
             <span className="text-dim">$</span> pip install{" "}
             <span className="text-blue-strong">hexgate</span>
           </code>
@@ -102,9 +102,9 @@ export function Hero() {
 
         <div className="mt-[34px] flex flex-wrap gap-6 font-mono text-[13px] text-dim">
           <span>CONSEIL</span>
-          <span className="text-mid opacity-55">/</span>
+          <span className="text-muted-foreground opacity-55">/</span>
           <span>DÉVELOPPEMENT</span>
-          <span className="text-mid opacity-55">/</span>
+          <span className="text-muted-foreground opacity-55">/</span>
           <span>MODULES IA PROPRIÉTAIRES</span>
         </div>
       </Container>

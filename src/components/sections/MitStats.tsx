@@ -15,7 +15,7 @@ function Stat({
     <div
       className={cn(
         "min-w-[180px] flex-1 px-6 py-[26px]",
-        divider && "border-r border-line",
+        divider && "border-r border-border",
       )}
     >
       <div className={cn("font-sans text-stat font-bold", valueClassName)}>
@@ -31,14 +31,14 @@ export function MitStats({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "flex flex-wrap overflow-hidden rounded-3xl border border-line bg-panel",
+        "flex flex-wrap overflow-hidden rounded-3xl border border-border bg-card",
         className,
       )}
     >
       <Stat
         value="30–40 Md$"
         caption="investis dans l'IA générative"
-        valueClassName="text-accent"
+        valueClassName="text-primary"
         divider
       />
       <Stat value="5 %" caption="en tirent un retour concret" divider />

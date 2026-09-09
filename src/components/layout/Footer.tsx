@@ -14,13 +14,13 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h4 className="font-serif text-lg text-ink">{title}</h4>
-      <ul className="mt-4 space-y-2 text-sm text-mid">
+      <h4 className="font-serif text-lg text-foreground">{title}</h4>
+      <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
         {links.map((item) => (
           <li key={item.href}>
             <SmartLink
               href={item.href}
-              className="transition-colors hover:text-accent-ink"
+              className="transition-colors hover:text-primary"
             >
               {item.label}
             </SmartLink>
@@ -35,10 +35,10 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-line-soft bg-sable">
+    <footer className="border-t border-line-soft bg-background">
       <Container className="grid gap-12 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Link href="/" className="flex items-center gap-3 text-ink">
+          <Link href="/" className="flex items-center gap-3 text-foreground">
             <Image
               src="/logo-owl.png"
               alt=""
@@ -50,7 +50,7 @@ export function Footer() {
               {site.name}
             </span>
           </Link>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-mid">
+          <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
             {site.tagline} Une IA utile, maîtrisée et déployée en production — du
             conseil aux modules logiciels.
           </p>

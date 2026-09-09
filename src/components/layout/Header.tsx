@@ -16,9 +16,9 @@ export function Header() {
   const isActive = (href: string) => pathname === href;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-line-soft bg-sable/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 border-b border-line-soft bg-background/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3 text-ink" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex items-center gap-3 text-foreground" onClick={() => setOpen(false)}>
           <Image
             src="/logo-owl.png"
             alt=""
@@ -40,8 +40,8 @@ export function Header() {
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={cn(
-                "text-[15px] font-medium transition-colors hover:text-accent-ink",
-                isActive(item.href) ? "text-accent-ink" : "text-mid",
+                "text-[15px] font-medium transition-colors hover:text-primary",
+                isActive(item.href) ? "text-primary" : "text-muted-foreground",
               )}
             >
               {item.label}
@@ -56,7 +56,7 @@ export function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn Hexamind"
-            className="text-mid transition-colors hover:text-accent-ink"
+            className="text-muted-foreground transition-colors hover:text-primary"
           >
             <LinkedInIcon />
           </a>
@@ -64,13 +64,13 @@ export function Header() {
             href={site.hexgateUrl}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-line bg-panel px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-blue hover:bg-white hover:text-blue-strong"
+            className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-blue hover:bg-white hover:text-blue-strong"
           >
             Hexgate
           </a>
           <Link
             href="/contact"
-            className="rounded-full bg-accent px-5 py-2 text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(15_31_74_/_0.5)] transition duration-200 hover:-translate-y-px hover:bg-accent-ink"
+            className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(15_31_74_/_0.5)] transition duration-200 hover:-translate-y-px hover:bg-primary-deep"
           >
             Nous contacter
           </Link>
@@ -82,7 +82,7 @@ export function Header() {
           aria-label="Menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="text-ink md:hidden"
+          className="text-foreground md:hidden"
         >
           <svg
             viewBox="0 0 24 24"
@@ -104,7 +104,7 @@ export function Header() {
 
       {/* Mobile panel */}
       {open ? (
-        <div className="border-t border-line-soft bg-sable md:hidden">
+        <div className="border-t border-line-soft bg-background md:hidden">
           <Container className="flex flex-col gap-3 py-4">
             {mainNav.map((item) => (
               <Link
@@ -114,7 +114,7 @@ export function Header() {
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
                   "text-base",
-                  isActive(item.href) ? "text-accent-ink" : "text-ink",
+                  isActive(item.href) ? "text-primary" : "text-foreground",
                 )}
               >
                 {item.label}
@@ -125,14 +125,14 @@ export function Header() {
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
-              className="text-base text-ink"
+              className="text-base text-foreground"
             >
               Hexgate
             </a>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-white"
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white"
             >
               Nous contacter
             </Link>

@@ -16,8 +16,12 @@ reference.
   [`src/app/globals.css`](src/app/globals.css)
 - Fonts via `next/font/google`: Hanken Grotesk (headings + body) + IBM Plex Mono
   — matching Hexgate's type system
-- Warm royal-blue accent (Hexgate-inspired) on a warm sable base; all colors are
-  tokens in `globals.css`
+- Theming follows the **shadcn/ui convention**: raw values on `:root`, mapped to
+  Tailwind utilities via `@theme inline` in `globals.css` (`bg-background`,
+  `text-foreground`, `text-primary`, `bg-card`, `text-muted-foreground`,
+  `border-border`, …). Ready to drop in shadcn components later.
+- Warm "paper" base + **plum** primary (inspired by the Hexgate roadmap
+  artifact), with teal / green / blue as secondary + status accents.
 
 ## Getting started
 

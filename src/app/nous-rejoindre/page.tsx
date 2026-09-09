@@ -116,7 +116,7 @@ export default function NousRejoindrePage() {
       {/* Intro */}
       <Section>
         <Eyebrow>NOUS REJOINDRE</Eyebrow>
-        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-ink">
+        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-foreground">
           Construisons ensemble une IA utile et maîtrisée.
         </h1>
       </Section>
@@ -144,7 +144,7 @@ export default function NousRejoindrePage() {
       {/* Postes ouverts */}
       <Section>
         <SectionHeader eyebrow="REJOIGNEZ-NOUS !" title="Nos postes ouverts." />
-        <div className="mt-12 max-w-4xl divide-y divide-line border-y border-line">
+        <div className="mt-12 max-w-4xl divide-y divide-border border-y border-border">
           {jobs.map((job) => (
             <Disclosure
               key={job.title}
@@ -152,7 +152,7 @@ export default function NousRejoindrePage() {
               summaryClassName="py-6"
               summary={
                 <div className="text-left">
-                  <div className="font-serif text-2xl text-ink">{job.title}</div>
+                  <div className="font-serif text-2xl text-foreground">{job.title}</div>
                   <div className="mt-1 text-sm text-dim">{job.location}</div>
                 </div>
               }
@@ -160,8 +160,8 @@ export default function NousRejoindrePage() {
             >
               {Object.entries(job.sections).map(([title, items]) => (
                 <div key={title}>
-                  <h4 className="font-serif text-lg text-accent-ink">{title}</h4>
-                  <ul className="mt-3 space-y-2 text-sm text-mid">
+                  <h4 className="font-serif text-lg text-primary">{title}</h4>
+                  <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                     {items.map((i) => (
                       <li key={i} className="flex gap-2">
                         <span className="text-teal">•</span>

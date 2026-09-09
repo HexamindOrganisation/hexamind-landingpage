@@ -68,10 +68,10 @@ export default function QuiSommesNousPage() {
       {/* Intro */}
       <Section>
         <Eyebrow>QUI SOMMES-NOUS</Eyebrow>
-        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-ink">
+        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-foreground">
           Amoureux d&rsquo;une IA maîtrisée, au bénéfice de tous.
         </h1>
-        <p className="mt-6 max-w-2xl text-body-lg text-mid">
+        <p className="mt-6 max-w-2xl text-body-lg text-muted-foreground">
           Early adopters ou plus récemment entrés dans le mouvement, nous sommes
           des passionnés de l&rsquo;IA et voulons être acteurs d&rsquo;une IA
           maîtrisée au bénéfice de tous.
@@ -104,7 +104,7 @@ export default function QuiSommesNousPage() {
         <div className="mt-14 grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-6">
           {team.map((m) => (
             <div key={m.name} className="flex flex-col items-center text-center">
-              <div className="size-40 overflow-hidden rounded-full bg-panel md:size-44">
+              <div className="size-40 overflow-hidden rounded-full bg-card md:size-44">
                 <Image
                   src={m.img}
                   alt={m.name}
@@ -116,9 +116,9 @@ export default function QuiSommesNousPage() {
               <div className="-mt-3 rounded-md bg-teal px-5 py-1.5 text-sm font-semibold text-cream">
                 {m.name}
               </div>
-              <div className="mt-4 font-bold text-ink">{m.role}</div>
-              <div className="text-sm text-mid">{m.fullRole}</div>
-              <div className="mt-4 text-sm leading-relaxed text-mid">
+              <div className="mt-4 font-bold text-foreground">{m.role}</div>
+              <div className="text-sm text-muted-foreground">{m.fullRole}</div>
+              <div className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {m.bio.map((line) => (
                   <div key={line}>{line}</div>
                 ))}

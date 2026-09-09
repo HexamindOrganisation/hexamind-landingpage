@@ -130,7 +130,7 @@ export function Modules() {
                   href="https://hexgate.ai"
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full bg-accent px-[22px] py-3 text-[15px] font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-14px_rgb(0_0_0_/_0.6)]"
+                  className="rounded-full bg-primary px-[22px] py-3 text-[15px] font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-14px_rgb(0_0_0_/_0.6)]"
                 >
                   Try the cloud version →
                 </a>
@@ -174,7 +174,7 @@ export function Modules() {
           <div className="border-t border-cream/20 pt-11">
             <a
               href="/contact"
-              className="inline-flex items-center gap-3 rounded-full bg-accent px-[30px] py-4 text-base font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-14px_rgb(0_0_0_/_0.65)]"
+              className="inline-flex items-center gap-3 rounded-full bg-primary px-[30px] py-4 text-base font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_34px_-14px_rgb(0_0_0_/_0.65)]"
             >
               Demander une démo <span aria-hidden>→</span>
             </a>

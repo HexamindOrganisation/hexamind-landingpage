@@ -18,13 +18,13 @@ export function Eyebrow({
       <span
         className={cn(
           "h-px w-[34px]",
-          tone === "cream" ? "bg-cream/90" : "bg-accent",
+          tone === "cream" ? "bg-cream/90" : "bg-primary",
         )}
       />
       <span
         className={cn(
           "font-mono text-eyebrow font-medium leading-none tracking-[0.22em]",
-          tone === "cream" ? "text-cream/90" : "text-accent-ink",
+          tone === "cream" ? "text-cream/90" : "text-primary",
         )}
       >
         {children}

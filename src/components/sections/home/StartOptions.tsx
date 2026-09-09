@@ -44,11 +44,11 @@ const cards: Card[] = [
     name: "BUILDAI",
     tagline: "PROTOTYPAGE & EXPÉRIMENTATION",
     desc: "Transforme votre cas d'usage prioritaire en solution concrète, testée par vos utilisateurs et mesurée en euros.",
-    card: "bg-panel border-line",
-    title: "text-ink",
-    tag: "text-accent-ink",
-    body: "text-mid",
-    link: "border-line text-ink hover:bg-white hover:border-ink",
+    card: "bg-card border-border",
+    title: "text-foreground",
+    tag: "text-primary",
+    body: "text-muted-foreground",
+    link: "border-border text-foreground hover:bg-white hover:border-ink",
   },
 ];
 
@@ -58,10 +58,10 @@ export function StartOptions() {
       <Reveal>
         <Container>
         <Eyebrow>CONSEIL</Eyebrow>
-        <h2 className="mt-[26px] max-w-[24ch] font-serif text-h2 font-semibold leading-[1.05] text-ink">
+        <h2 className="mt-[26px] max-w-[24ch] font-serif text-h2 font-semibold leading-[1.05] text-foreground">
           Trois façons de démarrer.
         </h2>
-        <p className="mt-[22px] max-w-[62ch] text-body-lg text-mid">
+        <p className="mt-[22px] max-w-[62ch] text-body-lg text-muted-foreground">
           Cadrer, acculturer, prototyper : le point d&rsquo;entrée dépend de
           votre maturité.
         </p>

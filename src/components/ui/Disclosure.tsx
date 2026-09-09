@@ -40,7 +40,7 @@ export function Disclosure({
           aria-hidden
           className={cn(
             "size-5 shrink-0 transition-transform duration-200 group-open:rotate-180",
-            tone === "dark" ? "text-cream/80" : "text-accent-ink",
+            tone === "dark" ? "text-cream/80" : "text-primary",
           )}
         >
           <path d="m6 9 6 6 6-6" />

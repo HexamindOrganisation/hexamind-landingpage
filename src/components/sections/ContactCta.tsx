@@ -17,7 +17,7 @@ export function ContactCta() {
         </div>
         <Link
           href="/contact"
-          className="inline-flex flex-none items-center gap-3 rounded-full bg-cream px-8 py-[17px] text-[17px] font-medium text-ink transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_16px_34px_-16px_rgb(0_0_0_/_0.45)]"
+          className="inline-flex flex-none items-center gap-3 rounded-full bg-cream px-8 py-[17px] text-[17px] font-medium text-foreground transition duration-200 hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_16px_34px_-16px_rgb(0_0_0_/_0.45)]"
         >
           Nous contacter <span aria-hidden>→</span>
         </Link>

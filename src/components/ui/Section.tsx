@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 export type SectionTone = "sable" | "panel" | "ink" | "teal";
 
 const toneClass: Record<SectionTone, string> = {
-  sable: "bg-sable text-ink",
-  panel: "bg-panel text-ink",
+  sable: "bg-background text-foreground",
+  panel: "bg-card text-foreground",
   ink: "bg-ink text-cream",
   teal: "bg-teal text-cream",
 };

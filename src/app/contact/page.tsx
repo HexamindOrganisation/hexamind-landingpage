@@ -18,31 +18,31 @@ export default function ContactPage() {
       <div className="grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <Eyebrow>CONTACT</Eyebrow>
-          <h1 className="mt-4 font-serif text-hero font-bold tracking-[-0.01em] text-ink">
+          <h1 className="mt-4 font-serif text-hero font-bold tracking-[-0.01em] text-foreground">
             Parlons de votre projet.
           </h1>
-          <p className="mt-6 max-w-md leading-relaxed text-mid">
+          <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
             Une question, un cadrage, une démo de nos modules : laissez-nous un
             message, nous revenons vers vous sous 48 heures.
           </p>
-          <ul className="mt-10 space-y-4 text-sm text-mid">
+          <ul className="mt-10 space-y-4 text-sm text-muted-foreground">
             <li className="flex items-center gap-3">
-              <MailIcon className="text-accent-ink" />
-              <a href={mailto} className="hover:text-accent-ink">
+              <MailIcon className="text-primary" />
+              <a href={mailto} className="hover:text-primary">
                 {site.email}
               </a>
             </li>
             <li className="flex items-center gap-3">
-              <MapPinIcon className="text-accent-ink" />
+              <MapPinIcon className="text-primary" />
               {site.location}, France
             </li>
             <li className="flex items-center gap-3">
-              <LinkedInIcon className="text-accent-ink" width={18} height={18} />
+              <LinkedInIcon className="text-primary" width={18} height={18} />
               <a
                 href={site.linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="hover:text-accent-ink"
+                className="hover:text-primary"
               >
                 LinkedIn
               </a>

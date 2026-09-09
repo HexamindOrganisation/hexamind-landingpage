@@ -34,7 +34,7 @@ export function SectionHeader({
       <h2
         className={cn(
           "mt-4 text-balance font-serif text-h2 font-semibold tracking-[-0.005em]",
-          dark ? "text-cream" : "text-ink",
+          dark ? "text-cream" : "text-foreground",
         )}
       >
         {title}
@@ -44,7 +44,7 @@ export function SectionHeader({
           className={cn(
             "mt-6 max-w-2xl text-body-lg",
             centered && "mx-auto",
-            dark ? "text-cream/85" : "text-mid",
+            dark ? "text-cream/85" : "text-muted-foreground",
           )}
         >
           {intro}

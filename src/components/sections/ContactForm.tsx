@@ -4,8 +4,8 @@ import { useState, type FormEvent } from "react";
 import { site } from "@/lib/site";
 
 const fieldClass =
-  "mt-1 w-full rounded-lg border border-line bg-sable px-4 py-3 text-sm text-ink focus:border-accent focus:outline-none";
-const labelClass = "text-xs uppercase tracking-wider text-mid";
+  "mt-1 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm text-foreground focus:border-primary focus:outline-none";
+const labelClass = "text-xs uppercase tracking-wider text-muted-foreground";
 
 /** Contact form that opens the visitor's mail client with a prefilled message. */
 export function ContactForm() {
@@ -28,7 +28,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={onSubmit}
-      className="rounded-3xl border border-line bg-panel p-8"
+      className="rounded-3xl border border-border bg-card p-8"
     >
       <div className="grid gap-5 md:grid-cols-2">
         <div>
@@ -84,7 +84,7 @@ export function ContactForm() {
       </div>
       <button
         type="submit"
-        className="mt-6 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-ink"
+        className="mt-6 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-deep"
       >
         Envoyer le message
       </button>

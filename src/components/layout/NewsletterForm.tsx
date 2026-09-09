@@ -16,7 +16,7 @@ export function NewsletterForm() {
 
   if (submitted) {
     return (
-      <p className="mt-6 max-w-sm text-sm text-mid">
+      <p className="mt-6 max-w-sm text-sm text-muted-foreground">
         Merci ! Nous vous tiendrons informé.
       </p>
     );
@@ -29,11 +29,11 @@ export function NewsletterForm() {
         required
         placeholder="votre@email.com"
         aria-label="Votre adresse email"
-        className="flex-1 rounded-full border border-line bg-panel px-4 py-2 text-sm text-ink placeholder:text-dim focus:border-accent focus:outline-none"
+        className="flex-1 rounded-full border border-border bg-card px-4 py-2 text-sm text-foreground placeholder:text-dim focus:border-primary focus:outline-none"
       />
       <button
         type="submit"
-        className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-accent-ink"
+        className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-deep"
       >
         S&rsquo;abonner
       </button>

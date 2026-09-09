@@ -215,10 +215,10 @@ export default function OffresPage() {
       {/* Intro */}
       <Section containerClassName="pb-8 pt-20 md:pb-10 md:pt-28">
         <Eyebrow>NOS OFFRES</Eyebrow>
-        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-ink">
+        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-foreground">
           Du conseil au déploiement, en passant par nos modules IA.
         </h1>
-        <p className="mt-6 max-w-2xl text-body-lg text-mid">
+        <p className="mt-6 max-w-2xl text-body-lg text-muted-foreground">
           Trois familles d&rsquo;offres complémentaires, à activer indépendamment
           ou en combinaison selon vos enjeux.
         </p>
@@ -232,33 +232,33 @@ export default function OffresPage() {
             <div
               key={o.id}
               id={o.id}
-              className="flex flex-col rounded-3xl border border-line bg-panel p-8"
+              className="flex flex-col rounded-3xl border border-border bg-card p-8"
             >
-              <div className="font-serif text-3xl text-ink">{o.name}</div>
-              <div className="mt-2 text-sm uppercase tracking-wider text-accent-ink">
+              <div className="font-serif text-3xl text-foreground">{o.name}</div>
+              <div className="mt-2 text-sm uppercase tracking-wider text-primary">
                 {o.tagline}
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-mid">{o.intro}</p>
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{o.intro}</p>
               <Disclosure
-                className="mt-6 border-t border-line pt-5"
-                summaryClassName="text-sm font-semibold text-ink"
+                className="mt-6 border-t border-border pt-5"
+                summaryClassName="text-sm font-semibold text-foreground"
                 summary={<span>En savoir plus</span>}
               >
                 <p className="text-sm text-dim">{o.duration}</p>
                 <div className="mt-4">
-                  <h4 className="font-serif text-lg text-ink">Le contenu</h4>
-                  <ul className="mt-3 space-y-2 text-sm text-mid">
+                  <h4 className="font-serif text-lg text-foreground">Le contenu</h4>
+                  <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                     {o.items.map((i) => (
                       <li key={i} className="flex gap-2">
-                        <span className="text-accent">•</span>
+                        <span className="text-primary">•</span>
                         {i}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div className="mt-5">
-                  <h4 className="font-serif text-lg text-ink">Les livrables</h4>
-                  <ul className="mt-3 space-y-2 text-sm text-mid">
+                  <h4 className="font-serif text-lg text-foreground">Les livrables</h4>
+                  <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                     {o.deliverables.map((i) => (
                       <li key={i} className="flex gap-2">
                         <span className="text-teal">•</span>
@@ -267,8 +267,8 @@ export default function OffresPage() {
                     ))}
                   </ul>
                 </div>
-                <p className="mt-5 text-sm text-mid">
-                  <strong className="text-ink">Pour qui ?</strong> {o.forWho}
+                <p className="mt-5 text-sm text-muted-foreground">
+                  <strong className="text-foreground">Pour qui ?</strong> {o.forWho}
                 </p>
               </Disclosure>
             </div>
@@ -287,24 +287,24 @@ export default function OffresPage() {
           {modes.map((m) => (
             <div
               key={m.n}
-              className="rounded-3xl border border-line bg-panel p-8"
+              className="rounded-3xl border border-border bg-card p-8"
             >
               <div className="flex items-baseline gap-4">
-                <span className="font-mono text-2xl font-bold text-accent-ink">
+                <span className="font-mono text-2xl font-bold text-primary">
                   {m.n}
                 </span>
-                <h3 className="font-serif text-2xl text-ink">{m.title}</h3>
+                <h3 className="font-serif text-2xl text-foreground">{m.title}</h3>
               </div>
-              <p className="mt-4 text-sm text-mid">
-                <strong className="text-ink">Principe.</strong> {m.principle}
+              <p className="mt-4 text-sm text-muted-foreground">
+                <strong className="text-foreground">Principe.</strong> {m.principle}
               </p>
-              <p className="mt-2 text-sm text-mid">
-                <strong className="text-ink">Facturation.</strong> {m.billing}
+              <p className="mt-2 text-sm text-muted-foreground">
+                <strong className="text-foreground">Facturation.</strong> {m.billing}
               </p>
-              <ul className="mt-4 space-y-1 text-sm text-mid">
+              <ul className="mt-4 space-y-1 text-sm text-muted-foreground">
                 {m.advantages.map((a) => (
                   <li key={a} className="flex gap-2">
-                    <span className="text-accent">•</span>
+                    <span className="text-primary">•</span>
                     {a}
                   </li>
                 ))}
@@ -359,7 +359,7 @@ export default function OffresPage() {
                         rel="noreferrer"
                         className={
                           l.primary
-                            ? "rounded-full bg-accent px-[22px] py-3 text-[15px] font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-14px_rgb(0_0_0_/_0.6)]"
+                            ? "rounded-full bg-primary px-[22px] py-3 text-[15px] font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-14px_rgb(0_0_0_/_0.6)]"
                             : "rounded-full border border-cream/35 px-[22px] py-3 text-[15px] text-cream transition-colors hover:border-cream hover:bg-cream/10"
                         }
                       >

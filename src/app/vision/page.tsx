@@ -66,13 +66,13 @@ export default function VisionPage() {
       {/* Intro */}
       <Section>
         <Eyebrow>VISION</Eyebrow>
-        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-ink">
+        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-foreground">
           L&rsquo;IA, une promesse qui reste à réaliser ?
         </h1>
-        <div className="mt-8 max-w-3xl space-y-6 text-body-lg text-mid">
+        <div className="mt-8 max-w-3xl space-y-6 text-body-lg text-muted-foreground">
           <p>
             L&rsquo;Intelligence Artificielle est une réalité opérationnelle et
-            un <strong className="text-ink">moteur de transformation</strong>{" "}
+            un <strong className="text-foreground">moteur de transformation</strong>{" "}
             majeur pour les organisations. En permettant aux machines de simuler
             des capacités cognitives humaines, l&rsquo;IA remodèle
             fondamentalement la manière dont les organisations fonctionnent,
@@ -83,12 +83,12 @@ export default function VisionPage() {
           <p>
             Un récent rapport du MIT* indique que malgré un investissement
             massif estimé entre 30 et 40 milliards de dollars dans l&rsquo;IA
-            générative, <strong className="text-ink">seulement 5 %</strong> des
+            générative, <strong className="text-foreground">seulement 5 %</strong> des
             organisations obtiendraient un retour concret. Ce chiffre de 5 % est
             accablant dans un contexte où l&rsquo;IA démontre ses extraordinaires
             capacités et est adoptée simplement pour des usages de plus en plus
             variés et complexes. Ce même rapport indique que{" "}
-            <strong className="text-ink">40 %</strong> des projets s&rsquo;appuyant
+            <strong className="text-foreground">40 %</strong> des projets s&rsquo;appuyant
             sur l&rsquo;IA &laquo; General Purpose &raquo; (ex. ChatGPT, Claude)
             ont un retour positif. Parmi les raisons invoquées : la flexibilité,
             la simplicité et l&rsquo;utilité directement perceptible des outils
@@ -165,25 +165,25 @@ export default function VisionPage() {
           {obstacles.map((o) => (
             <div
               key={o.n}
-              className="flex flex-col rounded-3xl border border-line bg-panel p-8"
+              className="flex flex-col rounded-3xl border border-border bg-card p-8"
             >
               <div className="flex items-baseline gap-4">
-                <span className="font-mono text-2xl font-bold text-accent-ink">
+                <span className="font-mono text-2xl font-bold text-primary">
                   {o.n}
                 </span>
-                <h3 className="font-serif text-2xl text-ink">{o.title}</h3>
+                <h3 className="font-serif text-2xl text-foreground">{o.title}</h3>
               </div>
               <div className="mt-5 flex flex-wrap gap-2">
                 {o.tags.map((t) => (
                   <span
                     key={t}
-                    className="rounded-lg bg-accent px-3 py-1.5 text-xs font-semibold leading-snug text-white"
+                    className="rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold leading-snug text-white"
                   >
                     {t}
                   </span>
                 ))}
               </div>
-              <p className="mt-5 text-sm leading-relaxed text-mid">{o.body}</p>
+              <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{o.body}</p>
             </div>
           ))}
         </div>
@@ -266,7 +266,7 @@ export default function VisionPage() {
           eyebrow="NOTRE ACCOMPAGNEMENT"
           title="Hexamind vous accompagne à chaque étape."
         />
-        <ul className="mt-8 max-w-3xl space-y-4 leading-relaxed text-mid">
+        <ul className="mt-8 max-w-3xl space-y-4 leading-relaxed text-muted-foreground">
           <li>
             — En accompagnant la démarche globale et la définition de
             l&rsquo;architecture générale.

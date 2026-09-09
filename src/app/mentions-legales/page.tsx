@@ -18,8 +18,8 @@ function LegalSection({
 }) {
   return (
     <section>
-      <h2 className="font-serif text-2xl text-ink">{title}</h2>
-      <div className="mt-3 text-sm leading-relaxed text-mid">{children}</div>
+      <h2 className="font-serif text-2xl text-foreground">{title}</h2>
+      <div className="mt-3 text-sm leading-relaxed text-muted-foreground">{children}</div>
     </section>
   );
 }
@@ -29,14 +29,14 @@ export default function MentionsLegalesPage() {
     <Section>
       <div className="max-w-3xl">
         <Eyebrow>INFORMATIONS LÉGALES</Eyebrow>
-        <h1 className="mt-4 font-serif text-h2-lg font-semibold text-ink">
+        <h1 className="mt-4 font-serif text-h2-lg font-semibold text-foreground">
           Mentions légales
         </h1>
 
         <div className="mt-12 space-y-10">
           <LegalSection title="Éditeur du site">
             <p>
-              <strong className="text-ink">Hexamind</strong>
+              <strong className="text-foreground">Hexamind</strong>
               <br />
               Siège social : 16 rue Saint Antoine, 75004 Paris, France
               <br />

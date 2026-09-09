@@ -103,7 +103,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${hanken.variable} ${plexMono.variable}`}
     >
-      <body className="min-h-screen bg-sable font-sans text-ink antialiased">
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         {/* Enables scroll-reveal animations; content is visible without it. */}
         <script
           dangerouslySetInnerHTML={{

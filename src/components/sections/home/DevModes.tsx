@@ -57,15 +57,15 @@ export function DevModes() {
   return (
     <section
       id="developpement"
-      className="border-t border-line-soft bg-sable-2 py-24 md:py-28"
+      className="border-t border-line-soft bg-muted py-24 md:py-28"
     >
       <Reveal>
         <Container>
         <Eyebrow>DÉVELOPPEMENT</Eyebrow>
-        <h2 className="mt-[26px] font-serif text-h2 font-semibold leading-[1.05] text-ink">
+        <h2 className="mt-[26px] font-serif text-h2 font-semibold leading-[1.05] text-foreground">
           Quatre modalités d&rsquo;intervention.
         </h2>
-        <p className="mt-[22px] max-w-[70ch] text-body-lg text-mid">
+        <p className="mt-[22px] max-w-[70ch] text-body-lg text-muted-foreground">
           Nous adaptons notre mode de collaboration à la maturité de vos projets,
           à votre budget et à votre besoin de flexibilité.
         </p>
@@ -74,28 +74,28 @@ export function DevModes() {
           {modes.map((m) => (
             <div
               key={m.n}
-              className="rounded-3xl border border-line bg-panel p-9 md:p-10"
+              className="rounded-3xl border border-border bg-card p-9 md:p-10"
             >
               <div className="flex items-baseline gap-4">
-                <span className="font-sans text-2xl font-bold text-accent-ink">
+                <span className="font-sans text-2xl font-bold text-primary">
                   {m.n}
                 </span>
-                <h3 className="font-serif text-[26px] font-semibold leading-tight text-ink">
+                <h3 className="font-serif text-[26px] font-semibold leading-tight text-foreground">
                   {m.title}
                 </h3>
               </div>
-              <p className="mt-[22px] text-[15.5px] leading-[1.65] text-mid">
-                <strong className="font-semibold text-ink">Principe.</strong>{" "}
+              <p className="mt-[22px] text-[15.5px] leading-[1.65] text-muted-foreground">
+                <strong className="font-semibold text-foreground">Principe.</strong>{" "}
                 {m.principle}
               </p>
-              <p className="mt-2.5 text-[15.5px] leading-[1.65] text-mid">
-                <strong className="font-semibold text-ink">Facturation.</strong>{" "}
+              <p className="mt-2.5 text-[15.5px] leading-[1.65] text-muted-foreground">
+                <strong className="font-semibold text-foreground">Facturation.</strong>{" "}
                 {m.billing}
               </p>
-              <ul className="mt-[22px] flex flex-col gap-2 text-[15px] text-mid">
+              <ul className="mt-[22px] flex flex-col gap-2 text-[15px] text-muted-foreground">
                 {m.advantages.map((a) => (
                   <li key={a} className="flex gap-3">
-                    <span className="text-accent-ink">•</span>
+                    <span className="text-primary">•</span>
                     {a}
                   </li>
                 ))}
