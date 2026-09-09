@@ -25,12 +25,12 @@
   --color-mid: #394665;
   --color-dim: #4c5878;
 
-  /* Accents — warm indigo-royal blue (Hexgate-inspired, warmer than its azure) */
-  --color-accent: #4a54e4;
-  --color-accent-ink: #3339ac; /* text / eyebrows on light surfaces (AA on sable) */
-  --color-accent-bright: #7581f6; /* accent for use on dark (navy/teal) surfaces */
-  --color-accent-warm: #9aa4fb; /* lightest — labels/eyebrows on dark surfaces */
-  --color-verm: #4a54e4; /* accent used in the workflow diagram */
+  /* Accents — the Hexamind owl blue (#0058bf) and a scale around it */
+  --color-accent: #0058bf;
+  --color-accent-ink: #004a9e; /* text / eyebrows on light surfaces (AA on sable) */
+  --color-accent-bright: #3d90ee; /* accent for use on dark (navy/teal) surfaces */
+  --color-accent-warm: #6fb0f5; /* lightest — labels/eyebrows on dark surfaces */
+  --color-verm: #0058bf; /* accent used in the workflow diagram */
   --color-blue: #2563eb;
   --color-blue-strong: #1d4ed8;
   --color-teal: #2a6a82;
@@ -75,7 +75,7 @@
   }
 
   ::selection {
-    background-color: rgb(74 84 228 / 0.18);
+    background-color: rgb(0 88 191 / 0.18);
   }
 
   /* Headings use the display font (Hanken) at a heavier weight by default,
