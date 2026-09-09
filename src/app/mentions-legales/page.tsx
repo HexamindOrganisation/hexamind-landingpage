@@ -50,16 +50,6 @@ export default function MentionsLegalesPage() {
             </p>
           </LegalSection>
 
-          <LegalSection title="Hébergeur">
-            <p>
-              <strong className="text-ink">Lovable</strong> (Lovable AB)
-              <br />
-              Norrlandsgatan 15, 111 43 Stockholm, Suède
-              <br />
-              Site web : https://lovable.dev
-            </p>
-          </LegalSection>
-
           <LegalSection title="Propriété intellectuelle">
             <p>
               L&rsquo;ensemble des contenus présents sur ce site (textes, images,

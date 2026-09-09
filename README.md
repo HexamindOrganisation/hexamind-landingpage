@@ -66,8 +66,6 @@ design/
 
 ## Content notes
 
-- **Mentions légales** — the "Hébergeur" section still names Lovable. Update it
-  to your new host (Vercel) before going live.
 - **Contact form** and **newsletter** are front-end only. The contact form opens
   the visitor's mail client (`mailto:`); the newsletter just acknowledges. Wire
   both to a backend / email provider when ready.
