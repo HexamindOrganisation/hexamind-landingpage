@@ -37,7 +37,7 @@ const proprietaryModules = [
 function ModuleName({ name, tagline }: { name: string; tagline: string }) {
   return (
     <>
-      <h3 className="font-serif text-[44px] font-medium leading-none text-cream">
+      <h3 className="font-serif text-[44px] font-semibold leading-none text-cream">
         {name}
       </h3>
       <div className="mt-3.5 text-[13px] font-medium tracking-[0.09em] text-accent-warm">
@@ -52,7 +52,7 @@ export function Modules() {
     <section id="modules" className="bg-ink py-24 md:py-28">
       <Container>
         <Eyebrow tone="cream">MODULES IA</Eyebrow>
-        <h2 className="mt-[26px] font-serif text-h2 font-medium leading-[1.05] text-cream">
+        <h2 className="mt-[26px] font-serif text-h2 font-semibold leading-[1.05] text-cream">
           Nos briques logicielles propriétaires.
         </h2>
 

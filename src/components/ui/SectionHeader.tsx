@@ -33,7 +33,7 @@ export function SectionHeader({
       </Eyebrow>
       <h2
         className={cn(
-          "mt-4 text-balance font-serif text-h2 font-medium tracking-[-0.005em]",
+          "mt-4 text-balance font-serif text-h2 font-semibold tracking-[-0.005em]",
           dark ? "text-cream" : "text-ink",
         )}
       >

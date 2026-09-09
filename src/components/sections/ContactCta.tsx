@@ -9,7 +9,7 @@ export function ContactCta() {
       <Container className="flex flex-wrap items-center justify-between gap-10">
         <div className="min-w-0">
           <Eyebrow tone="cream">TRAVAILLONS ENSEMBLE</Eyebrow>
-          <h2 className="mt-[22px] font-serif text-h2-lg font-medium text-cream">
+          <h2 className="mt-[22px] font-serif text-h2-lg font-semibold text-cream">
             Une question, un projet ?
           </h2>
         </div>

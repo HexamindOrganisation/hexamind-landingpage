@@ -69,7 +69,7 @@ export function Hero() {
         </div>
 
         <h1
-          className="max-w-[16ch] text-balance font-serif font-medium tracking-[-0.01em] text-ink"
+          className="max-w-[16ch] text-balance font-serif font-bold tracking-[-0.01em] text-ink"
           style={{ fontSize: "clamp(52px,7.2vw,100px)", lineHeight: 1 }}
         >
           We make <span className="text-accent">AI work</span> for you.

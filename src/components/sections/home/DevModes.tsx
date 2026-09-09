@@ -60,7 +60,7 @@ export function DevModes() {
     >
       <Container>
         <Eyebrow>DÉVELOPPEMENT</Eyebrow>
-        <h2 className="mt-[26px] font-serif text-h2 font-medium leading-[1.05] text-ink">
+        <h2 className="mt-[26px] font-serif text-h2 font-semibold leading-[1.05] text-ink">
           Quatre modalités d&rsquo;intervention.
         </h2>
         <p className="mt-[22px] max-w-[70ch] text-body-lg text-mid">
@@ -78,7 +78,7 @@ export function DevModes() {
                 <span className="font-sans text-2xl font-bold text-accent-ink">
                   {m.n}
                 </span>
-                <h3 className="font-serif text-[26px] font-medium leading-tight text-ink">
+                <h3 className="font-serif text-[26px] font-semibold leading-tight text-ink">
                   {m.title}
                 </h3>
               </div>

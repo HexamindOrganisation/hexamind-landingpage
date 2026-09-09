@@ -65,7 +65,7 @@ export default function VisionPage() {
       {/* Intro */}
       <Section>
         <Eyebrow>VISION</Eyebrow>
-        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-medium tracking-[-0.01em] text-ink">
+        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-ink">
           L&rsquo;IA, une promesse qui reste à réaliser ?
         </h1>
         <div className="mt-8 max-w-3xl space-y-6 text-body-lg text-mid">

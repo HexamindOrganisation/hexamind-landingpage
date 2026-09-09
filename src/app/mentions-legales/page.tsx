@@ -28,7 +28,7 @@ export default function MentionsLegalesPage() {
     <Section>
       <div className="max-w-3xl">
         <Eyebrow>INFORMATIONS LÉGALES</Eyebrow>
-        <h1 className="mt-4 font-serif text-h2-lg font-medium text-ink">
+        <h1 className="mt-4 font-serif text-h2-lg font-semibold text-ink">
           Mentions légales
         </h1>
 

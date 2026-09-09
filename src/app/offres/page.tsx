@@ -214,7 +214,7 @@ export default function OffresPage() {
       {/* Intro */}
       <Section containerClassName="pb-8 pt-20 md:pb-10 md:pt-28">
         <Eyebrow>NOS OFFRES</Eyebrow>
-        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-medium tracking-[-0.01em] text-ink">
+        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-ink">
           Du conseil au déploiement, en passant par nos modules IA.
         </h1>
         <p className="mt-6 max-w-2xl text-body-lg text-mid">

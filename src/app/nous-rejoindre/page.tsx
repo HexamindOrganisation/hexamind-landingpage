@@ -115,7 +115,7 @@ export default function NousRejoindrePage() {
       {/* Intro */}
       <Section>
         <Eyebrow>NOUS REJOINDRE</Eyebrow>
-        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-medium tracking-[-0.01em] text-ink">
+        <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-ink">
           Construisons ensemble une IA utile et maîtrisée.
         </h1>
       </Section>

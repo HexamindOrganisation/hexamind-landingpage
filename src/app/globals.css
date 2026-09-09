@@ -25,12 +25,12 @@
   --color-mid: #394665;
   --color-dim: #4c5878;
 
-  /* Accents — warm royal blue (Hexgate-inspired, warmer than its azure) */
-  --color-accent: #3f5fe0;
-  --color-accent-ink: #2b3fae; /* text / eyebrows on light surfaces (AA on sable) */
-  --color-accent-bright: #6d86f6; /* accent for use on dark (navy/teal) surfaces */
-  --color-accent-warm: #93a6fb; /* lightest — labels/eyebrows on dark surfaces */
-  --color-verm: #3f5fe0; /* accent used in the workflow diagram */
+  /* Accents — warm indigo-royal blue (Hexgate-inspired, warmer than its azure) */
+  --color-accent: #4a54e4;
+  --color-accent-ink: #3339ac; /* text / eyebrows on light surfaces (AA on sable) */
+  --color-accent-bright: #7581f6; /* accent for use on dark (navy/teal) surfaces */
+  --color-accent-warm: #9aa4fb; /* lightest — labels/eyebrows on dark surfaces */
+  --color-verm: #4a54e4; /* accent used in the workflow diagram */
   --color-blue: #2563eb;
   --color-blue-strong: #1d4ed8;
   --color-teal: #2a6a82;
@@ -75,7 +75,14 @@
   }
 
   ::selection {
-    background-color: rgb(63 95 224 / 0.18);
+    background-color: rgb(74 84 228 / 0.18);
+  }
+
+  /* Headings use the display font (Hanken) at a heavier weight by default,
+     matching Hexgate. Explicit weight utilities (font-medium on the logo,
+     font-bold on hero titles) still win. */
+  .font-serif {
+    font-weight: 600;
   }
 }
 

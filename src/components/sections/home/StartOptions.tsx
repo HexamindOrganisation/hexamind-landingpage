@@ -56,7 +56,7 @@ export function StartOptions() {
     <section id="offres" className="border-t border-line-soft py-24 md:py-28">
       <Container>
         <Eyebrow>CONSEIL</Eyebrow>
-        <h2 className="mt-[26px] max-w-[24ch] font-serif text-h2 font-medium leading-[1.05] text-ink">
+        <h2 className="mt-[26px] max-w-[24ch] font-serif text-h2 font-semibold leading-[1.05] text-ink">
           Trois façons de démarrer.
         </h2>
         <p className="mt-[22px] max-w-[62ch] text-body-lg text-mid">
@@ -75,7 +75,7 @@ export function StartOptions() {
             >
               <h3
                 className={cn(
-                  "font-serif text-[38px] font-medium leading-none",
+                  "font-serif text-[38px] font-semibold leading-none",
                   c.title,
                 )}
               >
