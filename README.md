@@ -8,6 +8,15 @@ The **content** (page structure and copy) was ported from the previous website
 Claude Design direction. The original design export lives in `design/` for
 reference.
 
+## Internationalization (FR / EN)
+
+Bilingual via [`next-intl`](https://next-intl.dev). Both locales are prefixed —
+`/fr/…` and `/en/…`, with `/` redirecting to `/fr`. Copy lives in
+`src/messages/{fr,en}.ts`; routing config is in `src/i18n/` and the middleware.
+Metadata, `hreflang` alternates and the sitemap are generated per locale.
+A FR/EN switcher sits in the header. The English copy is a first draft — review
+it before launch.
+
 ## Stack
 
 - [Next.js 15](https://nextjs.org) (App Router) + React 19

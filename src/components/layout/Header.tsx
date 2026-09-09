@@ -1,24 +1,62 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
 import { LinkedInIcon } from "@/components/ui/icons";
 import { mainNav, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
+function LanguageSwitcher({ className }: { className?: string }) {
+  const pathname = usePathname();
+  const locale = useLocale();
+  const t = useTranslations("languageSwitcher");
+
+  return (
+    <div
+      className={cn("flex items-center gap-1 font-mono text-xs", className)}
+      aria-label={t("label")}
+    >
+      {routing.locales.map((loc, i) => (
+        <span key={loc} className="flex items-center gap-1">
+          {i > 0 && <span className="text-border">/</span>}
+          <Link
+            href={pathname}
+            locale={loc}
+            aria-current={loc === locale ? "true" : undefined}
+            className={cn(
+              "uppercase transition-colors",
+              loc === locale
+                ? "font-semibold text-primary"
+                : "text-muted-foreground hover:text-foreground",
+            )}
+          >
+            {t(loc)}
+          </Link>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const t = useTranslations("nav");
 
   const isActive = (href: string) => pathname === href;
 
   return (
     <header className="sticky top-0 z-40 border-b border-line-soft bg-background/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-3 text-foreground" onClick={() => setOpen(false)}>
+        <Link
+          href="/"
+          className="flex items-center gap-3 text-foreground"
+          onClick={() => setOpen(false)}
+        >
           <Image
             src="/logo-owl.png"
             alt=""
@@ -32,7 +70,6 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden items-center gap-8 md:flex">
           {mainNav.map((item) => (
             <Link
@@ -44,18 +81,18 @@ export function Header() {
                 isActive(item.href) ? "text-primary" : "text-muted-foreground",
               )}
             >
-              {item.label}
+              {t(item.key)}
             </Link>
           ))}
         </nav>
 
-        {/* Desktop actions */}
         <div className="hidden items-center gap-4 md:flex">
+          <LanguageSwitcher />
           <a
             href={site.linkedinUrl}
             target="_blank"
             rel="noreferrer"
-            aria-label="LinkedIn Hexamind"
+            aria-label={t("linkedinAria")}
             className="text-muted-foreground transition-colors hover:text-primary"
           >
             <LinkedInIcon />
@@ -66,20 +103,19 @@ export function Header() {
             rel="noreferrer"
             className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary hover:bg-white hover:text-primary"
           >
-            Hexgate
+            {t("hexgate")}
           </a>
           <Link
             href="/contact"
-            className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(15_31_74_/_0.5)] transition duration-200 hover:-translate-y-px hover:bg-primary-deep"
+            className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(43_38_32_/_0.4)] transition duration-200 hover:-translate-y-px hover:bg-primary-deep"
           >
-            Nous contacter
+            {t("contact")}
           </Link>
         </div>
 
-        {/* Mobile toggle */}
         <button
           type="button"
-          aria-label="Menu"
+          aria-label={t("menuAria")}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className="text-foreground md:hidden"
@@ -93,16 +129,11 @@ export function Header() {
             aria-hidden
             className="size-6"
           >
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            )}
+            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
           </svg>
         </button>
       </Container>
 
-      {/* Mobile panel */}
       {open ? (
         <div className="border-t border-line-soft bg-background md:hidden">
           <Container className="flex flex-col gap-3 py-4">
@@ -117,25 +148,17 @@ export function Header() {
                   isActive(item.href) ? "text-primary" : "text-foreground",
                 )}
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             ))}
-            <a
-              href={site.hexgateUrl}
-              target="_blank"
-              rel="noreferrer"
-              onClick={() => setOpen(false)}
-              className="text-base text-foreground"
-            >
-              Hexgate
-            </a>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white"
             >
-              Nous contacter
+              {t("contact")}
             </Link>
+            <LanguageSwitcher className="mt-2" />
           </Container>
         </div>
       ) : null}

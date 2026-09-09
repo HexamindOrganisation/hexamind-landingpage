@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { isExternal } from "@/lib/site";
 
 type SmartLinkProps = {
@@ -8,8 +8,8 @@ type SmartLinkProps = {
 };
 
 /**
- * Renders a Next.js <Link> for internal routes and a plain <a> for external
- * links (http(s), mailto, tel), so navigation stays correct in both cases.
+ * Renders a locale-aware next-intl <Link> for internal routes and a plain <a>
+ * for external links (http(s), mailto, tel).
  */
 export function SmartLink({ href, className, children }: SmartLinkProps) {
   if (isExternal(href)) {
@@ -18,9 +18,7 @@ export function SmartLink({ href, className, children }: SmartLinkProps) {
       <a
         href={href}
         className={className}
-        {...(opensNewTab
-          ? { target: "_blank", rel: "noreferrer" }
-          : {})}
+        {...(opensNewTab ? { target: "_blank", rel: "noreferrer" } : {})}
       >
         {children}
       </a>
