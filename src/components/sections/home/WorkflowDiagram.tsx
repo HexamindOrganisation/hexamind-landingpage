@@ -4,9 +4,9 @@ import { Reveal } from "@/components/ui/Reveal";
 const HEX_CLIP = "polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)";
 
 const steps = [
-  { label: "01 · CADRER", color: "var(--color-verm)", delay: "0s" },
-  { label: "02 · CONSTRUIRE", color: "var(--color-teal)", delay: "1.1s" },
-  { label: "03 · INDUSTRIALISER", color: "var(--color-green)", delay: "2.2s" },
+  { n: "01", word: "CADRER", color: "var(--color-verm)", delay: "0s" },
+  { n: "02", word: "CONSTRUIRE", color: "var(--color-teal)", delay: "1.1s" },
+  { n: "03", word: "INDUSTRIALISER", color: "var(--color-green)", delay: "2.2s" },
 ];
 
 const columns = [
@@ -32,7 +32,7 @@ export function WorkflowDiagram() {
       <Reveal>
         <Container>
         <div
-          className="relative overflow-hidden rounded-[28px] border border-line p-8 md:p-[44px] md:pt-14"
+          className="relative overflow-hidden rounded-[28px] border border-line p-5 sm:p-8 md:p-[44px] md:pt-14"
           style={{
             background:
               "linear-gradient(180deg,var(--color-panel) 0%,var(--color-panel-2) 100%)",
@@ -123,18 +123,19 @@ export function WorkflowDiagram() {
               <div className="absolute inset-0 grid grid-cols-3">
                 {steps.map((s) => (
                   <div
-                    key={s.label}
+                    key={s.n}
                     className="grid place-items-end justify-items-center pb-[45px]"
                   >
                     <div className="flex flex-col items-center gap-3.5">
                       <span
-                        className="rounded-full px-3 py-[7px] font-mono text-[11px] font-medium tracking-[0.18em]"
+                        className="whitespace-nowrap rounded-full px-2.5 py-[7px] font-mono text-[11px] font-medium tracking-[0.14em]"
                         style={{
                           background: "rgba(255,255,255,.78)",
                           color: s.color,
                         }}
                       >
-                        {s.label}
+                        {s.n}
+                        <span className="hidden sm:inline"> · {s.word}</span>
                       </span>
                       <span
                         className="h-[17px] w-[15px]"
@@ -152,13 +153,13 @@ export function WorkflowDiagram() {
 
               {/* Corner pills */}
               <div
-                className="absolute left-[18px] top-4 rounded-full px-3 py-[7px] font-mono text-[11.5px] text-mid"
+                className="absolute left-2 top-4 rounded-full px-2.5 py-[7px] font-mono text-[10px] text-mid sm:left-[18px] sm:px-3 sm:text-[11.5px]"
                 style={{ background: "rgba(255,255,255,.72)" }}
               >
                 votre enjeu métier
               </div>
               <div
-                className="absolute right-[18px] top-4 flex items-center gap-2 rounded-full px-3 py-[7px] font-mono text-[11.5px] text-ink"
+                className="absolute right-2 top-4 flex items-center gap-2 rounded-full px-2.5 py-[7px] font-mono text-[10px] text-ink sm:right-[18px] sm:px-3 sm:text-[11.5px]"
                 style={{ background: "rgba(255,255,255,.72)" }}
               >
                 <span

@@ -98,7 +98,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="fr" className={`${hanken.variable} ${plexMono.variable}`}>
+    <html
+      lang="fr"
+      suppressHydrationWarning
+      className={`${hanken.variable} ${plexMono.variable}`}
+    >
       <body className="min-h-screen bg-sable font-sans text-ink antialiased">
         {/* Enables scroll-reveal animations; content is visible without it. */}
         <script
