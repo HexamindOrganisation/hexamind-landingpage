@@ -3,6 +3,7 @@ import { Section } from "@/components/ui/Section";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/mentions-legales" },
   title: "Mentions légales",
   description:
     "Mentions légales du site Hexamind : éditeur, hébergeur, propriété intellectuelle et données personnelles.",

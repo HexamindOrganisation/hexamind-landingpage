@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 const proprietaryModules = [
@@ -50,7 +51,8 @@ function ModuleName({ name, tagline }: { name: string; tagline: string }) {
 export function Modules() {
   return (
     <section id="modules" className="bg-ink py-24 md:py-28">
-      <Container>
+      <Reveal>
+        <Container>
         <Eyebrow tone="cream">MODULES IA</Eyebrow>
         <h2 className="mt-[26px] font-serif text-h2 font-semibold leading-[1.05] text-cream">
           Nos briques logicielles propriétaires.
@@ -102,7 +104,7 @@ export function Modules() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="https://app.hexgate.ai"
+                  href="https://hexgate.ai"
                   target="_blank"
                   rel="noreferrer"
                   className="rounded-full bg-accent px-[22px] py-3 text-[15px] font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-14px_rgb(0_0_0_/_0.6)]"
@@ -156,6 +158,7 @@ export function Modules() {
           </div>
         </div>
       </Container>
+      </Reveal>
     </section>
   );
 }

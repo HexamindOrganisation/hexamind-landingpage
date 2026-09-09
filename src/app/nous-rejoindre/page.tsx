@@ -6,6 +6,7 @@ import { Disclosure } from "@/components/ui/Disclosure";
 import { ContactCta } from "@/components/sections/ContactCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/nous-rejoindre" },
   title: "Nous rejoindre",
   description:
     "Rejoignez Hexamind : autonomie radicale, stack de pointe, culture produit et excellence durable.",

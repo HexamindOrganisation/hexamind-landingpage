@@ -6,6 +6,7 @@ import { LinkedInIcon, MailIcon, MapPinIcon } from "@/components/ui/icons";
 import { mailto, site } from "@/lib/site";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Contact",
   description:
     "Discutons de votre projet d'IA. Notre équipe vous répond sous 48 heures.",

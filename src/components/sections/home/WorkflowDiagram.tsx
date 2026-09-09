@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 
 const HEX_CLIP = "polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)";
 
@@ -28,7 +29,8 @@ const schools = ["Polytechnique", "Stanford", "Supaéro", "Accenture", "Sopra St
 export function WorkflowDiagram() {
   return (
     <section className="px-0 pb-28 pt-5">
-      <Container>
+      <Reveal>
+        <Container>
         <div
           className="relative overflow-hidden rounded-[28px] border border-line p-8 md:p-[44px] md:pt-14"
           style={{
@@ -203,6 +205,7 @@ export function WorkflowDiagram() {
           </div>
         </div>
       </Container>
+      </Reveal>
     </section>
   );
 }

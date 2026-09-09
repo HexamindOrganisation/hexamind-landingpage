@@ -19,32 +19,97 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
+const description =
+  "Hexamind vous accompagne dans vos projets de transformation IA : conseil, développement sur mesure et modules d'IA propriétaires (Hexgate, Pascal, zeAgent, Fastprop).";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://hexamind.ai"),
   title: {
     default: `${site.name} — ${site.tagline}`,
     template: `%s — ${site.name}`,
   },
-  description:
-    "Hexamind vous accompagne dans vos projets de transformation IA : conseil, développement sur mesure et modules d'IA propriétaires.",
+  description,
+  applicationName: site.name,
+  keywords: [
+    "IA",
+    "intelligence artificielle",
+    "transformation IA",
+    "agents IA",
+    "conseil IA",
+    "développement IA",
+    "LLM",
+    "Hexgate",
+    "Hexamind",
+  ],
+  authors: [{ name: site.name }],
+  creator: site.name,
+  publisher: site.name,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: `${site.name} — ${site.tagline}`,
-    description:
-      "Conseil, développement sur mesure et modules d'IA propriétaires.",
-    locale: "fr_FR",
     type: "website",
+    siteName: site.name,
+    url: "/",
+    title: `${site.name} — ${site.tagline}`,
+    description,
+    locale: "fr_FR",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.tagline}`,
+    description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://hexamind.ai/#organization",
+      name: site.name,
+      url: "https://hexamind.ai",
+      logo: "https://hexamind.ai/logo-owl.png",
+      description,
+      email: site.email,
+      sameAs: [site.linkedinUrl],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Paris",
+        addressCountry: "FR",
+      },
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://hexamind.ai/#website",
+      url: "https://hexamind.ai",
+      name: site.name,
+      inLanguage: "fr-FR",
+      publisher: { "@id": "https://hexamind.ai/#organization" },
+    },
+  ],
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="fr"
-      className={`${hanken.variable} ${plexMono.variable}`}
-    >
+    <html lang="fr" className={`${hanken.variable} ${plexMono.variable}`}>
       <body className="min-h-screen bg-sable font-sans text-ink antialiased">
+        {/* Enables scroll-reveal animations; content is visible without it. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main>{children}</main>
         <Footer />

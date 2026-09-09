@@ -6,6 +6,7 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { ContactCta } from "@/components/sections/ContactCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/qui-sommes-nous" },
   title: "Qui sommes-nous",
   description:
     "Hexamind : nos valeurs, notre équipe et notre engagement pour une IA maîtrisée au bénéfice de tous.",

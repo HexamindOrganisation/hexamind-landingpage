@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { Disclosure } from "@/components/ui/Disclosure";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/offres" },
   title: "Nos offres",
   description:
     "Conseil, développement et modules IA : nos offres pour faire de l'IA un succès dans votre organisation.",
@@ -160,7 +161,7 @@ const modules: ModuleItem[] = [
     links: [
       {
         label: "Try the cloud version →",
-        href: "https://app.hexgate.ai",
+        href: "https://hexgate.ai",
         primary: true,
       },
       { label: "GitHub", href: "https://github.com/HexamindOrganisation/hexgate" },

@@ -9,6 +9,7 @@ import { MitStats } from "@/components/sections/MitStats";
 import { ContactCta } from "@/components/sections/ContactCta";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/vision" },
   title: "Vision",
   description:
     "L'IA, une promesse qui reste à réaliser ? Notre vision pour faire de l'IA un succès en entreprise.",

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { cn } from "@/lib/utils";
 
@@ -54,7 +55,8 @@ const cards: Card[] = [
 export function StartOptions() {
   return (
     <section id="offres" className="border-t border-line-soft py-24 md:py-28">
-      <Container>
+      <Reveal>
+        <Container>
         <Eyebrow>CONSEIL</Eyebrow>
         <h2 className="mt-[26px] max-w-[24ch] font-serif text-h2 font-semibold leading-[1.05] text-ink">
           Trois façons de démarrer.
@@ -103,6 +105,7 @@ export function StartOptions() {
           ))}
         </div>
       </Container>
+      </Reveal>
     </section>
   );
 }

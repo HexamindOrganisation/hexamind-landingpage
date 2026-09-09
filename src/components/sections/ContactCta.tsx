@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 
 /** Full-width teal call-to-action band. Reused across pages. */
 export function ContactCta() {
   return (
     <section id="contact" className="bg-teal py-24 md:py-28">
-      <Container className="flex flex-wrap items-center justify-between gap-10">
+      <Reveal>
+        <Container className="flex flex-wrap items-center justify-between gap-10">
         <div className="min-w-0">
           <Eyebrow tone="cream">TRAVAILLONS ENSEMBLE</Eyebrow>
           <h2 className="mt-[22px] font-serif text-h2-lg font-semibold text-cream">
@@ -20,6 +22,7 @@ export function ContactCta() {
           Nous contacter <span aria-hidden>→</span>
         </Link>
       </Container>
+      </Reveal>
     </section>
   );
 }
