@@ -17,7 +17,7 @@ const proprietaryModules = [
   {
     name: "zeAgent",
     tagline: "LA FABRIQUE D'AGENTS INTELLIGENTS",
-    body: "L'environnement complet pour maîtriser le cycle de vie de vos agents IA — de la conception à l'exploitation. Le socle indispensable d'une IA fiable et orchestrée.",
+    body: "L'environnement complet pour maîtriser le cycle de vie de vos agents IA, de la conception à l'exploitation. Le socle indispensable d'une IA fiable et orchestrée.",
     benefits: [
       "Time-to-Market accéléré : framework optimisé pour le déploiement",
       "Sécurisation : environnement de test et monitoring rigoureux",

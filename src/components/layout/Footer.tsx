@@ -51,7 +51,7 @@ export function Footer() {
             </span>
           </Link>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-            {site.tagline} Une IA utile, maîtrisée et déployée en production — du
+            {site.tagline} Une IA utile, maîtrisée et déployée en production, du
             conseil aux modules logiciels.
           </p>
           <NewsletterForm />

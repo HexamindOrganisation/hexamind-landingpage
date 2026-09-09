@@ -101,10 +101,13 @@ export default function QuiSommesNousPage() {
       {/* L'équipe */}
       <Section>
         <SectionHeader eyebrow="L'ÉQUIPE" title="Des profils complémentaires." />
-        <div className="mt-14 grid grid-cols-2 gap-8 md:grid-cols-4 md:gap-6">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((m) => (
-            <div key={m.name} className="flex flex-col items-center text-center">
-              <div className="size-40 overflow-hidden rounded-full bg-card md:size-44">
+            <div
+              key={m.name}
+              className="flex flex-col items-center rounded-3xl border border-border bg-card p-6 text-center"
+            >
+              <div className="size-28 overflow-hidden rounded-full bg-muted ring-1 ring-border">
                 <Image
                   src={m.img}
                   alt={m.name}
@@ -113,12 +116,14 @@ export default function QuiSommesNousPage() {
                   className="size-full object-cover"
                 />
               </div>
-              <div className="-mt-3 rounded-md bg-clay px-5 py-1.5 text-sm font-semibold text-cream">
+              <h3 className="mt-5 font-serif text-lg font-semibold text-foreground">
                 {m.name}
+              </h3>
+              <div className="mt-1 text-sm font-semibold text-primary">
+                {m.role}
               </div>
-              <div className="mt-4 font-bold text-foreground">{m.role}</div>
-              <div className="text-sm text-muted-foreground">{m.fullRole}</div>
-              <div className="mt-4 text-sm leading-relaxed text-muted-foreground">
+              <div className="text-xs text-muted-foreground">{m.fullRole}</div>
+              <div className="mt-4 space-y-0.5 text-[13px] leading-relaxed text-muted-foreground">
                 {m.bio.map((line) => (
                   <div key={line}>{line}</div>
                 ))}
@@ -126,12 +131,12 @@ export default function QuiSommesNousPage() {
             </div>
           ))}
         </div>
-        <div className="mt-12 flex justify-center">
-          <p className="max-w-2xl rounded-md bg-clay px-8 py-4 text-center text-cream">
-            + équipe technique initiale de 10+ ingénieurs et chercheurs issus des
-            meilleurs écoles et universités
-          </p>
-        </div>
+        <p className="mt-8 text-center text-sm text-muted-foreground">
+          <span className="font-semibold text-foreground">
+            + 10 ingénieurs et chercheurs
+          </span>{" "}
+          issus des meilleures écoles et universités.
+        </p>
       </Section>
 
       <ContactCta />

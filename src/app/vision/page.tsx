@@ -117,18 +117,18 @@ export default function VisionPage() {
             </h3>
             <ul className="space-y-3 text-cream/85">
               <li>
-                <strong>Simple</strong> — un accès facile à une application
+                <strong>Simple</strong> : un accès facile à une application
                 puissante.
               </li>
               <li>
-                <strong>Quasi-gratuite</strong> — coûts d&rsquo;usage marginaux
+                <strong>Quasi-gratuite</strong> : coûts d&rsquo;usage marginaux
                 pour l&rsquo;utilisateur.
               </li>
               <li>
-                <strong>Apprenante</strong> — mémoire des conversations.
+                <strong>Apprenante</strong> : mémoire des conversations.
               </li>
               <li>
-                <strong>Évolutive</strong> — versions remplacées en transparence.
+                <strong>Évolutive</strong> : versions remplacées en transparence.
               </li>
             </ul>
           </div>
@@ -138,16 +138,16 @@ export default function VisionPage() {
             </h3>
             <ul className="space-y-3 text-cream/85">
               <li>
-                <strong>Accès</strong> — l&rsquo;agent IA doit accéder aux
+                <strong>Accès</strong> : l&rsquo;agent IA doit accéder aux
                 données et applications, en respectant les droits.
               </li>
               <li>
-                <strong>Gouvernance &amp; souveraineté</strong> — maîtriser qui
+                <strong>Gouvernance &amp; souveraineté</strong> : maîtriser qui
                 accède à quoi, éviter les fuites de données, suivre le cycle de
                 vie des agents.
               </li>
               <li>
-                <strong>UX évoluée</strong> — rester universel tout en
+                <strong>UX évoluée</strong> : rester universel tout en
                 s&rsquo;enrichissant pour des cas d&rsquo;usage métiers.
               </li>
             </ul>
@@ -190,7 +190,7 @@ export default function VisionPage() {
       </Section>
 
       {/* La proposition Hexamind */}
-      <Section tone="clay">
+      <Section tone="ink">
         <SectionHeader
           tone="dark"
           eyebrow="LA PROPOSITION HEXAMIND"
@@ -267,17 +267,20 @@ export default function VisionPage() {
           title="Hexamind vous accompagne à chaque étape."
         />
         <ul className="mt-8 max-w-3xl space-y-4 leading-relaxed text-muted-foreground">
-          <li>
-            — En accompagnant la démarche globale et la définition de
+          <li className="flex gap-3">
+            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+            Nous accompagnons la démarche globale et la définition de
             l&rsquo;architecture générale.
           </li>
-          <li>
-            — En mettant en place les fondations transverses à partir de notre
+          <li className="flex gap-3">
+            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+            Nous mettons en place les fondations transverses à partir de notre
             socle Pascal.
           </li>
-          <li>
-            — En développant des agents spécifiques à vos cas d&rsquo;usage (le
-            code devient propriété du client).
+          <li className="flex gap-3">
+            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
+            Nous développons des agents spécifiques à vos cas d&rsquo;usage. Le
+            code devient votre propriété.
           </li>
         </ul>
         <ArrowLink href="/offres" className="mt-10">

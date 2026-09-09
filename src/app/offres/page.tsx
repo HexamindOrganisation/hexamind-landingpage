@@ -45,9 +45,9 @@ const conseilOffers = [
     intro:
       "Trois parcours progressifs selon votre maturité, pour rendre vos équipes autonomes avec l'IA dès le premier jour.",
     items: [
-      "Level 1 — Starting (1 jour) : fondamentaux IA, ML, NLP, LLM",
-      "Level 2 — Building (3 à 5 jours) : ateliers pratiques, intégration Jira / Confluence / M365 / Notion",
-      "Level 3 — Scaling (1 à 3 semaines) : Vibe Coding (Claude Code), agents autonomes, gouvernance LLM",
+      "Level 1 · Starting (1 jour) : fondamentaux IA, ML, NLP, LLM",
+      "Level 2 · Building (3 à 5 jours) : ateliers pratiques, intégration Jira / Confluence / M365 / Notion",
+      "Level 3 · Scaling (1 à 3 semaines) : Vibe Coding (Claude Code), agents autonomes, gouvernance LLM",
     ],
     deliverables: [
       "Supports complets (vidéos, exercices, cas réels)",
@@ -151,7 +151,7 @@ const modules: ModuleItem[] = [
     id: "hexgate",
     name: "Hexgate",
     tagline: "L'autorisation de vos agents IA",
-    body: "Autorisation par utilisateur pour les agents IA : chaque appel d'outil est filtré selon le rôle de l'appelant, via une policy appliquée en local depuis un bundle WASM signé — sans latence ajoutée. Chaque décision (autoriser, refuser, validation requise) part dans le journal d'audit. Compatible OpenAI Agents, LangChain, Google ADK et Pydantic AI.",
+    body: "Autorisation par utilisateur pour les agents IA : chaque appel d'outil est filtré selon le rôle de l'appelant, via une policy appliquée en local depuis un bundle WASM signé, sans latence ajoutée. Chaque décision (autoriser, refuser, validation requise) part dans le journal d'audit. Compatible OpenAI Agents, LangChain, Google ADK et Pydantic AI.",
     benefits: [
       "Contrôle fin : rôles, contraintes sur les arguments et décisions typées (allow / deny / approval-required)",
       "Zéro latence ajoutée : la policy est évaluée en local, depuis un bundle WASM signé",
@@ -187,7 +187,7 @@ const modules: ModuleItem[] = [
     id: "zeagent",
     name: "zeAgent",
     tagline: "La fabrique d'agents intelligents",
-    body: "L'environnement complet pour maîtriser le cycle de vie de vos agents IA — de la conception à l'exploitation. Le socle indispensable d'une IA fiable et orchestrée.",
+    body: "L'environnement complet pour maîtriser le cycle de vie de vos agents IA, de la conception à l'exploitation. Le socle indispensable d'une IA fiable et orchestrée.",
     benefits: [
       "Time-to-Market accéléré : framework optimisé pour le déploiement",
       "Sécurisation : environnement de test et monitoring rigoureux",
