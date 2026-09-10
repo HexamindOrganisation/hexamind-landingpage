@@ -15,8 +15,8 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#E7E5D6",
-          color: "#0F1F4A",
+          background: "#f7f9fc",
+          color: "#0e1626",
           padding: "80px",
           fontFamily: "sans-serif",
         }}
@@ -26,14 +26,14 @@ export default function OpengraphImage() {
             style={{
               width: 26,
               height: 1,
-              background: "#0058bf",
+              background: "#2563eb",
             }}
           />
           <div
             style={{
               fontSize: 26,
               letterSpacing: 8,
-              color: "#004a9e",
+              color: "#1d4ed8",
               fontWeight: 600,
             }}
           >
@@ -58,15 +58,15 @@ export default function OpengraphImage() {
             }}
           >
             <span>We make&nbsp;</span>
-            <span style={{ color: "#0058bf" }}>&nbsp;AI work&nbsp;</span>
+            <span style={{ color: "#2563eb" }}>&nbsp;AI work&nbsp;</span>
             <span>&nbsp;for you.</span>
           </div>
-          <div style={{ fontSize: 30, color: "#394665", maxWidth: 900 }}>
+          <div style={{ fontSize: 30, color: "#5a6576", maxWidth: 900 }}>
             Conseil · Développement sur mesure · Modules d&rsquo;IA propriétaires
           </div>
         </div>
 
-        <div style={{ fontSize: 24, color: "#4C5878" }}>hexamind.ai</div>
+        <div style={{ fontSize: 24, color: "#7a8496" }}>hexamind.ai</div>
       </div>
     ),
     { ...size },

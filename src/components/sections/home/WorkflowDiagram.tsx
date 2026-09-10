@@ -6,8 +6,8 @@ const HEX_CLIP = "polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%)";
 
 // Colours + animation delays are presentation-only; labels come from messages.
 const stepStyles = [
-  { color: "var(--color-verm)", delay: "0s" },
-  { color: "var(--color-clay)", delay: "1.1s" },
+  { color: "var(--color-primary)", delay: "0s" },
+  { color: "var(--color-accent-bright)", delay: "1.1s" },
   { color: "var(--color-green)", delay: "2.2s" },
 ];
 
@@ -55,16 +55,16 @@ export function WorkflowDiagram() {
                 className="relative mt-[34px] h-[230px] overflow-hidden rounded-3xl"
                 style={{
                   background:
-                    "linear-gradient(90deg,rgba(163,84,47,.06),rgba(124,72,112,.07))",
+                    "linear-gradient(90deg,rgba(37,99,235,.05),rgba(96,165,250,.07))",
                 }}
               >
-                {/* Drifting clay dots */}
+                {/* Drifting blue dots */}
                 <div
                   aria-hidden
-                  className="absolute inset-0 opacity-75"
+                  className="absolute inset-0 opacity-70"
                   style={{
                     backgroundImage:
-                      "radial-gradient(var(--color-clay) 1.6px,transparent 1.6px)",
+                      "radial-gradient(var(--color-accent-bright) 1.6px,transparent 1.6px)",
                     backgroundSize: "24px 24px",
                     maskImage:
                       "linear-gradient(90deg,#000 0%,rgba(0,0,0,.4) 44%,transparent 64%)",
@@ -73,10 +73,10 @@ export function WorkflowDiagram() {
                     animation: "hx-drift 22s linear infinite alternate",
                   }}
                 />
-                {/* Static plum dots */}
+                {/* Static primary dots */}
                 <div
                   aria-hidden
-                  className="absolute inset-0 opacity-50"
+                  className="absolute inset-0 opacity-45"
                   style={{
                     backgroundImage:
                       "radial-gradient(var(--color-primary) 1.5px,transparent 1.5px)",
@@ -85,16 +85,6 @@ export function WorkflowDiagram() {
                       "linear-gradient(90deg,transparent 34%,rgba(0,0,0,.25) 52%,#000 88%)",
                     WebkitMaskImage:
                       "linear-gradient(90deg,transparent 34%,rgba(0,0,0,.25) 52%,#000 88%)",
-                  }}
-                />
-                {/* Sweeping light */}
-                <div
-                  aria-hidden
-                  className="absolute inset-y-0 left-0 w-1/4"
-                  style={{
-                    background:
-                      "linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent)",
-                    animation: "hx-sweep 9s cubic-bezier(.4,0,.6,1) infinite",
                   }}
                 />
                 {/* Baseline */}
@@ -116,11 +106,8 @@ export function WorkflowDiagram() {
                     >
                       <div className="flex flex-col items-center gap-3.5">
                         <span
-                          className="whitespace-nowrap rounded-full px-2.5 py-[7px] font-mono text-[11px] font-medium tracking-[0.14em]"
-                          style={{
-                            background: "rgba(255,255,255,.78)",
-                            color: stepStyles[i].color,
-                          }}
+                          className="whitespace-nowrap rounded-full border border-border bg-card px-2.5 py-[7px] font-mono text-[11px] font-medium tracking-[0.14em] shadow-sm"
+                          style={{ color: stepStyles[i].color }}
                         >
                           {s.n}
                           <span className="hidden sm:inline"> · {s.word}</span>
@@ -140,16 +127,10 @@ export function WorkflowDiagram() {
                 </div>
 
                 {/* Corner pills */}
-                <div
-                  className="absolute left-2 top-4 rounded-full px-2.5 py-[7px] font-mono text-[10px] text-muted-foreground sm:left-[18px] sm:px-3 sm:text-[11.5px]"
-                  style={{ background: "rgba(255,255,255,.72)" }}
-                >
+                <div className="absolute left-2 top-4 rounded-full border border-border bg-card px-2.5 py-[7px] font-mono text-[10px] text-muted-foreground shadow-sm sm:left-[18px] sm:px-3 sm:text-[11.5px]">
                   {t("enjeu")}
                 </div>
-                <div
-                  className="absolute right-2 top-4 flex items-center gap-2 rounded-full px-2.5 py-[7px] font-mono text-[10px] text-foreground sm:right-[18px] sm:px-3 sm:text-[11.5px]"
-                  style={{ background: "rgba(255,255,255,.72)" }}
-                >
+                <div className="absolute right-2 top-4 flex items-center gap-2 rounded-full border border-border bg-card px-2.5 py-[7px] font-mono text-[10px] text-foreground shadow-sm sm:right-[18px] sm:px-3 sm:text-[11.5px]">
                   <span
                     className="size-[7px] rounded-full bg-green"
                     style={{ animation: "hx-dot 2.4s ease-in-out infinite" }}

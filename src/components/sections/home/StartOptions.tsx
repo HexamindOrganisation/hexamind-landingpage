@@ -18,7 +18,7 @@ const styles: Record<
     link: "border-cream/40 text-cream hover:bg-cream/10 hover:border-cream",
   },
   boostai: {
-    card: "bg-clay border-clay",
+    card: "bg-primary border-primary",
     title: "text-cream",
     tag: "text-cream/90",
     body: "text-cream/90",

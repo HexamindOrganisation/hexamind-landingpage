@@ -29,8 +29,8 @@ it before launch.
   Tailwind utilities via `@theme inline` in `globals.css` (`bg-background`,
   `text-foreground`, `text-primary`, `bg-card`, `text-muted-foreground`,
   `border-border`, …). Ready to drop in shadcn components later.
-- Warm "paper" base + **plum** primary (inspired by the Hexgate roadmap
-  artifact), with teal / green / blue as secondary + status accents.
+- A light take on Hexgate's dark UI: cool light neutrals, dark cool ink, and
+  Hexgate **blue** as the single accent (plus a green status colour).
 
 ## Getting started
 
