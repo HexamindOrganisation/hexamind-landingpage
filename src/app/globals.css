@@ -6,53 +6,49 @@
   to Tailwind color utilities (bg-background, text-foreground, text-primary,
   bg-card, text-muted-foreground, border-border, …).
 
-  Palette: warm "paper" base + plum primary (inspired by the Hexgate roadmap
-  artifact), with clay / green / blue kept as secondary + status accents.
+  Palette: a light take on Hexgate's dark UI — cool light neutrals, dark cool
+  ink, and Hexgate blue as the single accent (plus a green status colour).
 */
 :root {
   /* Core surfaces & text */
-  --background: #f1e8d6; /* warm paper */
-  --foreground: #2b2620; /* warm ink */
-  --card: #faf5ea;
-  --card-foreground: #2b2620;
-  --popover: #faf5ea;
-  --popover-foreground: #2b2620;
-  --muted: #eaddc7;
-  --muted-foreground: #6a5d4d;
-  --secondary: #eaddc7;
-  --secondary-foreground: #2b2620;
+  --background: #f7f9fc; /* light cool */
+  --foreground: #0e1626; /* dark cool ink */
+  --card: #ffffff;
+  --card-foreground: #0e1626;
+  --popover: #ffffff;
+  --popover-foreground: #0e1626;
+  --muted: #eef2f8;
+  --muted-foreground: #5a6576;
+  --secondary: #eef2f8;
+  --secondary-foreground: #0e1626;
 
-  /* Brand primary — plum (works as a fill and as text on paper) */
-  --primary: #7c4870;
-  --primary-foreground: #faf5ea;
-  --primary-deep: #63385a; /* hover / pressed */
+  /* Brand primary — Hexgate blue (works as a fill and as text on light) */
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --primary-deep: #1d4ed8; /* hover / pressed */
 
-  --destructive: #c84d62;
+  --destructive: #dc2626;
   --destructive-foreground: #ffffff;
 
-  --border: rgb(43 38 32 / 0.14);
-  --input: rgb(43 38 32 / 0.14);
-  --ring: #7c4870;
+  --border: rgb(14 22 38 / 0.1);
+  --input: rgb(14 22 38 / 0.1);
+  --ring: #2563eb;
   --radius: 1rem;
 
-  /* Dark section surface + on-dark text */
-  --ink: #221d18; /* warm near-black used for dark bands */
-  --cream: #f4ecdd;
+  /* Dark section surface + on-dark text (light theme's dark bands) */
+  --ink: #0b1220; /* dark cool navy-black, à la Hexgate */
+  --cream: #eef2f8;
 
   /* Secondary text + hairline */
-  --dim: #8a7c69;
-  --line-soft: rgb(43 38 32 / 0.08);
+  --dim: #7a8496;
+  --line-soft: rgb(14 22 38 / 0.06);
 
-  /* Plum tints for use on dark surfaces */
-  --accent-bright: #b985ae;
-  --accent-warm: #d0a7c7;
+  /* Blue tints for use on dark surfaces */
+  --accent-bright: #60a5fa;
+  --accent-warm: #93c5fd;
 
-  /* Secondary & status accents */
-  --clay: #a3542f; /* warm terracotta secondary (replaces the old cool teal) */
-  --green: #3f9166; /* allow */
-  --blue: #3d6fb0; /* wip */
-  --blue-strong: #2c5488;
-  --verm: #7c4870; /* workflow step 01 (plum) */
+  /* Status */
+  --green: #2f9e6f;
 }
 
 @theme inline {
@@ -89,11 +85,7 @@
   --color-line-soft: var(--line-soft);
   --color-accent-bright: var(--accent-bright);
   --color-accent-warm: var(--accent-warm);
-  --color-clay: var(--clay);
   --color-green: var(--green);
-  --color-blue: var(--blue);
-  --color-blue-strong: var(--blue-strong);
-  --color-verm: var(--verm);
 
   /* Type scale — sizes paired with their line-heights */
   --text-eyebrow: 0.8125rem; /* 13px */
@@ -129,7 +121,7 @@
   }
 
   ::selection {
-    background-color: rgb(124 72 112 / 0.2);
+    background-color: rgb(37 99 235 / 0.18);
   }
 
   /* Scroll-reveal: hidden only when JS is on AND motion is allowed, so no-JS
@@ -175,23 +167,15 @@
     background-position: 26px 13px;
   }
 }
-@keyframes hx-sweep {
-  0% {
-    transform: translateX(-30%);
-  }
-  100% {
-    transform: translateX(430%);
-  }
-}
 @keyframes hx-bloom {
   0%,
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgb(43 38 32 / 0);
+    box-shadow: 0 0 0 0 rgb(14 22 38 / 0);
   }
   45% {
     transform: scale(1.18);
-    box-shadow: 0 0 0 9px rgb(43 38 32 / 0.07);
+    box-shadow: 0 0 0 9px rgb(14 22 38 / 0.07);
   }
 }
 

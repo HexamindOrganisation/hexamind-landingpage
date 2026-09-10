@@ -94,7 +94,7 @@ export default async function NousRejoindrePage({
                   <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                     {s.items.map((i) => (
                       <li key={i} className="flex gap-2">
-                        <span className="text-clay">•</span>
+                        <span className="text-primary">•</span>
                         {i}
                       </li>
                     ))}

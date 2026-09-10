@@ -114,7 +114,7 @@ export default async function OffresPage({
                   <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                     {o.deliverables.map((i) => (
                       <li key={i} className="flex gap-2">
-                        <span className="text-clay">•</span>
+                        <span className="text-primary">•</span>
                         {i}
                       </li>
                     ))}

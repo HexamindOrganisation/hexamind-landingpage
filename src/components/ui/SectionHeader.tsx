@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Eyebrow + heading (+ optional intro) block used at the top of most sections.
- * `tone="dark"` switches colours for ink/clay backgrounds.
+ * `tone="dark"` switches colours for dark backgrounds.
  */
 export function SectionHeader({
   eyebrow,
