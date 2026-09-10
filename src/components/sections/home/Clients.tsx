@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
@@ -22,12 +23,13 @@ const clients: Client[] = [
 ];
 
 export function Clients() {
+  const t = useTranslations("home.clients");
   return (
     <Section>
       <SectionHeader
         align="center"
-        eyebrow="RÉFÉRENCES"
-        title="Ils nous font confiance."
+        eyebrow={t("eyebrow")}
+        title={t("title")}
       />
       <div className="mt-14 grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
         {clients.map((c) => (

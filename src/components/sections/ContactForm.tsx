@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useTranslations } from "next-intl";
 import { site } from "@/lib/site";
 
 const fieldClass =
@@ -9,6 +10,7 @@ const labelClass = "text-xs uppercase tracking-wider text-muted-foreground";
 
 /** Contact form that opens the visitor's mail client with a prefilled message. */
 export function ContactForm() {
+  const t = useTranslations("contact.form");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -19,7 +21,7 @@ export function ContactForm() {
   function onSubmit(e: FormEvent) {
     e.preventDefault();
     const body = `${form.message}\n\n— ${form.name} (${form.email})`;
-    const subject = form.subject || "Contact site Hexamind";
+    const subject = form.subject || t("defaultSubject");
     window.location.href = `mailto:${site.email}?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
@@ -33,7 +35,7 @@ export function ContactForm() {
       <div className="grid gap-5 md:grid-cols-2">
         <div>
           <label htmlFor="name" className={labelClass}>
-            Nom, Prénom
+            {t("name")}
           </label>
           <input
             id="name"
@@ -45,7 +47,7 @@ export function ContactForm() {
         </div>
         <div>
           <label htmlFor="email" className={labelClass}>
-            Email
+            {t("email")}
           </label>
           <input
             id="email"
@@ -59,7 +61,7 @@ export function ContactForm() {
       </div>
       <div className="mt-5">
         <label htmlFor="subject" className={labelClass}>
-          Sujet
+          {t("subject")}
         </label>
         <input
           id="subject"
@@ -71,7 +73,7 @@ export function ContactForm() {
       </div>
       <div className="mt-5">
         <label htmlFor="message" className={labelClass}>
-          Message
+          {t("message")}
         </label>
         <textarea
           id="message"
@@ -86,7 +88,7 @@ export function ContactForm() {
         type="submit"
         className="mt-6 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-deep"
       >
-        Envoyer le message
+        {t("submit")}
       </button>
     </form>
   );

@@ -1,7 +1,11 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 
 export function Hero() {
+  const t = useTranslations("home.hero");
+  const disciplines = t.raw("disciplines") as string[];
+
   return (
     <section
       id="top"
@@ -19,7 +23,7 @@ export function Hero() {
           WebkitMaskImage: "radial-gradient(80% 60% at 50% 0%,#000,transparent)",
         }}
       />
-      {/* Teal dotted field */}
+      {/* Clay dotted field */}
       <div
         aria-hidden
         className="pointer-events-none absolute -right-20 -top-10 h-[620px] w-[900px] opacity-70"
@@ -33,7 +37,7 @@ export function Hero() {
             "radial-gradient(58% 62% at 92% 8%,#000 0%,rgba(0,0,0,.5) 45%,transparent 78%)",
         }}
       />
-      {/* Vermilion dotted field */}
+      {/* Plum dotted field */}
       <div
         aria-hidden
         className="pointer-events-none absolute -right-10 -top-16 h-[520px] w-[760px] opacity-70"
@@ -55,8 +59,11 @@ export function Hero() {
             style={{ animation: "hx-dot 2.2s ease-in-out infinite" }}
           />
           <span>
-            IA <span className="font-bold text-foreground">déployée en production</span>,
-            pas juste un prototype
+            {t.rich("statusPill", {
+              b: (chunks) => (
+                <span className="font-bold text-foreground">{chunks}</span>
+              ),
+            })}
           </span>
         </div>
 
@@ -64,7 +71,7 @@ export function Hero() {
         <div className="mb-5 mt-[34px] flex items-center gap-4">
           <span className="h-px w-[34px] bg-primary" />
           <span className="font-mono text-[13px] font-medium tracking-[0.22em] text-primary">
-            HEXAMIND
+            {t("eyebrow")}
           </span>
         </div>
 
@@ -76,23 +83,21 @@ export function Hero() {
         </h1>
 
         <p className="mt-8 max-w-[60ch] text-[19px] leading-[1.65] text-muted-foreground">
-          Nous vous accompagnons dans vos projets de transformation IA en
-          conseil, en développement sur mesure et grâce à nos propres modules
-          d&rsquo;IA.
+          {t("lead")}
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3.5">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(15_31_74_/_0.5)] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-deep"
+            className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(43_38_32_/_0.4)] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-deep"
           >
-            Discuter de votre projet <span aria-hidden>→</span>
+            {t("ctaPrimary")} <span aria-hidden>→</span>
           </Link>
           <Link
             href="/vision"
             className="inline-flex items-center gap-2.5 rounded-xl border border-border bg-card px-[26px] py-[15px] text-base font-medium text-foreground transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-white"
           >
-            Découvrir notre vision
+            {t("ctaSecondary")}
           </Link>
           <code className="ml-1 rounded-xl border border-border bg-card px-[18px] py-[13px] font-mono text-sm text-muted-foreground">
             <span className="text-dim">$</span> pip install{" "}
@@ -101,11 +106,12 @@ export function Hero() {
         </div>
 
         <div className="mt-[34px] flex flex-wrap gap-6 font-mono text-[13px] text-dim">
-          <span>CONSEIL</span>
-          <span className="text-muted-foreground opacity-55">/</span>
-          <span>DÉVELOPPEMENT</span>
-          <span className="text-muted-foreground opacity-55">/</span>
-          <span>MODULES IA PROPRIÉTAIRES</span>
+          {disciplines.map((d, i) => (
+            <span key={d} className="flex items-center gap-6">
+              {i > 0 && <span className="text-muted-foreground opacity-55">/</span>}
+              <span>{d}</span>
+            </span>
+          ))}
         </div>
       </Container>
     </section>

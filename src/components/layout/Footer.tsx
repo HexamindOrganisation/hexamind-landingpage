@@ -1,28 +1,24 @@
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { SmartLink } from "@/components/ui/SmartLink";
 import { NewsletterForm } from "@/components/layout/NewsletterForm";
-import { footerContact, footerExplore, site } from "@/lib/site";
+import { footerContact, footerExplore, site, type NavItem } from "@/lib/site";
 
-function FooterColumn({
-  title,
-  links,
-}: {
-  title: string;
-  links: { label: string; href: string }[];
-}) {
+function FooterColumn({ title, links }: { title: string; links: NavItem[] }) {
+  const t = useTranslations("footer.links");
   return (
     <div>
       <h4 className="font-serif text-lg text-foreground">{title}</h4>
       <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
         {links.map((item) => (
-          <li key={item.href}>
+          <li key={item.key}>
             <SmartLink
               href={item.href}
               className="transition-colors hover:text-primary"
             >
-              {item.label}
+              {t(item.key)}
             </SmartLink>
           </li>
         ))}
@@ -32,6 +28,7 @@ function FooterColumn({
 }
 
 export function Footer() {
+  const t = useTranslations("footer");
   const year = new Date().getFullYear();
 
   return (
@@ -51,22 +48,21 @@ export function Footer() {
             </span>
           </Link>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-            {site.tagline} Une IA utile, maîtrisée et déployée en production, du
-            conseil aux modules logiciels.
+            {site.tagline} {t("blurb")}
           </p>
           <NewsletterForm />
         </div>
 
-        <FooterColumn title="Explorer" links={footerExplore} />
-        <FooterColumn title="Contact" links={footerContact} />
+        <FooterColumn title={t("exploreTitle")} links={footerExplore} />
+        <FooterColumn title={t("contactTitle")} links={footerContact} />
       </Container>
 
       <div className="border-t border-line-soft">
-        <Container className="flex flex-col items-center justify-between gap-3 py-6 font-mono text-[12.5px] text-dim md:flex-row">
+        <Container className="flex flex-col items-center justify-between gap-3 py-6 font-mono text-[12.5px] text-muted-foreground md:flex-row">
           <p>
-            © {year} {site.name}. Tous droits réservés.
+            © {year} {site.name}. {t("rights")}
           </p>
-          <p>{site.location}</p>
+          <p>{t("location")}</p>
         </Container>
       </div>
     </footer>

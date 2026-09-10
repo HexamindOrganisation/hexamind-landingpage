@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 function Stat({
@@ -28,6 +29,7 @@ function Stat({
 
 /** The three headline MIT figures, shown as a bordered card row. */
 export function MitStats({ className }: { className?: string }) {
+  const t = useTranslations("mitStats");
   return (
     <div
       className={cn(
@@ -36,15 +38,15 @@ export function MitStats({ className }: { className?: string }) {
       )}
     >
       <Stat
-        value="30–40 Md$"
-        caption="investis dans l'IA générative"
+        value={t("invest")}
+        caption={t("investCaption")}
         valueClassName="text-primary"
         divider
       />
-      <Stat value="5 %" caption="en tirent un retour concret" divider />
+      <Stat value={t("fivePercent")} caption={t("fivePercentCaption")} divider />
       <Stat
-        value="Vous"
-        caption="notre mission : vous mettre dans ces 5 %"
+        value={t("you")}
+        caption={t("youCaption")}
         valueClassName="text-green"
       />
     </div>

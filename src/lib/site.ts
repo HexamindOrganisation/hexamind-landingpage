@@ -1,6 +1,7 @@
 /**
  * Central site configuration.
- * Edit copy, links and contact details here rather than inside components.
+ * Link labels live in the message catalogs (src/messages/*.ts); here we keep
+ * the structure (message key + locale-agnostic href).
  */
 export const site = {
   name: "Hexamind",
@@ -14,32 +15,32 @@ export const site = {
 
 export const mailto = `mailto:${site.email}`;
 
-export type NavLink = {
-  label: string;
+export type NavItem = {
+  /** Key under the `nav` / `footer.links` message namespaces. */
+  key: string;
+  /** Locale-agnostic href — the locale prefix is added by the i18n <Link>. */
   href: string;
+  external?: boolean;
 };
 
-/** Primary navigation shown in the header. */
-export const mainNav: NavLink[] = [
-  { label: "Vision", href: "/vision" },
-  { label: "Nos offres", href: "/offres" },
-  { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-  { label: "Nous rejoindre", href: "/nous-rejoindre" },
+export const mainNav: NavItem[] = [
+  { key: "vision", href: "/vision" },
+  { key: "offres", href: "/offres" },
+  { key: "qui", href: "/qui-sommes-nous" },
+  { key: "rejoindre", href: "/nous-rejoindre" },
 ];
 
-/** Footer — "Explorer" column. */
-export const footerExplore: NavLink[] = [
-  { label: "Vision", href: "/vision" },
-  { label: "Nos offres", href: "/offres" },
-  { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-  { label: "Nous rejoindre", href: "/nous-rejoindre" },
+export const footerExplore: NavItem[] = [
+  { key: "vision", href: "/vision" },
+  { key: "offres", href: "/offres" },
+  { key: "qui", href: "/qui-sommes-nous" },
+  { key: "rejoindre", href: "/nous-rejoindre" },
 ];
 
-/** Footer — "Contact" column. */
-export const footerContact: NavLink[] = [
-  { label: "Nous contacter", href: "/contact" },
-  { label: "LinkedIn", href: site.linkedinUrl },
-  { label: "Mentions légales", href: "/mentions-legales" },
+export const footerContact: NavItem[] = [
+  { key: "contact", href: "/contact" },
+  { key: "linkedin", href: site.linkedinUrl, external: true },
+  { key: "mentions", href: "/mentions-legales" },
 ];
 
 /** True for links that leave the site (external URLs and mailto/tel). */
