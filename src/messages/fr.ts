@@ -682,7 +682,7 @@ const messages = {
       lines: [
         "Hexamind",
         "Siège social : 16 rue Saint Antoine, 75004 Paris, France",
-        "Email : hello@hexamind.ai",
+        "Email : contact@hexamind.ai",
         "Forme juridique : SAS (société par actions simplifiée)",
         "Capital social : 40 000 €",
         "RCS Paris : 947 999 793 · SIREN : 947 999 793",
@@ -695,7 +695,7 @@ const messages = {
     },
     data: {
       title: "Données personnelles",
-      body1: "Les informations recueillies via le formulaire de contact font l'objet d'un traitement destiné à répondre à vos demandes. Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de vos données. Vous pouvez exercer ces droits en écrivant à hello@hexamind.ai.",
+      body1: "Les informations recueillies via le formulaire de contact font l'objet d'un traitement destiné à répondre à vos demandes. Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification, d'effacement, d'opposition, de limitation et de portabilité de vos données. Vous pouvez exercer ces droits en écrivant à contact@hexamind.ai.",
       body2:
         "Délégué à la protection des données (DPO) : Yves Péligry. Durée de conservation des données : 12 mois.",
     },

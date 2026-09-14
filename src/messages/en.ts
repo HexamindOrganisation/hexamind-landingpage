@@ -682,7 +682,7 @@ const messages = {
       lines: [
         "Hexamind",
         "Registered office: 16 rue Saint Antoine, 75004 Paris, France",
-        "Email: hello@hexamind.ai",
+        "Email: contact@hexamind.ai",
         "Legal form: SAS (simplified joint-stock company)",
         "Share capital: €40,000",
         "RCS Paris: 947 999 793 · SIREN: 947 999 793",
@@ -695,7 +695,7 @@ const messages = {
     },
     data: {
       title: "Personal data",
-      body1: "Information collected through the contact form is processed to respond to your requests. In accordance with Regulation (EU) 2016/679 (GDPR) and the French Data Protection Act, you have the right to access, rectify, erase, object to, restrict and port your data. You can exercise these rights by writing to hello@hexamind.ai.",
+      body1: "Information collected through the contact form is processed to respond to your requests. In accordance with Regulation (EU) 2016/679 (GDPR) and the French Data Protection Act, you have the right to access, rectify, erase, object to, restrict and port your data. You can exercise these rights by writing to contact@hexamind.ai.",
       body2:
         "Data Protection Officer (DPO): Yves Péligry. Data retention period: 12 months.",
     },
