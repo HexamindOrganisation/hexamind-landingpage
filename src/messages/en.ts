@@ -214,7 +214,7 @@ const messages = {
     hero: {
       eyebrow: "HEXAMIND",
       lead:
-        "We help you deliver your AI transformation projects: consulting, custom development and our own AI modules. AI deployed in production, not just a prototype.",
+        "We help you deliver your AI transformation projects: consulting, custom development and our own AI modules. <b>AI deployed in production</b>, not just a prototype.",
       ctaPrimary: "Discuss your project",
       ctaSecondary: "Discover our vision",
       disciplines: ["CONSULTING", "DEVELOPMENT", "PROPRIETARY AI MODULES"],

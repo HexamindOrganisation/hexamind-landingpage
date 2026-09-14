@@ -214,7 +214,7 @@ const messages = {
     hero: {
       eyebrow: "HEXAMIND",
       lead:
-        "Nous vous accompagnons dans vos projets de transformation IA en conseil, en développement sur mesure et grâce à nos propres modules d'IA. De l'IA déployée en production, pas juste un prototype.",
+        "Nous vous accompagnons dans vos projets de transformation IA en conseil, en développement sur mesure et grâce à nos propres modules d'IA. De l'<b>IA déployée en production</b>, pas juste un prototype.",
       ctaPrimary: "Discuter de votre projet",
       ctaSecondary: "Découvrir notre vision",
       disciplines: ["CONSEIL", "DÉVELOPPEMENT", "MODULES IA PROPRIÉTAIRES"],

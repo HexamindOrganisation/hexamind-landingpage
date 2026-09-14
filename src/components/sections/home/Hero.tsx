@@ -68,7 +68,11 @@ export function Hero() {
         </h1>
 
         <p className="mt-8 max-w-[60ch] text-[19px] leading-[1.65] text-muted-foreground">
-          {t("lead")}
+          {t.rich("lead", {
+            b: (chunks) => (
+              <span className="font-semibold text-foreground">{chunks}</span>
+            ),
+          })}
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3.5">
