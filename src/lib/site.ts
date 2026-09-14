@@ -6,11 +6,10 @@
 export const site = {
   name: "Hexamind",
   tagline: "We make AI work for you.",
-  email: "hello@hexamind.ai",
+  email: "contact@hexamind.ai",
   location: "Paris",
   hexgateUrl: "https://hexgate.ai",
-  linkedinUrl:
-    "https://www.linkedin.com/search/results/all/?keywords=hexamind%20%3A%20l%27ia%20utile%20et%20ma%C3%AEtris%C3%A9e&origin=RICH_QUERY_SEARCH_HOME_HISTORY&heroEntityKey=urn%3Ali%3Aorganization%3A74674214",
+  linkedinUrl: "https://www.linkedin.com/company/hexamind-ai/posts/?feedView=all",
 } as const;
 
 export const mailto = `mailto:${site.email}`;
