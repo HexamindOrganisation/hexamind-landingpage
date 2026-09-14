@@ -212,10 +212,9 @@ const messages = {
 
   home: {
     hero: {
-      statusPill: "AI <b>deployed in production</b>, not just a prototype",
       eyebrow: "HEXAMIND",
       lead:
-        "We help you deliver your AI transformation projects: consulting, custom development and our own AI modules.",
+        "We help you deliver your AI transformation projects: consulting, custom development and our own AI modules. <b>AI deployed in production</b>, not just a prototype.",
       ctaPrimary: "Discuss your project",
       ctaSecondary: "Discover our vision",
       disciplines: ["CONSULTING", "DEVELOPMENT", "PROPRIETARY AI MODULES"],

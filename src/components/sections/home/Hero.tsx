@@ -52,23 +52,8 @@ export function Hero() {
       />
 
       <Container className="relative">
-        {/* Status pill */}
-        <div className="inline-flex items-center gap-2.5 rounded-full border border-border bg-card px-4 py-2 font-mono text-[13px] text-muted-foreground">
-          <span
-            className="size-[7px] flex-none rounded-full bg-green"
-            style={{ animation: "hx-dot 2.2s ease-in-out infinite" }}
-          />
-          <span>
-            {t.rich("statusPill", {
-              b: (chunks) => (
-                <span className="font-bold text-foreground">{chunks}</span>
-              ),
-            })}
-          </span>
-        </div>
-
         {/* Eyebrow */}
-        <div className="mb-5 mt-[34px] flex items-center gap-4">
+        <div className="mb-5 flex items-center gap-4">
           <span className="h-px w-[34px] bg-primary" />
           <span className="font-mono text-[13px] font-medium tracking-[0.22em] text-primary">
             {t("eyebrow")}
@@ -83,7 +68,11 @@ export function Hero() {
         </h1>
 
         <p className="mt-8 max-w-[60ch] text-[19px] leading-[1.65] text-muted-foreground">
-          {t("lead")}
+          {t.rich("lead", {
+            b: (chunks) => (
+              <span className="font-semibold text-foreground">{chunks}</span>
+            ),
+          })}
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3.5">
