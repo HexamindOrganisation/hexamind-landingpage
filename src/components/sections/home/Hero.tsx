@@ -99,10 +99,6 @@ export function Hero() {
           >
             {t("ctaSecondary")}
           </Link>
-          <code className="ml-1 rounded-xl border border-border bg-card px-[18px] py-[13px] font-mono text-sm text-muted-foreground">
-            <span className="text-dim">$</span> pip install{" "}
-            <span className="text-primary">hexgate</span>
-          </code>
         </div>
 
         <div className="mt-[34px] flex flex-wrap gap-6 font-mono text-[13px] text-dim">
