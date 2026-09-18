@@ -78,7 +78,7 @@ export default async function QuiSommesNousPage({
       {/* L'équipe */}
       <Section>
         <SectionHeader eyebrow={t("team.eyebrow")} title={t("team.title")} />
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {members.map((mbr) => (
             <div
               key={mbr.name}
