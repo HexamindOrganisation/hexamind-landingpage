@@ -521,6 +521,13 @@ const messages = {
           fullRole: "Chief Product Officer",
           bio: ["Polytechnique '15", "7 years in AI startups"],
         },
+        {
+          img: "/team/victor.png",
+          name: "Victor LUDVIG",
+          role: "AI Engineer",
+          fullRole: "AI Engineer",
+          bio: ["Centrale Lyon '20, MVA '24", "Experience in big tech & research labs"],
+        },
       ],
       note: "<b>+ 10 engineers and researchers</b> from top schools and universities.",
     },
