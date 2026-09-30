@@ -215,10 +215,14 @@ const messages = {
       eyebrow: "HEXAMIND",
       lead:
         "We help you deliver your AI transformation projects: consulting, custom development and our own AI modules. <b>AI deployed in production</b>, not just a prototype.",
-      ctaPrimary: "Discuss your project",
-      ctaSecondary: "Discover our vision",
+      ctaServicesLabel: "01 · EXPERTISE",
+      ctaServices: "Our services",
+      ctaServicesHint:
+        "From scoping to production, accelerated by our AI modules.",
+      ctaHexgateLabel: "02 · PRODUCT",
       ctaHexgate: "Discover Hexgate",
-      disciplines: ["CONSULTING", "DEVELOPMENT", "PROPRIETARY AI MODULES"],
+      ctaHexgateHint:
+        "Keep your AI agents in check: rules, monitoring and countermeasures.",
     },
     workflow: {
       eyebrow: "HOW WE WORK",

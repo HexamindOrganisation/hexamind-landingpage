@@ -6,6 +6,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Disclosure } from "@/components/ui/Disclosure";
+import { WorkflowDiagram } from "@/components/sections/WorkflowDiagram";
 import { localizedAlternates } from "@/lib/metadata";
 
 export async function generateMetadata({
@@ -70,6 +71,8 @@ export default async function OffresPage({
           {t("intro")}
         </p>
       </Section>
+
+      <WorkflowDiagram />
 
       {/* Conseil */}
       <Section id="conseil" containerClassName="py-8 md:py-12">

@@ -6,7 +6,6 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   const t = useTranslations("home.hero");
-  const disciplines = t.raw("disciplines") as string[];
 
   return (
     <section
@@ -77,37 +76,41 @@ export function Hero() {
           })}
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-3.5">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(43_38_32_/_0.4)] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-deep"
-          >
-            {t("ctaPrimary")} <span aria-hidden>→</span>
-          </Link>
-          <Link
-            href="/vision"
-            className="inline-flex items-center gap-2.5 rounded-xl border border-border bg-card px-[26px] py-[15px] text-base font-medium text-foreground transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-white"
-          >
-            {t("ctaSecondary")}
+        <div className="mt-12 grid max-w-[720px] divide-y divide-border sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+          <Link href="/offres" className="group block pb-7 sm:pb-0 sm:pr-10">
+            <span className="font-mono text-[12px] font-medium tracking-[0.2em] text-primary">
+              {t("ctaServicesLabel")}
+            </span>
+            <span className="mt-3 flex items-center gap-2.5 text-[22px] font-semibold text-foreground transition-colors group-hover:text-primary">
+              {t("ctaServices")}
+              <span aria-hidden className="text-primary transition-transform duration-200 group-hover:translate-x-1">
+                →
+              </span>
+            </span>
+            <span className="mt-2 block max-w-[32ch] text-[15px] leading-relaxed text-muted-foreground">
+              {t("ctaServicesHint")}
+            </span>
           </Link>
           <a
             href={site.hexgateUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2.5 rounded-xl bg-ink px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(11_18_32_/_0.5)] transition duration-200 hover:-translate-y-0.5 hover:bg-foreground"
+            className="group block pt-7 sm:pl-10 sm:pt-0"
           >
-            <HexgateIcon width={20} height={20} className="text-accent-bright" />
-            {t("ctaHexgate")} <span aria-hidden className="text-white/70">↗</span>
-          </a>
-        </div>
-
-        <div className="mt-[34px] flex flex-wrap gap-6 font-mono text-[13px] text-dim">
-          {disciplines.map((d, i) => (
-            <span key={d} className="flex items-center gap-6">
-              {i > 0 && <span className="text-muted-foreground opacity-55">/</span>}
-              <span>{d}</span>
+            <span className="font-mono text-[12px] font-medium tracking-[0.2em] text-primary">
+              {t("ctaHexgateLabel")}
             </span>
-          ))}
+            <span className="mt-3 flex items-center gap-2.5 text-[22px] font-semibold text-foreground transition-colors group-hover:text-primary">
+              <HexgateIcon width={24} height={24} className="text-primary" />
+              {t("ctaHexgate")}
+              <span aria-hidden className="text-primary transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                ↗
+              </span>
+            </span>
+            <span className="mt-2 block max-w-[32ch] text-[15px] leading-relaxed text-muted-foreground">
+              {t("ctaHexgateHint")}
+            </span>
+          </a>
         </div>
       </Container>
     </section>
