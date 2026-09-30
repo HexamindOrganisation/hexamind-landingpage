@@ -77,28 +77,32 @@ export function Hero() {
           })}
         </p>
 
-        <div className="mt-10 flex flex-wrap items-center gap-3.5">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(43_38_32_/_0.4)] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-deep"
-          >
-            {t("ctaPrimary")} <span aria-hidden>→</span>
-          </Link>
-          <Link
-            href="/vision"
-            className="inline-flex items-center gap-2.5 rounded-xl border border-border bg-card px-[26px] py-[15px] text-base font-medium text-foreground transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-white"
-          >
-            {t("ctaSecondary")}
-          </Link>
-          <a
-            href={site.hexgateUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2.5 rounded-xl bg-ink px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(11_18_32_/_0.5)] transition duration-200 hover:-translate-y-0.5 hover:bg-foreground"
-          >
-            <HexgateIcon width={20} height={20} className="text-accent-bright" />
-            {t("ctaHexgate")} <span aria-hidden className="text-white/70">↗</span>
-          </a>
+        <div className="mt-10 grid max-w-[640px] gap-6 sm:grid-cols-2">
+          <div>
+            <Link
+              href="/offres"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(43_38_32_/_0.4)] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-deep"
+            >
+              {t("ctaServices")} <span aria-hidden>→</span>
+            </Link>
+            <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-muted-foreground">
+              {t("ctaServicesHint")}
+            </p>
+          </div>
+          <div>
+            <a
+              href={site.hexgateUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2.5 rounded-xl bg-ink px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(11_18_32_/_0.5)] transition duration-200 hover:-translate-y-0.5 hover:bg-foreground"
+            >
+              <HexgateIcon width={20} height={20} className="text-accent-bright" />
+              {t("ctaHexgate")} <span aria-hidden className="text-white/70">↗</span>
+            </a>
+            <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-muted-foreground">
+              {t("ctaHexgateHint")}
+            </p>
+          </div>
         </div>
 
         <div className="mt-[34px] flex flex-wrap gap-6 font-mono text-[13px] text-dim">
