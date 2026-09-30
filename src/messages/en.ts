@@ -164,14 +164,14 @@ const messages = {
     pascalPreviewAlt: "Pascal preview, watch the intro video",
     hexgate: {
       name: "Hexgate",
-      tagline: "Authorization for your AI agents",
+      tagline: "Control and monitoring for your AI agents",
       bodyShort:
-        "Per-user authorization for AI agents. Every tool call is filtered by the caller's role. The policy is enforced locally, from a signed WASM bundle, and every decision is written to the audit log.",
+        "Stay in control of your AI agents. Deterministic rules govern every action they take (tools, skills, sub-agents) based on their context. Hexgate continuously monitors their behavior, detects anomalies and proposes countermeasures.",
       body:
-        "Per-user authorization for AI agents: every tool call is filtered by the caller's role, via a policy enforced locally from a signed WASM bundle, with no added latency. Every decision (allow, deny, approval required) is written to the audit log. Works with OpenAI Agents, LangChain, Google ADK and Pydantic AI.",
+        "Stay in control of your AI agents. Deterministic rules govern every action they take (access to tools, skills and sub-agents) based on the user's role and the agent's state, enforced locally with no added latency. Alongside, Hexgate continuously monitors their behavior: it detects anomalies, analyzes them and proposes countermeasures. Every decision is written to the audit log. Works with OpenAI Agents, LangChain, Google ADK and Pydantic AI.",
       benefits: [
-        "Fine-grained control: roles, argument constraints and typed decisions (allow / deny / approval-required)",
-        "Zero added latency: the policy is evaluated locally, from a signed WASM bundle",
+        "Control: deterministic rules allow, deny or require approval for every agent action",
+        "Monitoring: detection of abnormal behavior, with analysis and proposed countermeasures",
         "Traceability: every decision is logged with the caller's identity",
       ],
     },
