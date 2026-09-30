@@ -42,6 +42,23 @@ function LanguageSwitcher({ className }: { className?: string }) {
   );
 }
 
+function HexgateButton() {
+  const t = useTranslations("nav");
+  return (
+    <a
+      href={site.hexgateUrl}
+      target="_blank"
+      rel="noreferrer"
+      className="hx-grid-fill inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(46_111_237_/_0.6)] transition duration-200 hover:-translate-y-px md:px-4"
+    >
+      {t("hexgate")}
+      <span aria-hidden className="text-white/80">
+        ↗
+      </span>
+    </a>
+  );
+}
+
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -52,23 +69,27 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-line-soft bg-background/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-4">
-        <Link
-          href="/"
-          className="flex items-center gap-3 text-foreground"
-          onClick={() => setOpen(false)}
-        >
-          <Image
-            src="/logo-owl.png"
-            alt=""
-            width={30}
-            height={33}
-            priority
-            className="h-8 w-8 object-contain"
-          />
-          <span className="font-serif text-xl font-medium leading-none">
-            {site.name}
-          </span>
-        </Link>
+        <div className="flex items-center gap-3 md:gap-5">
+          <Link
+            href="/"
+            className="flex items-center gap-3 text-foreground"
+            onClick={() => setOpen(false)}
+          >
+            <Image
+              src="/logo-owl.png"
+              alt=""
+              width={30}
+              height={33}
+              priority
+              className="h-8 w-8 object-contain"
+            />
+            <span className="font-serif text-xl font-medium leading-none">
+              {site.name}
+            </span>
+          </Link>
+          <span aria-hidden className="hidden h-6 w-px bg-border md:block" />
+          <HexgateButton />
+        </div>
 
         <nav className="hidden items-center gap-8 md:flex">
           {mainNav.map((item) => (
@@ -97,14 +118,6 @@ export function Header() {
           >
             <LinkedInIcon />
           </a>
-          <a
-            href={site.hexgateUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-primary hover:bg-white hover:text-primary"
-          >
-            {t("hexgate")}
-          </a>
           <Link
             href="/contact"
             className="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(43_38_32_/_0.4)] transition duration-200 hover:-translate-y-px hover:bg-primary-deep"
@@ -129,7 +142,11 @@ export function Header() {
             aria-hidden
             className="size-6"
           >
-            {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+            {open ? (
+              <path d="M6 6l12 12M18 6L6 18" />
+            ) : (
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            )}
           </svg>
         </button>
       </Container>
