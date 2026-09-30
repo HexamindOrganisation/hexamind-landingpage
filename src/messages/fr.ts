@@ -215,13 +215,14 @@ const messages = {
       eyebrow: "HEXAMIND",
       lead:
         "Nous vous accompagnons dans vos projets de transformation IA en conseil, en développement sur mesure et grâce à nos propres modules d'IA. De l''<b>IA déployée en production</b>, pas juste un prototype.",
+      ctaServicesLabel: "01 · EXPERTISE",
       ctaServices: "Nos prestations",
       ctaServicesHint:
         "Du cadrage à la mise en production, accéléré par nos modules IA.",
+      ctaHexgateLabel: "02 · PRODUIT",
       ctaHexgate: "Découvrir Hexgate",
       ctaHexgateHint:
         "Gardez le contrôle de vos agents IA : règles, surveillance et contre-mesures.",
-      disciplines: ["CONSEIL", "DÉVELOPPEMENT", "MODULES IA PROPRIÉTAIRES"],
     },
     workflow: {
       eyebrow: "NOTRE FAÇON DE TRAVAILLER",
