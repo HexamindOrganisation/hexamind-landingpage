@@ -56,3 +56,32 @@ export function MapPinIcon(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+
+/** Hexgate mark (from hexgate.ai), drawn in currentColor for use on fills. */
+export function HexgateIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 32 32"
+      fill="none"
+      aria-hidden
+      width={18}
+      height={18}
+      {...props}
+    >
+      <path
+        d="M16 2.5 27.5 9v14L16 29.5 4.5 23V9L16 2.5Z"
+        stroke="currentColor"
+        strokeWidth={2.2}
+        fill="currentColor"
+        fillOpacity={0.18}
+      />
+      <path
+        d="M16 9.5 21.5 12.7v6.6L16 22.5 10.5 19.3v-6.6L16 9.5Z"
+        stroke="currentColor"
+        strokeOpacity={0.85}
+        strokeWidth={1.8}
+      />
+      <circle cx="16" cy="16" r="2.3" fill="currentColor" />
+    </svg>
+  );
+}

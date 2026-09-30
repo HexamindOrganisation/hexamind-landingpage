@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/Container";
-import { LinkedInIcon } from "@/components/ui/icons";
+import { HexgateIcon, LinkedInIcon } from "@/components/ui/icons";
 import { mainNav, site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -51,6 +51,7 @@ function HexgateButton() {
       rel="noreferrer"
       className="hx-grid-fill inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm font-semibold text-white shadow-[0_6px_18px_-8px_rgb(46_111_237_/_0.6)] transition duration-200 hover:-translate-y-px md:px-4"
     >
+      <HexgateIcon className="-ml-1" />
       {t("hexgate")}
       <span aria-hidden className="text-white/80">
         ↗
