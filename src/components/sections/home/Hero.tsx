@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
+import { HexgateIcon } from "@/components/ui/icons";
+import { site } from "@/lib/site";
 
 export function Hero() {
   const t = useTranslations("home.hero");
@@ -88,6 +90,15 @@ export function Hero() {
           >
             {t("ctaSecondary")}
           </Link>
+          <a
+            href={site.hexgateUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2.5 rounded-xl bg-ink px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(11_18_32_/_0.5)] transition duration-200 hover:-translate-y-0.5 hover:bg-foreground"
+          >
+            <HexgateIcon width={20} height={20} className="text-accent-bright" />
+            {t("ctaHexgate")} <span aria-hidden className="text-white/70">↗</span>
+          </a>
         </div>
 
         <div className="mt-[34px] flex flex-wrap gap-6 font-mono text-[13px] text-dim">
