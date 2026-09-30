@@ -154,7 +154,7 @@ const messages = {
     eyebrow: "MODULES IA",
     title: "Nos briques logicielles propriétaires.",
     badge: "OPEN SOURCE · MIT",
-    cloudButton: "Try the cloud version →",
+    cloudButton: "Essayer la version cloud →",
     githubButton: "GitHub",
     demoButton: "Demander une démo",
     dashboardAlt:
@@ -164,14 +164,14 @@ const messages = {
     pascalPreviewAlt: "Aperçu de Pascal, voir la vidéo de présentation",
     hexgate: {
       name: "Hexgate",
-      tagline: "L'autorisation de vos agents IA",
+      tagline: "Le contrôle et la surveillance de vos agents IA",
       bodyShort:
-        "Autorisation par utilisateur pour les agents IA. Chaque appel d'outil est filtré selon le rôle de l'appelant. La policy est appliquée en local, depuis un bundle WASM signé, et chaque décision part dans le journal d'audit.",
+        "Gardez la maîtrise de vos agents IA. Des règles déterministes contrôlent chacune de leurs actions (outils, skills, sous-agents) selon leur contexte. Hexgate surveille en continu leur comportement, détecte les anomalies et propose des contre-mesures.",
       body:
-        "Autorisation par utilisateur pour les agents IA : chaque appel d'outil est filtré selon le rôle de l'appelant, via une policy appliquée en local depuis un bundle WASM signé, sans latence ajoutée. Chaque décision (autoriser, refuser, validation requise) part dans le journal d'audit. Compatible OpenAI Agents, LangChain, Google ADK et Pydantic AI.",
+        "Gardez la maîtrise de vos agents IA. Des règles déterministes contrôlent chacune de leurs actions (accès aux outils, aux skills, aux sous-agents) selon le rôle de l'utilisateur et l'état de l'agent, appliquées en local sans latence ajoutée. En parallèle, Hexgate surveille en continu leur comportement : il détecte les anomalies, les analyse et propose des contre-mesures. Chaque décision est tracée dans le journal d'audit. Compatible OpenAI Agents, LangChain, Google ADK et Pydantic AI.",
       benefits: [
-        "Contrôle fin : rôles, contraintes sur les arguments et décisions typées (allow / deny / approval-required)",
-        "Zéro latence ajoutée : la policy est évaluée en local, depuis un bundle WASM signé",
+        "Contrôle : des règles déterministes autorisent, refusent ou soumettent à validation chaque action de l'agent",
+        "Surveillance : détection des comportements anormaux, analyse et contre-mesures proposées",
         "Traçabilité : chaque décision est journalisée avec l'identité de l'appelant",
       ],
     },
