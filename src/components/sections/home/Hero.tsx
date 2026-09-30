@@ -77,32 +77,57 @@ export function Hero() {
           })}
         </p>
 
-        <div className="mt-10 grid max-w-[640px] gap-6 sm:grid-cols-2">
-          <div>
-            <Link
-              href="/offres"
-              className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(43_38_32_/_0.4)] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-deep"
-            >
-              {t("ctaServices")} <span aria-hidden>→</span>
-            </Link>
-            <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-muted-foreground">
+        <div className="mt-10 grid max-w-[720px] gap-4 sm:grid-cols-2">
+          <Link
+            href="/offres"
+            className="group relative flex flex-col overflow-hidden rounded-2xl bg-primary p-6 text-white shadow-[0_18px_40px_-20px_rgb(37_99_235_/_0.7)] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-deep"
+          >
+            <span className="flex items-center justify-between gap-4">
+              <span className="text-lg font-semibold">{t("ctaServices")}</span>
+              <span
+                aria-hidden
+                className="flex size-8 flex-none items-center justify-center rounded-full bg-white/15 transition duration-200 group-hover:translate-x-0.5 group-hover:bg-white/25"
+              >
+                →
+              </span>
+            </span>
+            <span className="mt-2 text-sm leading-relaxed text-white/80">
               {t("ctaServicesHint")}
-            </p>
-          </div>
-          <div>
-            <a
-              href={site.hexgateUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2.5 rounded-xl bg-ink px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(11_18_32_/_0.5)] transition duration-200 hover:-translate-y-0.5 hover:bg-foreground"
-            >
-              <HexgateIcon width={20} height={20} className="text-accent-bright" />
-              {t("ctaHexgate")} <span aria-hidden className="text-white/70">↗</span>
-            </a>
-            <p className="mt-3 max-w-[34ch] text-sm leading-relaxed text-muted-foreground">
+            </span>
+          </Link>
+          <a
+            href={site.hexgateUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="group relative flex flex-col overflow-hidden rounded-2xl bg-ink p-6 text-white shadow-[0_18px_40px_-20px_rgb(11_18_32_/_0.8)] transition duration-200 hover:-translate-y-0.5"
+          >
+            <span
+              aria-hidden
+              className="pointer-events-none absolute inset-0 opacity-60 transition-opacity duration-200 group-hover:opacity-100"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgb(96 165 250 / 0.12) 1px,transparent 1px),linear-gradient(90deg,rgb(96 165 250 / 0.12) 1px,transparent 1px)",
+                backgroundSize: "16px 16px",
+                maskImage: "radial-gradient(120% 120% at 100% 0%,#000,transparent 75%)",
+                WebkitMaskImage: "radial-gradient(120% 120% at 100% 0%,#000,transparent 75%)",
+              }}
+            />
+            <span className="relative flex items-center justify-between gap-4">
+              <span className="flex items-center gap-2.5 text-lg font-semibold">
+                <HexgateIcon width={22} height={22} className="text-accent-bright" />
+                {t("ctaHexgate")}
+              </span>
+              <span
+                aria-hidden
+                className="flex size-8 flex-none items-center justify-center rounded-full bg-white/10 transition duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:bg-white/20"
+              >
+                ↗
+              </span>
+            </span>
+            <span className="relative mt-2 text-sm leading-relaxed text-white/70">
               {t("ctaHexgateHint")}
-            </p>
-          </div>
+            </span>
+          </a>
         </div>
 
         <div className="mt-[34px] flex flex-wrap gap-6 font-mono text-[13px] text-dim">
