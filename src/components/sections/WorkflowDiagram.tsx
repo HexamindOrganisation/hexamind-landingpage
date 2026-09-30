@@ -18,7 +18,7 @@ export function WorkflowDiagram() {
   const schools = t.raw("schools") as string[];
 
   return (
-    <section className="px-0 pb-28 pt-5">
+    <section className="px-0 pb-12 pt-5">
       <Reveal>
         <Container>
           <div
