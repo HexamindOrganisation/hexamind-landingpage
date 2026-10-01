@@ -1,7 +1,10 @@
 const messages = {
   meta: {
+    title: "Hexamind — Hexgate, le contrôle et la surveillance de vos agents IA",
     description:
-      "Hexamind vous accompagne dans vos projets de transformation IA : conseil, développement sur mesure et modules d'IA propriétaires (Hexgate, Pascal, zeAgent, Fastprop).",
+      "Hexgate, par Hexamind, contrôle chaque action de vos agents IA avec des règles déterministes, surveille leur comportement et trace chaque décision. Open source. Et du conseil et développement IA sur mesure à Paris.",
+    hexgate:
+      "Contrôle et surveillance open source des agents IA : règles déterministes sur chaque action, détection d'anomalies et journal d'audit complet.",
     vision: {
       title: "Vision",
       description:
@@ -10,7 +13,7 @@ const messages = {
     offres: {
       title: "Nos offres",
       description:
-        "Conseil, développement et modules IA : nos offres pour faire de l'IA un succès dans votre organisation.",
+        "Hexgate et nos modules IA, conseil et développement sur mesure : nos offres pour mettre l'IA en production dans votre organisation.",
     },
     qui: {
       title: "Qui sommes-nous",
@@ -162,6 +165,7 @@ const messages = {
     editorAlt:
       "Hexgate — éditeur de politique : capabilities, contraintes sur les arguments et permissions résolues par rôle",
     pascalPreviewAlt: "Aperçu de Pascal, voir la vidéo de présentation",
+    codeComment: "↳ chaque appel d’outil passe par la policy",
     hexgate: {
       name: "Hexgate",
       tagline: "Le contrôle et la surveillance de vos agents IA",
@@ -212,68 +216,37 @@ const messages = {
 
   home: {
     hero: {
-      eyebrow: "HEXAMIND",
+      eyebrow: "HEXGATE · PAR HEXAMIND",
+      h1: "Gardez le <hl>contrôle</hl> de vos agents IA.",
       lead:
-        "Nous vous accompagnons dans vos projets de transformation IA en conseil, en développement sur mesure et grâce à nos propres modules d'IA. De l''<b>IA déployée en production</b>, pas juste un prototype.",
-      ctaPrimary: "Discuter de votre projet",
-      ctaSecondary: "Connaître notre vision",
-      ctaHexgate: "Découvrir Hexgate",
-      disciplines: ["CONSEIL", "DÉVELOPPEMENT", "MODULES IA PROPRIÉTAIRES"],
+        "Hexgate applique des règles déterministes à chaque action de vos agents, surveille leur comportement et trace chaque décision. Conçu par Hexamind, qui accompagne aussi les entreprises pour mettre l''<b>IA en production</b>, en conseil et en développement sur mesure.",
+      ctaHexgate: "Essayer Hexgate",
+      ctaPrimary: "Nous contacter",
+      worksWith: "COMPATIBLE AVEC",
+      frameworks: ["OpenAI Agents", "LangChain", "Google ADK", "Pydantic AI"],
+      license: "OPEN SOURCE · MIT",
     },
-    workflow: {
-      eyebrow: "NOTRE FAÇON DE TRAVAILLER",
-      subtitle: "trois temps, sur vos données",
-      steps: [
-        { n: "01", word: "CADRER" },
-        { n: "02", word: "CONSTRUIRE" },
-        { n: "03", word: "INDUSTRIALISER" },
-      ],
-      enjeu: "votre enjeu métier",
-      production: "en production",
-      columns: [
-        {
-          title: "Cas d'usage priorisés, ROI estimé",
-          body: "On cartographie les cas d'usage et on chiffre le gain attendu avec vous. Vos équipes techniques ne sont mobilisées que pour extraire les données.",
-        },
-        {
-          title: "Du MVP à la mise en production",
-          body: "Maquettes sur données réelles en cycles courts, puis développement sur mesure jusqu'au déploiement.",
-        },
-        {
-          title: "Droits, rôles et audit",
-          body: "Nos modules prennent le relais : Hexgate pour l'autorisation et la traçabilité, Pascal, zeAgent et Fastprop pour le reste.",
-        },
-      ],
-      credibility: "DES ÉQUIPES QUI ONT DÉJÀ LIVRÉ",
+    hexgate: {
+      eyebrow: "NOTRE PRODUIT",
+      title: "La couche de contrôle et de surveillance de vos agents IA.",
+    },
+    team: {
+      eyebrow: "L'ÉQUIPE",
+      title: "Conçu par une équipe qui met l'IA en production.",
       schools: ["Polytechnique", "Stanford", "Supaéro", "Accenture", "Sopra Steria"],
       doctorats: "+ doctorats",
+      more: "Découvrir l'équipe",
     },
-    conseil: {
-      eyebrow: "CONSEIL",
-      title: "Trois façons de démarrer.",
+    beyond: {
+      eyebrow: "AU-DELÀ D'HEXGATE",
+      title: "Nous menons aussi vos projets IA de bout en bout.",
       intro:
-        "Cadrer, acculturer, prototyper : le point d'entrée dépend de votre maturité.",
-      more: "En savoir plus",
-      cards: [
-        {
-          id: "startai",
-          name: "STARTAI",
-          tagline: "AUDIT IA & DIAGNOSTIC DE MATURITÉ",
-          desc: "L'étape préalable indispensable pour prioriser les initiatives à fort ROI, éviter les investissements inutiles et poser des bases solides.",
-        },
-        {
-          id: "boostai",
-          name: "BOOSTAI",
-          tagline: "ACCULTURATION & FORMATION IA",
-          desc: "Trois parcours progressifs selon votre maturité, pour rendre vos équipes autonomes avec l'IA dès le premier jour.",
-        },
-        {
-          id: "buildai",
-          name: "BUILDAI",
-          tagline: "PROTOTYPAGE & EXPÉRIMENTATION",
-          desc: "Transforme votre cas d'usage prioritaire en solution concrète, testée par vos utilisateurs et mesurée en euros.",
-        },
-      ],
+        "Cadrage, développement sur mesure et autres briques logicielles : notre équipe mène vos cas d'usage de l'idée à la production.",
+      more: "Voir nos offres",
+      conseil: "Conseil",
+      developpement: "Développement sur mesure",
+      developpementBody: "Quatre modes d'engagement, du forfait à l'assistance technique.",
+      modules: "Autres modules IA",
     },
     clients: {
       eyebrow: "RÉFÉRENCES",
@@ -383,11 +356,39 @@ const messages = {
 
   offres: {
     eyebrow: "NOS OFFRES",
-    h1: "Du conseil au déploiement, en passant par nos modules IA.",
+    h1: "Nos modules IA, du conseil et du développement, jusqu'à la production.",
     intro:
       "Trois familles d'offres complémentaires, à activer indépendamment ou en combinaison selon vos enjeux.",
+    workflow: {
+      eyebrow: "NOTRE FAÇON DE TRAVAILLER",
+      subtitle: "trois temps, sur vos données",
+      steps: [
+        { n: "01", word: "CADRER" },
+        { n: "02", word: "CONSTRUIRE" },
+        { n: "03", word: "INDUSTRIALISER" },
+      ],
+      enjeu: "votre enjeu métier",
+      production: "en production",
+      columns: [
+        {
+          title: "Cas d'usage priorisés, ROI estimé",
+          body: "On cartographie les cas d'usage et on chiffre le gain attendu avec vous. Vos équipes techniques ne sont mobilisées que pour extraire les données.",
+        },
+        {
+          title: "Du MVP à la mise en production",
+          body: "Maquettes sur données réelles en cycles courts, puis développement sur mesure jusqu'au déploiement.",
+        },
+        {
+          title: "Droits, rôles et audit",
+          body: "Nos modules prennent le relais : Hexgate pour l'autorisation et la traçabilité, Pascal, zeAgent et Fastprop pour le reste.",
+        },
+      ],
+    },
     conseil: {
       eyebrow: "CONSEIL",
+      title: "Trois façons de démarrer.",
+      intro:
+        "Cadrer, acculturer, prototyper : le point d'entrée dépend de votre maturité.",
       more: "En savoir plus",
       contenu: "Le contenu",
       livrables: "Les livrables",

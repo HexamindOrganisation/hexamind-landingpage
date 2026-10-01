@@ -12,13 +12,12 @@ const stepStyles = [
 ];
 
 export function WorkflowDiagram() {
-  const t = useTranslations("home.workflow");
+  const t = useTranslations("offres.workflow");
   const steps = t.raw("steps") as { n: string; word: string }[];
   const columns = t.raw("columns") as { title: string; body: string }[];
-  const schools = t.raw("schools") as string[];
 
   return (
-    <section className="px-0 pb-28 pt-5">
+    <section className="px-0 pb-16 pt-5">
       <Reveal>
         <Container>
           <div
@@ -151,26 +150,6 @@ export function WorkflowDiagram() {
                     </p>
                   </div>
                 ))}
-              </div>
-            </div>
-
-            {/* Credibility row */}
-            <div className="relative mt-10 border-t border-line-soft pt-[26px] text-center">
-              <div className="font-mono text-[11px] tracking-[0.2em] text-dim">
-                {t("credibility")}
-              </div>
-              <div className="mt-5 flex flex-wrap justify-center gap-3">
-                {schools.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-xl border border-border bg-card px-5 py-[11px] text-[14.5px] text-muted-foreground"
-                  >
-                    {s}
-                  </span>
-                ))}
-                <span className="rounded-xl border border-dashed border-border px-5 py-[11px] font-mono text-[13px] text-dim">
-                  {t("doctorats")}
-                </span>
               </div>
             </div>
           </div>

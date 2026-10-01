@@ -1,7 +1,10 @@
 const messages = {
   meta: {
+    title: "Hexamind — Hexgate, control and monitoring for your AI agents",
     description:
-      "Hexamind helps you deliver your AI transformation projects: consulting, custom development and proprietary AI modules (Hexgate, Pascal, zeAgent, Fastprop).",
+      "Hexgate, by Hexamind, governs every action your AI agents take with deterministic rules, monitors their behavior and logs every decision. Open source. Plus AI consulting and custom development in Paris.",
+    hexgate:
+      "Open-source control and monitoring for AI agents: deterministic rules on every action, anomaly detection and a full audit log.",
     vision: {
       title: "Vision",
       description:
@@ -10,7 +13,7 @@ const messages = {
     offres: {
       title: "Our offerings",
       description:
-        "Consulting, development and AI modules: our offerings to make AI a success in your organization.",
+        "Hexgate and our AI modules, consulting and custom development: our offerings to take AI to production in your organization.",
     },
     qui: {
       title: "About us",
@@ -162,6 +165,7 @@ const messages = {
     editorAlt:
       "Hexgate — policy editor: capabilities, argument constraints and permissions resolved by role",
     pascalPreviewAlt: "Pascal preview, watch the intro video",
+    codeComment: "↳ every tool call goes through the policy",
     hexgate: {
       name: "Hexgate",
       tagline: "Control and monitoring for your AI agents",
@@ -212,68 +216,37 @@ const messages = {
 
   home: {
     hero: {
-      eyebrow: "HEXAMIND",
+      eyebrow: "HEXGATE · BY HEXAMIND",
+      h1: "Keep <hl>control</hl> of your AI agents.",
       lead:
-        "We help you deliver your AI transformation projects: consulting, custom development and our own AI modules. <b>AI deployed in production</b>, not just a prototype.",
-      ctaPrimary: "Discuss your project",
-      ctaSecondary: "Discover our vision",
-      ctaHexgate: "Discover Hexgate",
-      disciplines: ["CONSULTING", "DEVELOPMENT", "PROPRIETARY AI MODULES"],
+        "Hexgate applies deterministic rules to every action your agents take, monitors their behavior and logs every decision. Built by Hexamind, which also helps companies take <b>AI to production</b> through consulting and custom development.",
+      ctaHexgate: "Try Hexgate",
+      ctaPrimary: "Talk to us",
+      worksWith: "WORKS WITH",
+      frameworks: ["OpenAI Agents", "LangChain", "Google ADK", "Pydantic AI"],
+      license: "OPEN SOURCE · MIT",
     },
-    workflow: {
-      eyebrow: "HOW WE WORK",
-      subtitle: "three steps, on your data",
-      steps: [
-        { n: "01", word: "FRAME" },
-        { n: "02", word: "BUILD" },
-        { n: "03", word: "INDUSTRIALIZE" },
-      ],
-      enjeu: "your business challenge",
-      production: "in production",
-      columns: [
-        {
-          title: "Prioritized use cases, estimated ROI",
-          body: "We map the use cases and quantify the expected gains with you. Your technical teams are only needed to extract the data.",
-        },
-        {
-          title: "From MVP to production",
-          body: "Mock-ups on real data in short cycles, then custom development through to deployment.",
-        },
-        {
-          title: "Rights, roles and audit",
-          body: "Our modules take over: Hexgate for authorization and traceability, Pascal, zeAgent and Fastprop for the rest.",
-        },
-      ],
-      credibility: "TEAMS THAT HAVE ALREADY DELIVERED",
+    hexgate: {
+      eyebrow: "OUR PRODUCT",
+      title: "The control and monitoring layer for your AI agents.",
+    },
+    team: {
+      eyebrow: "THE TEAM",
+      title: "Built by a team that ships AI to production.",
       schools: ["Polytechnique", "Stanford", "Supaéro", "Accenture", "Sopra Steria"],
       doctorats: "+ PhDs",
+      more: "Meet the team",
     },
-    conseil: {
-      eyebrow: "CONSULTING",
-      title: "Three ways to start.",
+    beyond: {
+      eyebrow: "BEYOND HEXGATE",
+      title: "We also deliver your AI projects end to end.",
       intro:
-        "Frame, upskill, prototype: your entry point depends on your maturity.",
-      more: "Learn more",
-      cards: [
-        {
-          id: "startai",
-          name: "STARTAI",
-          tagline: "AI AUDIT & MATURITY DIAGNOSTIC",
-          desc: "The essential first step to prioritize high-ROI initiatives, avoid wasted investment and lay solid foundations.",
-        },
-        {
-          id: "boostai",
-          name: "BOOSTAI",
-          tagline: "AI ENABLEMENT & TRAINING",
-          desc: "Three progressive tracks based on your maturity, to make your teams self-sufficient with AI from day one.",
-        },
-        {
-          id: "buildai",
-          name: "BUILDAI",
-          tagline: "PROTOTYPING & EXPERIMENTATION",
-          desc: "Turns your priority use case into a concrete solution, tested by your users and measured in euros.",
-        },
-      ],
+        "Framing, custom development and other software building blocks: our team takes your use cases from idea to production.",
+      more: "See our offerings",
+      conseil: "Consulting",
+      developpement: "Custom development",
+      developpementBody: "Four ways to engage, from fixed price to staff augmentation.",
+      modules: "Other AI modules",
     },
     clients: {
       eyebrow: "REFERENCES",
@@ -383,11 +356,39 @@ const messages = {
 
   offres: {
     eyebrow: "OUR OFFERINGS",
-    h1: "From consulting to deployment, by way of our AI modules.",
+    h1: "Our AI modules, consulting and development, through to production.",
     intro:
       "Three complementary families of offerings, to activate on their own or together depending on your needs.",
+    workflow: {
+      eyebrow: "HOW WE WORK",
+      subtitle: "three steps, on your data",
+      steps: [
+        { n: "01", word: "FRAME" },
+        { n: "02", word: "BUILD" },
+        { n: "03", word: "INDUSTRIALIZE" },
+      ],
+      enjeu: "your business challenge",
+      production: "in production",
+      columns: [
+        {
+          title: "Prioritized use cases, estimated ROI",
+          body: "We map the use cases and quantify the expected gains with you. Your technical teams are only needed to extract the data.",
+        },
+        {
+          title: "From MVP to production",
+          body: "Mock-ups on real data in short cycles, then custom development through to deployment.",
+        },
+        {
+          title: "Rights, roles and audit",
+          body: "Our modules take over: Hexgate for authorization and traceability, Pascal, zeAgent and Fastprop for the rest.",
+        },
+      ],
+    },
     conseil: {
       eyebrow: "CONSULTING",
+      title: "Three ways to start.",
+      intro:
+        "Frame, upskill, prototype: your entry point depends on your maturity.",
       more: "Learn more",
       contenu: "What's included",
       livrables: "Deliverables",

@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   const t = useTranslations("home.hero");
-  const disciplines = t.raw("disciplines") as string[];
+  const frameworks = t.raw("frameworks") as string[];
 
   return (
     <section
@@ -63,10 +63,12 @@ export function Hero() {
         </div>
 
         <h1
-          className="max-w-[16ch] text-balance font-serif font-bold tracking-[-0.01em] text-foreground"
-          style={{ fontSize: "clamp(52px,7.2vw,100px)", lineHeight: 1 }}
+          className="max-w-[18ch] text-balance font-serif font-bold tracking-[-0.01em] text-foreground"
+          style={{ fontSize: "clamp(40px,6.6vw,92px)", lineHeight: 1 }}
         >
-          We make <span className="text-primary">AI work</span> for you.
+          {t.rich("h1", {
+            hl: (chunks) => <span className="text-primary">{chunks}</span>,
+          })}
         </h1>
 
         <p className="mt-8 max-w-[60ch] text-[19px] leading-[1.65] text-muted-foreground">
@@ -78,18 +80,6 @@ export function Hero() {
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-3.5">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2.5 rounded-xl bg-primary px-[26px] py-[15px] text-base font-semibold text-white shadow-[0_10px_26px_-10px_rgb(43_38_32_/_0.4)] transition duration-200 hover:-translate-y-0.5 hover:bg-primary-deep"
-          >
-            {t("ctaPrimary")} <span aria-hidden>→</span>
-          </Link>
-          <Link
-            href="/vision"
-            className="inline-flex items-center gap-2.5 rounded-xl border border-border bg-card px-[26px] py-[15px] text-base font-medium text-foreground transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-white"
-          >
-            {t("ctaSecondary")}
-          </Link>
           <a
             href={site.hexgateUrl}
             target="_blank"
@@ -99,15 +89,22 @@ export function Hero() {
             <HexgateIcon width={20} height={20} className="text-accent-bright" />
             {t("ctaHexgate")} <span aria-hidden className="text-white/70">↗</span>
           </a>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2.5 rounded-xl border border-border bg-card px-[26px] py-[15px] text-base font-medium text-foreground transition duration-200 hover:-translate-y-0.5 hover:border-ink hover:bg-white"
+          >
+            {t("ctaPrimary")} <span aria-hidden>→</span>
+          </Link>
         </div>
 
-        <div className="mt-[34px] flex flex-wrap gap-6 font-mono text-[13px] text-dim">
-          {disciplines.map((d, i) => (
-            <span key={d} className="flex items-center gap-6">
-              {i > 0 && <span className="text-muted-foreground opacity-55">/</span>}
-              <span>{d}</span>
-            </span>
+        <div className="mt-[34px] flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[13px] text-dim">
+          <span className="text-muted-foreground">{t("worksWith")}</span>
+          {frameworks.map((f) => (
+            <span key={f}>{f}</span>
           ))}
+          <span className="rounded-md border border-border px-2.5 py-[5px] text-[11px] tracking-[0.12em] text-muted-foreground">
+            {t("license")}
+          </span>
         </div>
       </Container>
     </section>
