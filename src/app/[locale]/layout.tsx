@@ -36,7 +36,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  const title = `${site.name} — ${site.tagline}`;
+  const title = t("title");
   const description = t("description");
 
   return {
@@ -88,12 +88,24 @@ export default async function LocaleLayout({
         logo: "https://hexamind.ai/logo-owl.png",
         description: t("description"),
         email: site.email,
-        sameAs: [site.linkedinUrl],
+        sameAs: [site.linkedinUrl, site.githubUrl],
         address: {
           "@type": "PostalAddress",
           addressLocality: "Paris",
           addressCountry: "FR",
         },
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": `${site.hexgateUrl}/#software`,
+        name: "Hexgate",
+        url: site.hexgateUrl,
+        sameAs: [site.hexgateRepoUrl],
+        applicationCategory: "DeveloperApplication",
+        operatingSystem: "Cross-platform",
+        license: "https://opensource.org/licenses/MIT",
+        description: t("hexgate"),
+        publisher: { "@id": "https://hexamind.ai/#organization" },
       },
       {
         "@type": "WebSite",

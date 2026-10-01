@@ -9,6 +9,8 @@ export const site = {
   email: "contact@hexamind.ai",
   location: "Paris",
   hexgateUrl: "https://hexgate.ai",
+  hexgateRepoUrl: "https://github.com/HexamindOrganisation/hexgate",
+  githubUrl: "https://github.com/HexamindOrganisation",
   linkedinUrl: "https://www.linkedin.com/company/hexamind-ai/posts/?feedView=all",
 } as const;
 

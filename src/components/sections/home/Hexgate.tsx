@@ -4,42 +4,33 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { site } from "@/lib/site";
 
-const PROPRIETARY = ["pascal", "zeagent", "fastprop"] as const;
-
-function ModuleName({ name, tagline }: { name: string; tagline: string }) {
-  return (
-    <>
-      <h3 className="font-serif text-[44px] font-semibold leading-none text-cream">
-        {name}
-      </h3>
-      <div className="mt-3.5 text-[13px] font-medium uppercase tracking-[0.09em] text-accent-warm">
-        {tagline}
-      </div>
-    </>
-  );
-}
-
-export function Modules() {
+export function Hexgate() {
   const t = useTranslations("modules");
+  const h = useTranslations("home.hexgate");
+  const benefits = t.raw("hexgate.benefits") as string[];
+  const steps = t.raw("hexgate.steps") as { name: string; body: string }[];
 
   return (
-    <section id="modules" className="bg-ink py-24 md:py-28">
+    <section id="hexgate" className="scroll-mt-20 bg-ink py-24 md:py-28">
       <Reveal>
         <Container>
-          <Eyebrow tone="cream">{t("eyebrow")}</Eyebrow>
-          <h2 className="mt-[26px] font-serif text-h2 font-semibold leading-[1.05] text-cream">
-            {t("title")}
+          <Eyebrow tone="cream">{h("eyebrow")}</Eyebrow>
+          <h2 className="mt-[26px] max-w-[24ch] text-balance font-serif text-h2 font-semibold leading-[1.05] text-cream">
+            {h("title")}
           </h2>
 
           <div className="mt-12">
-            {/* Hexgate — featured, with code sample + product showcase */}
+            {/* Product pitch, code sample + product showcase */}
             <div className="flex flex-wrap gap-x-14 gap-y-8 border-t border-cream/20 py-13">
               <div className="min-w-0 flex-[1_1_220px]">
-                <ModuleName
-                  name={t("hexgate.name")}
-                  tagline={t("hexgate.tagline")}
-                />
+                <h3 className="font-serif text-[44px] font-semibold leading-none text-cream">
+                  {t("hexgate.name")}
+                </h3>
+                <div className="mt-3.5 text-[13px] font-medium uppercase tracking-[0.09em] text-accent-warm">
+                  {t("hexgate.tagline")}
+                </div>
                 <span className="mt-4 inline-block rounded-md border border-cream/35 px-2.5 py-[5px] font-mono text-[10.5px] font-medium tracking-[0.12em] text-cream/80">
                   {t("badge")}
                 </span>
@@ -48,6 +39,14 @@ export function Modules() {
                 <p className="max-w-[66ch] text-body-lg leading-[1.7] text-cream/85">
                   {t("hexgate.bodyShort")}
                 </p>
+                <ul className="mt-6 flex flex-col gap-3 text-base text-cream/80">
+                  {benefits.map((b) => (
+                    <li key={b} className="flex gap-3.5">
+                      <span className="text-accent-warm">→</span>
+                      {b}
+                    </li>
+                  ))}
+                </ul>
 
                 <div
                   className="mt-6 overflow-hidden rounded-xl border border-cream/20"
@@ -68,9 +67,7 @@ export function Modules() {
                     {"\n\n"}runner ={" "}
                     <span className="text-[#8FC0FF]">HexgateRunner</span>()
                     {"\n"}
-                    <span className="text-cream/50">
-                      ↳ chaque appel d&rsquo;outil passe par la policy
-                    </span>
+                    <span className="text-cream/50">{t("codeComment")}</span>
                   </pre>
                 </div>
 
@@ -97,7 +94,7 @@ export function Modules() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a
-                    href="https://hexgate.ai"
+                    href={site.hexgateUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-full bg-primary px-[22px] py-3 text-[15px] font-semibold text-white transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_-14px_rgb(0_0_0_/_0.6)]"
@@ -105,7 +102,7 @@ export function Modules() {
                     {t("cloudButton")}
                   </a>
                   <a
-                    href="https://github.com/HexamindOrganisation/hexgate"
+                    href={site.hexgateRepoUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="rounded-full border border-cream/35 px-[22px] py-3 text-[15px] text-cream transition-colors hover:border-cream hover:bg-cream/10"
@@ -116,36 +113,27 @@ export function Modules() {
               </div>
             </div>
 
-            {/* Proprietary modules */}
-            {PROPRIETARY.map((key) => {
-              const benefits = t.raw(`${key}.benefits`) as string[];
-              return (
-                <div
-                  key={key}
-                  className="flex flex-wrap gap-x-14 gap-y-8 border-t border-cream/20 py-13"
-                >
-                  <div className="min-w-0 flex-[1_1_220px]">
-                    <ModuleName
-                      name={t(`${key}.name`)}
-                      tagline={t(`${key}.tagline`)}
-                    />
-                  </div>
-                  <div className="min-w-0 flex-[3_1_380px]">
-                    <p className="max-w-[66ch] text-body-lg leading-[1.7] text-cream/85">
-                      {t(`${key}.body`)}
+            {/* Define → Fetch → Enforce → Report → Improve, as on hexgate.ai */}
+            <div className="border-t border-cream/20 py-11">
+              <h3 className="font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-cream/70">
+                {h("stepsTitle")}
+              </h3>
+              <ol className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+                {steps.map((step, i) => (
+                  <li key={step.name}>
+                    <span className="font-mono text-[13px] text-accent-warm">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div className="mt-2 font-serif text-xl font-semibold text-cream">
+                      {step.name}
+                    </div>
+                    <p className="mt-2 text-[14.5px] leading-relaxed text-cream/75">
+                      {step.body}
                     </p>
-                    <ul className="mt-6 flex flex-col gap-3 text-base text-cream/80">
-                      {benefits.map((b) => (
-                        <li key={b} className="flex gap-3.5">
-                          <span className="text-accent-warm">→</span>
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              );
-            })}
+                  </li>
+                ))}
+              </ol>
+            </div>
 
             <div className="border-t border-cream/20 pt-11">
               <Link

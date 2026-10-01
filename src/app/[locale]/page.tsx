@@ -1,9 +1,9 @@
 import { setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/home/Hero";
+import { Hexgate } from "@/components/sections/home/Hexgate";
 import { Clients } from "@/components/sections/home/Clients";
-import { StartOptions } from "@/components/sections/home/StartOptions";
-import { DevModes } from "@/components/sections/home/DevModes";
-import { Modules } from "@/components/sections/home/Modules";
+import { TeamStrip } from "@/components/sections/home/TeamStrip";
+import { Beyond } from "@/components/sections/home/Beyond";
 import { ContactCta } from "@/components/sections/ContactCta";
 
 export default async function HomePage({
@@ -17,10 +17,10 @@ export default async function HomePage({
   return (
     <>
       <Hero />
+      <Hexgate />
       <Clients />
-      <StartOptions />
-      <DevModes />
-      <Modules />
+      <TeamStrip />
+      <Beyond />
       <ContactCta />
     </>
   );
