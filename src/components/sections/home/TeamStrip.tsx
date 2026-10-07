@@ -47,28 +47,26 @@ export function TeamStrip() {
         ))}
       </div>
 
-      <div data-stagger className="mt-10 flex flex-wrap items-center gap-3 border-t border-line-soft pt-8">
-        <span className="mr-2 text-sm text-muted-foreground">
-          {q.rich("note", {
-            b: (chunks) => (
-              <span className="font-semibold text-foreground">{chunks}</span>
-            ),
-          })}
-        </span>
-        {schools.map((s) => (
-          <span
-            key={s}
-            className="rounded-xl border border-border bg-card px-4 py-2 text-[14px] text-muted-foreground"
-          >
-            {s}
+      <div className="mt-6 grid items-center gap-6 rounded-3xl border border-border bg-card p-6 md:grid-cols-[auto_1fr_auto] md:gap-10 md:p-8">
+        <div className="flex items-center gap-4">
+          <span className="font-serif text-5xl font-bold leading-none text-primary">
+            {t("statNumber")}
           </span>
-        ))}
-        <span className="rounded-xl border border-dashed border-border px-4 py-2 font-mono text-[13px] text-dim">
-          {t("doctorats")}
-        </span>
+          <span className="max-w-[22ch] text-[15px] leading-snug text-muted-foreground">
+            {t("statLabel")}
+          </span>
+        </div>
+        <div className="border-border md:border-l md:pl-10">
+          <div className="font-mono text-[11px] tracking-[0.2em] text-dim">
+            {t("backgrounds")}
+          </div>
+          <p className="mt-2 text-[16px] font-medium leading-relaxed text-foreground">
+            {[...schools, t("doctorats")].join("  ·  ")}
+          </p>
+        </div>
         <Link
           href="/qui-sommes-nous"
-          className="ml-auto inline-flex items-center gap-2 text-[15px] font-semibold text-foreground underline-offset-4 hover:underline"
+          className="inline-flex items-center gap-2 self-start justify-self-start whitespace-nowrap rounded-full border border-border px-5 py-2.5 text-[15px] font-semibold text-foreground transition-colors hover:border-ink hover:bg-white md:self-center md:justify-self-end"
         >
           {t("more")} <span aria-hidden>→</span>
         </Link>

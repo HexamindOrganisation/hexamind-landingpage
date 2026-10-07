@@ -248,7 +248,10 @@ const messages = {
       eyebrow: "THE TEAM",
       title: "Built by a team that ships AI to production.",
       schools: ["Polytechnique", "Stanford", "Supaéro", "Accenture", "Sopra Steria"],
-      doctorats: "+ PhDs",
+      doctorats: "PhDs",
+      statNumber: "10+",
+      statLabel: "engineers and researchers from top schools and universities",
+      backgrounds: "BACKGROUNDS",
       more: "Meet the team",
     },
     beyond: {

@@ -248,7 +248,10 @@ const messages = {
       eyebrow: "L'ÉQUIPE",
       title: "Conçu par une équipe qui met l'IA en production.",
       schools: ["Polytechnique", "Stanford", "Supaéro", "Accenture", "Sopra Steria"],
-      doctorats: "+ doctorats",
+      doctorats: "Doctorats",
+      statNumber: "10+",
+      statLabel: "ingénieurs et chercheurs issus des meilleures écoles et universités",
+      backgrounds: "PARCOURS",
       more: "Découvrir l'équipe",
     },
     beyond: {

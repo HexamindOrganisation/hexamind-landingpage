@@ -17,9 +17,9 @@ export default async function HomePage({
   return (
     <>
       <Hero />
-      <Hexgate />
       <Clients />
       <TeamStrip />
+      <Hexgate />
       <Beyond />
       <ContactCta />
     </>
