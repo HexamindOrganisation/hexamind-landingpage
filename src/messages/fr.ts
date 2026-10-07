@@ -178,6 +178,7 @@ const messages = {
         "Des règles qui comprennent le contexte : l'utilisateur et son rôle, l'outil et ses arguments, l'état de l'agent, l'heure et l'environnement",
         "Tout est tracé : chaque verdict dans un journal d'audit en ajout seul, avec détection d'anomalies et kill-switch",
       ],
+      stepsTitle: "Les cinq mêmes étapes à chaque exécution",
       steps: [
         { name: "Définir", body: "Écrivez les règles de chaque agent, serveur MCP ou outil." },
         { name: "Récupérer", body: "Le SDK charge un bundle de politique signé à l'exécution." },
@@ -236,11 +237,6 @@ const messages = {
       ctaServicesHint:
         "Du cadrage à la mise en production, accéléré par nos modules IA.",
     },
-    hexgate: {
-      eyebrow: "NOTRE PRODUIT",
-      title: "Une sécurité qui s'exécute dans l'agent, pas autour.",
-      stepsTitle: "Les cinq mêmes étapes à chaque exécution",
-    },
     team: {
       eyebrow: "L'ÉQUIPE",
       title: "Conçu par une équipe qui met l'IA en production.",
@@ -250,17 +246,6 @@ const messages = {
       statLabel: "ingénieurs et chercheurs issus des meilleures écoles et universités",
       backgrounds: "PARCOURS",
       more: "Découvrir l'équipe",
-    },
-    beyond: {
-      eyebrow: "AU-DELÀ D'HEXGATE",
-      title: "Nous menons aussi vos projets IA de bout en bout.",
-      intro:
-        "Cadrage, développement sur mesure et autres briques logicielles : notre équipe mène vos cas d'usage de l'idée à la production.",
-      more: "Voir nos offres",
-      conseil: "Conseil",
-      developpement: "Développement sur mesure",
-      developpementBody: "Quatre modes d'engagement, du forfait à l'assistance technique.",
-      modules: "Autres modules IA",
     },
     clients: {
       eyebrow: "RÉFÉRENCES",
