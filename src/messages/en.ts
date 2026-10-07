@@ -224,7 +224,7 @@ const messages = {
   home: {
     hero: {
       eyebrow: "HEXGATE · BY HEXAMIND",
-      h1: "Take back <hl>control</hl> of your AI agents.",
+      h1: "We make <hl>AI work</hl> for you.",
       lead:
         "Let your agents <b>do more</b>, because nothing they do goes unchecked. Everyone gets the right access, nothing happens that shouldn't, and every action is recorded and analyzed.",
       ctaHexgateLabel: "01 · PRODUCT",
