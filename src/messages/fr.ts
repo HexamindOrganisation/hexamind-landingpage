@@ -349,7 +349,7 @@ const messages = {
       "Trois familles de prestations complémentaires, à activer indépendamment ou en combinaison selon vos enjeux.",
     workflow: {
       eyebrow: "NOTRE FAÇON DE TRAVAILLER",
-      subtitle: "trois temps, sur vos données",
+      title: "Trois temps, sur vos données.",
       steps: [
         { n: "01", word: "CADRER" },
         { n: "02", word: "CONSTRUIRE" },

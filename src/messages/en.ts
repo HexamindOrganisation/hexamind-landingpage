@@ -349,7 +349,7 @@ const messages = {
       "Three complementary families of services, to activate on their own or together depending on your needs.",
     workflow: {
       eyebrow: "HOW WE WORK",
-      subtitle: "three steps, on your data",
+      title: "Three steps, on your data.",
       steps: [
         { n: "01", word: "FRAME" },
         { n: "02", word: "BUILD" },

@@ -74,6 +74,9 @@ export default async function OffresPage({
         </p>
       </Section>
 
+      {/* Notre façon de travailler */}
+      <WorkflowDiagram />
+
       {/* Modules IA */}
       <Section id="modules" tone="ink">
         <SectionHeader tone="dark" eyebrow={m("eyebrow")} title={m("title")} />
@@ -177,10 +180,6 @@ export default async function OffresPage({
           <Button href="/contact">{m("demoButton")} →</Button>
         </div>
       </Section>
-      {/* Notre façon de travailler */}
-      <div className="pt-20 md:pt-28">
-        <WorkflowDiagram />
-      </div>
 
       {/* Conseil */}
       <Section id="conseil">
