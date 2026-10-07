@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 /**
- * Hexgate product visuals for the offerings page: code sample, policy editor
+ * Hexgate product visuals for the services page: code sample, policy editor
  * and audit dashboard, then the five steps run on each agent call.
  */
 export function HexgateShowcase() {

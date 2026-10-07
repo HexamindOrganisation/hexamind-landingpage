@@ -11,9 +11,9 @@ const messages = {
         "AI, a promise still to be fulfilled? Our vision for making AI a success in the enterprise.",
     },
     offres: {
-      title: "Our offerings",
+      title: "Our services",
       description:
-        "Hexgate and our AI modules, consulting and custom development: our offerings to take AI to production in your organization.",
+        "Hexgate and our AI modules, consulting and custom development: our services to take AI to production in your organization.",
     },
     qui: {
       title: "About us",
@@ -39,7 +39,7 @@ const messages = {
 
   nav: {
     vision: "Vision",
-    offres: "Our offerings",
+    offres: "Our services",
     qui: "About us",
     rejoindre: "Join us",
     hexgate: "Hexgate",
@@ -61,7 +61,7 @@ const messages = {
     contactTitle: "Contact",
     links: {
       vision: "Vision",
-      offres: "Our offerings",
+      offres: "Our services",
       qui: "About us",
       rejoindre: "Join us",
       contact: "Get in touch",
@@ -349,15 +349,15 @@ const messages = {
         "We put the cross-cutting foundations in place from our Pascal base.",
         "We build agents specific to your use cases. The code becomes your property.",
       ],
-      link: "See all our offerings",
+      link: "See all our services",
     },
   },
 
   offres: {
-    eyebrow: "OUR OFFERINGS",
+    eyebrow: "OUR SERVICES",
     h1: "Our AI modules, consulting and development, through to production.",
     intro:
-      "Three complementary families of offerings, to activate on their own or together depending on your needs.",
+      "Three complementary families of services, to activate on their own or together depending on your needs.",
     workflow: {
       eyebrow: "HOW WE WORK",
       subtitle: "three steps, on your data",

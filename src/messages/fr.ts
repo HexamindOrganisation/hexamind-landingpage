@@ -11,9 +11,9 @@ const messages = {
         "L'IA, une promesse qui reste à réaliser ? Notre vision pour faire de l'IA un succès en entreprise.",
     },
     offres: {
-      title: "Nos offres",
+      title: "Nos prestations",
       description:
-        "Hexgate et nos modules IA, conseil et développement sur mesure : nos offres pour mettre l'IA en production dans votre organisation.",
+        "Hexgate et nos modules IA, conseil et développement sur mesure : nos prestations pour mettre l'IA en production dans votre organisation.",
     },
     qui: {
       title: "Qui sommes-nous",
@@ -39,7 +39,7 @@ const messages = {
 
   nav: {
     vision: "Vision",
-    offres: "Nos offres",
+    offres: "Nos prestations",
     qui: "Qui sommes-nous",
     rejoindre: "Nous rejoindre",
     hexgate: "Hexgate",
@@ -61,7 +61,7 @@ const messages = {
     contactTitle: "Contact",
     links: {
       vision: "Vision",
-      offres: "Nos offres",
+      offres: "Nos prestations",
       qui: "Qui sommes-nous",
       rejoindre: "Nous rejoindre",
       contact: "Nous contacter",
@@ -349,15 +349,15 @@ const messages = {
         "Nous mettons en place les fondations transverses à partir de notre socle Pascal.",
         "Nous développons des agents spécifiques à vos cas d'usage. Le code devient votre propriété.",
       ],
-      link: "Voir toutes nos offres",
+      link: "Voir toutes nos prestations",
     },
   },
 
   offres: {
-    eyebrow: "NOS OFFRES",
+    eyebrow: "NOS PRESTATIONS",
     h1: "Nos modules IA, du conseil et du développement, jusqu'à la production.",
     intro:
-      "Trois familles d'offres complémentaires, à activer indépendamment ou en combinaison selon vos enjeux.",
+      "Trois familles de prestations complémentaires, à activer indépendamment ou en combinaison selon vos enjeux.",
     workflow: {
       eyebrow: "NOTRE FAÇON DE TRAVAILLER",
       subtitle: "trois temps, sur vos données",
