@@ -58,7 +58,7 @@ export default async function QuiSommesNousPage({
       {/* L'équipe */}
       <Section containerClassName="pt-4 pb-20 md:pt-6 md:pb-28">
         <SectionHeader eyebrow={t("team.eyebrow")} title={t("team.title")} />
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div data-stagger className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {members.map((mbr) => (
             <div
               key={mbr.name}
@@ -104,7 +104,7 @@ export default async function QuiSommesNousPage({
           eyebrow={t("values.eyebrow")}
           title={t("values.title")}
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div data-stagger className="mt-14 grid gap-6 md:grid-cols-2">
           {values.map((v) => (
             <div
               key={v.title}

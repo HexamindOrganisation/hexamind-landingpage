@@ -54,76 +54,78 @@ export function Hero() {
       />
 
       <Container className="relative">
-        {/* Eyebrow */}
-        <div className="mb-5 flex items-center gap-4">
-          <span className="h-px w-[34px] bg-primary" />
-          <span className="font-mono text-[13px] font-medium tracking-[0.22em] text-primary">
-            {t("eyebrow")}
-          </span>
-        </div>
+        <div data-hero>
+          {/* Eyebrow */}
+          <div className="mb-5 flex items-center gap-4">
+            <span className="h-px w-[34px] bg-primary" />
+            <span className="font-mono text-[13px] font-medium tracking-[0.22em] text-primary">
+              {t("eyebrow")}
+            </span>
+          </div>
 
-        <h1
-          className="max-w-[18ch] text-balance font-serif font-bold tracking-[-0.01em] text-foreground"
-          style={{ fontSize: "clamp(40px,6.6vw,92px)", lineHeight: 1 }}
-        >
-          {t.rich("h1", {
-            hl: (chunks) => <span className="text-primary">{chunks}</span>,
-          })}
-        </h1>
-
-        <p className="mt-8 max-w-[60ch] text-[19px] leading-[1.65] text-muted-foreground">
-          {t.rich("lead", {
-            b: (chunks) => (
-              <span className="font-semibold text-foreground">{chunks}</span>
-            ),
-          })}
-        </p>
-
-        <div className="mt-12 grid max-w-[720px] divide-y divide-border sm:grid-cols-2 sm:divide-x sm:divide-y-0">
-          <a
-            href={site.hexgateUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="group block pb-7 sm:pb-0 sm:pr-10"
+          <h1
+            className="max-w-[18ch] text-balance font-serif font-bold tracking-[-0.01em] text-foreground"
+            style={{ fontSize: "clamp(40px,6.6vw,92px)", lineHeight: 1 }}
           >
-            <span className="font-mono text-[12px] font-medium tracking-[0.2em] text-primary">
-              {t("ctaHexgateLabel")}
-            </span>
-            <span className="mt-3 flex items-center gap-2.5 text-[22px] font-semibold text-foreground transition-colors group-hover:text-primary">
-              <HexgateIcon width={24} height={24} className="text-primary" />
-              {t("ctaHexgate")}
-              <span aria-hidden className="text-primary transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
-                ↗
-              </span>
-            </span>
-            <span className="mt-2 block max-w-[32ch] text-[15px] leading-relaxed text-muted-foreground">
-              {t("ctaHexgateHint")}
-            </span>
-          </a>
-          <Link href="/offres" className="group block pt-7 sm:pl-10 sm:pt-0">
-            <span className="font-mono text-[12px] font-medium tracking-[0.2em] text-primary">
-              {t("ctaServicesLabel")}
-            </span>
-            <span className="mt-3 flex items-center gap-2.5 text-[22px] font-semibold text-foreground transition-colors group-hover:text-primary">
-              {t("ctaServices")}
-              <span aria-hidden className="text-primary transition-transform duration-200 group-hover:translate-x-1">
-                →
-              </span>
-            </span>
-            <span className="mt-2 block max-w-[32ch] text-[15px] leading-relaxed text-muted-foreground">
-              {t("ctaServicesHint")}
-            </span>
-          </Link>
-        </div>
+            {t.rich("h1", {
+              hl: (chunks) => <span className="text-primary">{chunks}</span>,
+            })}
+          </h1>
 
-        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[13px] text-dim">
-          <span className="text-muted-foreground">{t("worksWith")}</span>
-          {frameworks.map((f) => (
-            <span key={f}>{f}</span>
-          ))}
-          <span className="rounded-md border border-border px-2.5 py-[5px] text-[11px] tracking-[0.12em] text-muted-foreground">
-            {t("license")}
-          </span>
+          <p className="mt-8 max-w-[60ch] text-[19px] leading-[1.65] text-muted-foreground">
+            {t.rich("lead", {
+              b: (chunks) => (
+                <span className="font-semibold text-foreground">{chunks}</span>
+              ),
+            })}
+          </p>
+
+          <div className="mt-12 grid max-w-[720px] divide-y divide-border sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+            <a
+              href={site.hexgateUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="group block pb-7 sm:pb-0 sm:pr-10"
+            >
+              <span className="font-mono text-[12px] font-medium tracking-[0.2em] text-primary">
+                {t("ctaHexgateLabel")}
+              </span>
+              <span className="mt-3 flex items-center gap-2.5 text-[22px] font-semibold text-foreground transition-colors group-hover:text-primary">
+                <HexgateIcon width={24} height={24} className="text-primary" />
+                {t("ctaHexgate")}
+                <span aria-hidden className="text-primary transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                  ↗
+                </span>
+              </span>
+              <span className="mt-2 block max-w-[32ch] text-[15px] leading-relaxed text-muted-foreground">
+                {t("ctaHexgateHint")}
+              </span>
+            </a>
+            <Link href="/offres" className="group block pt-7 sm:pl-10 sm:pt-0">
+              <span className="font-mono text-[12px] font-medium tracking-[0.2em] text-primary">
+                {t("ctaServicesLabel")}
+              </span>
+              <span className="mt-3 flex items-center gap-2.5 text-[22px] font-semibold text-foreground transition-colors group-hover:text-primary">
+                {t("ctaServices")}
+                <span aria-hidden className="text-primary transition-transform duration-200 group-hover:translate-x-1">
+                  →
+                </span>
+              </span>
+              <span className="mt-2 block max-w-[32ch] text-[15px] leading-relaxed text-muted-foreground">
+                {t("ctaServicesHint")}
+              </span>
+            </Link>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[13px] text-dim">
+            <span className="text-muted-foreground">{t("worksWith")}</span>
+            {frameworks.map((f) => (
+              <span key={f}>{f}</span>
+            ))}
+            <span className="rounded-md border border-border px-2.5 py-[5px] text-[11px] tracking-[0.12em] text-muted-foreground">
+              {t("license")}
+            </span>
+          </div>
         </div>
       </Container>
     </section>

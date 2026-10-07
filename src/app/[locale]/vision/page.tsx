@@ -78,7 +78,7 @@ export default async function VisionPage({
       {/* Le défi */}
       <Section tone="ink">
         <SectionHeader tone="dark" eyebrow={t("defi.eyebrow")} title={t("defi.title")} />
-        <div className="mt-12 grid gap-12 md:grid-cols-2">
+        <div data-stagger className="mt-12 grid gap-12 md:grid-cols-2">
           <div>
             <h3 className="mb-4 font-serif text-xl text-accent-bright">
               {t("defi.forcesTitle")}
@@ -105,7 +105,7 @@ export default async function VisionPage({
       {/* Trois obstacles */}
       <Section>
         <SectionHeader eyebrow={t("obstacles.eyebrow")} title={t("obstacles.title")} />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div data-stagger className="mt-12 grid gap-6 md:grid-cols-3">
           {obstacles.map((o) => (
             <div
               key={o.n}
@@ -142,7 +142,7 @@ export default async function VisionPage({
           eyebrow={t("proposition.eyebrow")}
           title={t("proposition.title")}
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div data-stagger className="mt-14 grid gap-6 md:grid-cols-3">
           {layers.map((l) => (
             <div
               key={l.n}

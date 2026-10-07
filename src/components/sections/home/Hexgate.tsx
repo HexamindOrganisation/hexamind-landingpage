@@ -39,7 +39,7 @@ export function Hexgate() {
                 <p className="max-w-[66ch] text-body-lg leading-[1.7] text-cream/85">
                   {t("hexgate.bodyShort")}
                 </p>
-                <ul className="mt-6 flex flex-col gap-3 text-base text-cream/80">
+                <ul data-stagger className="mt-6 flex flex-col gap-3 text-base text-cream/80">
                   {benefits.map((b) => (
                     <li key={b} className="flex gap-3.5">
                       <span className="text-accent-warm">→</span>
@@ -71,7 +71,7 @@ export function Hexgate() {
                   </pre>
                 </div>
 
-                <div className="mt-6 grid gap-4">
+                <div data-stagger className="mt-6 grid gap-4">
                   <figure className="overflow-hidden rounded-xl border border-cream/15">
                     <Image
                       src="/hexgate/audit-dashboard.png"
@@ -118,7 +118,7 @@ export function Hexgate() {
               <h3 className="font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-cream/70">
                 {h("stepsTitle")}
               </h3>
-              <ol className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+              <ol data-stagger className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
                 {steps.map((step, i) => (
                   <li key={step.name}>
                     <span className="font-mono text-[13px] text-accent-warm">

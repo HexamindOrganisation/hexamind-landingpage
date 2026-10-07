@@ -17,7 +17,7 @@ export function TeamStrip() {
     <Section className="border-t border-line-soft">
       <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />
 
-      <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+      <div data-stagger className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {members.map((mbr) => (
           <div
             key={mbr.name}
@@ -47,7 +47,7 @@ export function TeamStrip() {
         ))}
       </div>
 
-      <div className="mt-10 flex flex-wrap items-center gap-3 border-t border-line-soft pt-8">
+      <div data-stagger className="mt-10 flex flex-wrap items-center gap-3 border-t border-line-soft pt-8">
         <span className="mr-2 text-sm text-muted-foreground">
           {q.rich("note", {
             b: (chunks) => (

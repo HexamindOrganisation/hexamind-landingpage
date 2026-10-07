@@ -145,6 +145,63 @@
       opacity: 1;
       transform: none;
     }
+
+    /* Staggered groups (cards, lists, logos): children rise one by one. */
+    .js [data-stagger] > * {
+      opacity: 0;
+      transform: translateY(26px);
+      transition:
+        opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .js [data-stagger].is-visible > * {
+      opacity: 1;
+      transform: none;
+    }
+    .js [data-stagger] > :nth-child(2) {
+      transition-delay: 90ms;
+    }
+    .js [data-stagger] > :nth-child(3) {
+      transition-delay: 180ms;
+    }
+    .js [data-stagger] > :nth-child(4) {
+      transition-delay: 270ms;
+    }
+    .js [data-stagger] > :nth-child(5) {
+      transition-delay: 360ms;
+    }
+    .js [data-stagger] > :nth-child(6) {
+      transition-delay: 450ms;
+    }
+    .js [data-stagger] > :nth-child(7) {
+      transition-delay: 540ms;
+    }
+    .js [data-stagger] > :nth-child(8) {
+      transition-delay: 630ms;
+    }
+    .js [data-stagger] > :nth-child(n + 9) {
+      transition-delay: 630ms;
+    }
+
+    /* Hero: plays once on load, no scroll needed. */
+    [data-hero] > * {
+      animation: hx-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    [data-hero] > :nth-child(2) {
+      animation-delay: 110ms;
+    }
+    [data-hero] > :nth-child(3) {
+      animation-delay: 220ms;
+    }
+    [data-hero] > :nth-child(4) {
+      animation-delay: 330ms;
+    }
+    [data-hero] > :nth-child(5) {
+      animation-delay: 440ms;
+    }
+    [data-hero] > :nth-child(6) {
+      animation-delay: 550ms;
+    }
   }
 
   /* Headings use the display font (Hanken) at a heavier weight by default.
@@ -169,6 +226,17 @@
 }
 
 /* --- Motion (workflow diagram + hero accents) ---------------------------- */
+@keyframes hx-rise {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @keyframes hx-dot {
   0%,
   100% {

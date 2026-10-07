@@ -76,7 +76,7 @@ export default async function OffresPage({
       {/* Modules IA */}
       <Section id="modules" tone="ink">
         <SectionHeader tone="dark" eyebrow={m("eyebrow")} title={m("title")} />
-        <div className="mt-14 space-y-10">
+        <div data-stagger className="mt-14 space-y-10">
           {MODULE_IDS.map((id) => {
             const benefits = m.raw(`${id}.benefits`) as string[];
             return (
@@ -168,7 +168,7 @@ export default async function OffresPage({
           title={t("conseil.title")}
           intro={t("conseil.intro")}
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div data-stagger className="mt-14 grid gap-6 md:grid-cols-3">
           {offers.map((o) => (
             <div
               key={o.id}
@@ -231,7 +231,7 @@ export default async function OffresPage({
           title={dm("title")}
           intro={dm("intro")}
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div data-stagger className="mt-14 grid gap-6 md:grid-cols-2">
           {modes.map((mode) => (
             <div
               key={mode.n}

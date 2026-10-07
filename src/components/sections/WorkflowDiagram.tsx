@@ -139,7 +139,7 @@ export function WorkflowDiagram() {
               </div>
 
               {/* Explanatory columns */}
-              <div className="mt-8 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+              <div data-stagger className="mt-8 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
                 {columns.map((c) => (
                   <div key={c.title}>
                     <h3 className="font-sans text-[19px] font-semibold leading-[1.3] tracking-[-0.01em] text-foreground">

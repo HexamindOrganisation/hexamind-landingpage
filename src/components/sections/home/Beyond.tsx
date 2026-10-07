@@ -67,7 +67,7 @@ export function Beyond() {
   return (
     <Section id="offres" className="border-t border-line-soft">
       <SectionHeader eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")} />
-      <div className="mt-13 grid gap-6 md:grid-cols-3">
+      <div data-stagger className="mt-13 grid gap-6 md:grid-cols-3">
         <Card
           title={t("conseil")}
           body={c("intro")}
