@@ -26,11 +26,7 @@ export function Clients() {
   const t = useTranslations("home.clients");
   return (
     <Section>
-      <SectionHeader
-        align="center"
-        eyebrow={t("eyebrow")}
-        title={t("title")}
-      />
+      <SectionHeader eyebrow={t("eyebrow")} title={t("title")} />
       <div data-stagger className="mt-14 grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
         {clients.map((c) => (
           <div
