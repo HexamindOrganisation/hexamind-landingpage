@@ -2,7 +2,7 @@ const messages = {
   meta: {
     title: "Hexamind — Hexgate, la gouvernance open source de vos agents IA",
     description:
-      "Hexgate, par Hexamind, vérifie chaque appel d'outil de vos agents IA par rapport à des règles déterministes, par utilisateur, pendant leur exécution. Open source, avec journal d'audit, détection d'anomalies et kill-switch. Et du conseil et développement IA sur mesure à Paris.",
+      "Hexgate, par Hexamind, s'exécute dans vos agents IA : il vérifie chaque appel d'outil par rapport à votre politique avant qu'il ne parte, avec l'identité de l'utilisateur à l'origine de la demande, puis journalise et analyse ce qu'ils ont fait. Open source. Et du conseil et développement IA sur mesure à Paris.",
     hexgate:
       "Gouvernance open source des agents IA : le SDK vérifie chaque appel d'outil dans l'agent, et la plateforme tient un journal d'audit, signale les anomalies et propose des ajustements de politique.",
     vision: {
@@ -179,7 +179,7 @@ const messages = {
         "Tout est tracé : chaque verdict dans un journal d'audit en ajout seul, avec détection d'anomalies et kill-switch",
       ],
       steps: [
-        { name: "Définir", body: "Écrivez des règles déterministes pour chaque agent." },
+        { name: "Définir", body: "Écrivez les règles de chaque agent, serveur MCP ou outil." },
         { name: "Récupérer", body: "Le SDK charge un bundle de politique signé à l'exécution." },
         { name: "Appliquer", body: "Chaque étape est vérifiée localement, avant l'appel d'outil." },
         { name: "Remonter", body: "Chaque décision est renvoyée à la plateforme." },
@@ -226,7 +226,7 @@ const messages = {
       eyebrow: "HEXGATE · PAR HEXAMIND",
       h1: "Reprenez le <hl>contrôle</hl> de vos agents IA.",
       lead:
-        "Hexgate vérifie ce que font vos agents par rapport à des règles déterministes, par utilisateur et par appel d'outil, pendant leur exécution. Conçu par Hexamind, qui mène aussi vos <b>projets IA jusqu'en production</b>, en conseil et en développement sur mesure.",
+        "Hexgate s'exécute dans vos agents : il vérifie chaque appel d'outil par rapport à votre politique avant qu'il ne parte, avec l'identité de l'utilisateur à l'origine de la demande. Tout ce qu'ils font est journalisé et analysé, en direct et a posteriori. Conçu par Hexamind, qui mène aussi vos <b>projets IA jusqu'en production</b>.",
       ctaHexgateLabel: "01 · PRODUIT",
       ctaHexgate: "Découvrir Hexgate",
       ctaHexgateHint:

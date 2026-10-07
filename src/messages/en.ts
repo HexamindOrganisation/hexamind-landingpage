@@ -2,7 +2,7 @@ const messages = {
   meta: {
     title: "Hexamind — Hexgate, open-source governance for your AI agents",
     description:
-      "Hexgate, by Hexamind, checks every tool call your AI agents make against deterministic rules, per user, while they run. Open source, with an audit log, anomaly detection and a kill-switch. Plus AI consulting and custom development in Paris.",
+      "Hexgate, by Hexamind, sits inside your AI agents: it checks each tool call against your policy before it runs, using the identity of the user who asked, and logs and analyzes what they did. Open source. Plus AI consulting and custom development in Paris.",
     hexgate:
       "Open-source agent governance: the SDK checks each tool call against your policy inside the agent, and the platform keeps an audit log, flags anomalies and suggests policy changes.",
     vision: {
@@ -179,7 +179,7 @@ const messages = {
         "On the record: every verdict in an append-only audit log, with anomaly detection and a kill-switch",
       ],
       steps: [
-        { name: "Define", body: "Write deterministic rules for each agent." },
+        { name: "Define", body: "Write the rules for each agent, MCP server or tool." },
         { name: "Fetch", body: "The SDK pulls a signed policy bundle at runtime." },
         { name: "Enforce", body: "Each step is checked in-process, before the tool call." },
         { name: "Report", body: "Every decision goes back to the platform." },
@@ -226,7 +226,7 @@ const messages = {
       eyebrow: "HEXGATE · BY HEXAMIND",
       h1: "Take back <hl>control</hl> of your AI agents.",
       lead:
-        "Hexgate checks what your agents do against deterministic rules, per user and per tool call, while they run. Built by Hexamind, which also takes your <b>AI projects to production</b> through consulting and custom development.",
+        "Hexgate sits inside your agents: it checks each tool call against your policy before it runs, using the identity of the user who asked. What they did is logged and analyzed, live and after the fact. Built by Hexamind, which also takes your <b>AI projects to production</b>.",
       ctaHexgateLabel: "01 · PRODUCT",
       ctaHexgate: "Discover Hexgate",
       ctaHexgateHint:
