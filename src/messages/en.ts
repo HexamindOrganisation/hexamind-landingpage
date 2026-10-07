@@ -1,7 +1,10 @@
 const messages = {
   meta: {
+    title: "Hexamind — Hexgate, open-source governance for your AI agents",
     description:
-      "Hexamind helps you deliver your AI transformation projects: consulting, custom development and proprietary AI modules (Hexgate, Pascal, zeAgent, Fastprop).",
+      "Hexgate, by Hexamind, sits inside your AI agents: it checks each tool call against your policy before it runs, using the identity of the user who asked, and logs and analyzes what they did. Open source. Plus AI consulting and custom development in Paris.",
+    hexgate:
+      "Open-source agent governance: the SDK checks each tool call against your policy inside the agent, and the platform keeps an audit log, flags anomalies and suggests policy changes.",
     vision: {
       title: "Vision",
       description:
@@ -10,7 +13,7 @@ const messages = {
     offres: {
       title: "Our offerings",
       description:
-        "Consulting, development and AI modules: our offerings to make AI a success in your organization.",
+        "Hexgate and our AI modules, consulting and custom development: our offerings to take AI to production in your organization.",
     },
     qui: {
       title: "About us",
@@ -162,17 +165,25 @@ const messages = {
     editorAlt:
       "Hexgate — policy editor: capabilities, argument constraints and permissions resolved by role",
     pascalPreviewAlt: "Pascal preview, watch the intro video",
+    codeComment: "↳ each tool call is checked against your policy before it runs",
     hexgate: {
       name: "Hexgate",
-      tagline: "Control and monitoring for your AI agents",
+      tagline: "Open-source agent governance",
       bodyShort:
-        "Stay in control of your AI agents. Deterministic rules govern every action they take (tools, skills, sub-agents) based on their context. Hexgate continuously monitors their behavior, detects anomalies and proposes countermeasures.",
+        "Firewalls, guardrails and MCP gateways sit around the agent: they see network traffic, prompts and tool names, but not whether a refund is legitimate or hijacked. The Hexgate SDK runs inside your agent and checks each tool call against your policy before it runs, for each user and in context. Every decision goes back to the platform, which flags anomalies and suggests policy changes.",
       body:
-        "Stay in control of your AI agents. Deterministic rules govern every action they take (access to tools, skills and sub-agents) based on the user's role and the agent's state, enforced locally with no added latency. Alongside, Hexgate continuously monitors their behavior: it detects anomalies, analyzes them and proposes countermeasures. Every decision is written to the audit log. Works with OpenAI Agents, LangChain, Google ADK and Pydantic AI.",
+        "Firewalls, guardrails and MCP gateways sit around the agent: they see network traffic, prompts and tool names, but not whether a refund is legitimate or hijacked. The Hexgate SDK runs inside your agent and checks each tool call against your policy before it runs, for each user and in context, with no per-call round-trips. Every decision goes to an append-only audit log; the platform flags anomalies, suggests policy changes and gives you a kill-switch. Wrap your agent in one line. Works with OpenAI Agents, LangChain / LangGraph, Google ADK and Pydantic AI.",
       benefits: [
-        "Control: deterministic rules allow, deny or require approval for every agent action",
-        "Monitoring: detection of abnormal behavior, with analysis and proposed countermeasures",
-        "Traceability: every decision is logged with the caller's identity",
+        "Inside the agent: each tool call is checked in-process against a deny-by-default policy, with no per-call round-trips",
+        "Rules that understand context: the user and their role, the tool and its arguments, the agent's state, time and environment",
+        "On the record: every verdict in an append-only audit log, with anomaly detection and a kill-switch",
+      ],
+      steps: [
+        { name: "Define", body: "Write the rules for each agent, MCP server or tool." },
+        { name: "Fetch", body: "The SDK pulls a signed policy bundle at runtime." },
+        { name: "Enforce", body: "Each step is checked in-process, before the tool call." },
+        { name: "Report", body: "Every decision goes back to the platform." },
+        { name: "Improve", body: "The platform flags anomalies and suggests policy changes." },
       ],
     },
     pascal: {
@@ -212,72 +223,47 @@ const messages = {
 
   home: {
     hero: {
-      eyebrow: "HEXAMIND",
+      eyebrow: "HEXGATE · BY HEXAMIND",
+      h1: "Take back <hl>control</hl> of your AI agents.",
       lead:
-        "We help you deliver your AI transformation projects: consulting, custom development and our own AI modules. <b>AI deployed in production</b>, not just a prototype.",
-      ctaServicesLabel: "01 · EXPERTISE",
+        "Let your agents <b>do more</b>, because nothing they do goes unchecked. Everyone gets the right access, nothing happens that shouldn't, and every action is recorded and analyzed.",
+      ctaHexgateLabel: "01 · PRODUCT",
+      ctaHexgate: "Discover Hexgate",
+      ctaHexgateHint:
+        "Open-source agent governance: policies, audit log and a kill-switch.",
+      ctaServicesLabel: "02 · EXPERTISE",
       ctaServices: "Our services",
       ctaServicesHint:
         "From scoping to production, accelerated by our AI modules.",
-      ctaHexgateLabel: "02 · PRODUCT",
-      ctaHexgate: "Discover Hexgate",
-      ctaHexgateHint:
-        "Keep your AI agents in check: rules, monitoring and countermeasures.",
+      worksWith: "WORKS WITH",
+      frameworks: ["OpenAI Agents", "LangChain / LangGraph", "Google ADK", "Pydantic AI"],
+      license: "OPEN SOURCE · MIT",
     },
-    workflow: {
-      eyebrow: "HOW WE WORK",
-      subtitle: "three steps, on your data",
-      steps: [
-        { n: "01", word: "FRAME" },
-        { n: "02", word: "BUILD" },
-        { n: "03", word: "INDUSTRIALIZE" },
-      ],
-      enjeu: "your business challenge",
-      production: "in production",
-      columns: [
-        {
-          title: "Prioritized use cases, estimated ROI",
-          body: "We map the use cases and quantify the expected gains with you. Your technical teams are only needed to extract the data.",
-        },
-        {
-          title: "From MVP to production",
-          body: "Mock-ups on real data in short cycles, then custom development through to deployment.",
-        },
-        {
-          title: "Rights, roles and audit",
-          body: "Our modules take over: Hexgate for authorization and traceability, Pascal, zeAgent and Fastprop for the rest.",
-        },
-      ],
-      credibility: "TEAMS THAT HAVE ALREADY DELIVERED",
+    hexgate: {
+      eyebrow: "OUR PRODUCT",
+      title: "Security that runs inside the agent, not around it.",
+      stepsTitle: "The same five steps on each agent run",
+    },
+    team: {
+      eyebrow: "THE TEAM",
+      title: "Built by a team that ships AI to production.",
       schools: ["Polytechnique", "Stanford", "Supaéro", "Accenture", "Sopra Steria"],
-      doctorats: "+ PhDs",
+      doctorats: "PhDs",
+      statNumber: "10+",
+      statLabel: "engineers and researchers from top schools and universities",
+      backgrounds: "BACKGROUNDS",
+      more: "Meet the team",
     },
-    conseil: {
-      eyebrow: "CONSULTING",
-      title: "Three ways to start.",
+    beyond: {
+      eyebrow: "BEYOND HEXGATE",
+      title: "We also deliver your AI projects end to end.",
       intro:
-        "Frame, upskill, prototype: your entry point depends on your maturity.",
-      more: "Learn more",
-      cards: [
-        {
-          id: "startai",
-          name: "STARTAI",
-          tagline: "AI AUDIT & MATURITY DIAGNOSTIC",
-          desc: "The essential first step to prioritize high-ROI initiatives, avoid wasted investment and lay solid foundations.",
-        },
-        {
-          id: "boostai",
-          name: "BOOSTAI",
-          tagline: "AI ENABLEMENT & TRAINING",
-          desc: "Three progressive tracks based on your maturity, to make your teams self-sufficient with AI from day one.",
-        },
-        {
-          id: "buildai",
-          name: "BUILDAI",
-          tagline: "PROTOTYPING & EXPERIMENTATION",
-          desc: "Turns your priority use case into a concrete solution, tested by your users and measured in euros.",
-        },
-      ],
+        "Framing, custom development and other software building blocks: our team takes your use cases from idea to production.",
+      more: "See our offerings",
+      conseil: "Consulting",
+      developpement: "Custom development",
+      developpementBody: "Four ways to engage, from fixed price to staff augmentation.",
+      modules: "Other AI modules",
     },
     clients: {
       eyebrow: "REFERENCES",
@@ -387,11 +373,39 @@ const messages = {
 
   offres: {
     eyebrow: "OUR OFFERINGS",
-    h1: "From consulting to deployment, by way of our AI modules.",
+    h1: "Our AI modules, consulting and development, through to production.",
     intro:
       "Three complementary families of offerings, to activate on their own or together depending on your needs.",
+    workflow: {
+      eyebrow: "HOW WE WORK",
+      subtitle: "three steps, on your data",
+      steps: [
+        { n: "01", word: "FRAME" },
+        { n: "02", word: "BUILD" },
+        { n: "03", word: "INDUSTRIALIZE" },
+      ],
+      enjeu: "your business challenge",
+      production: "in production",
+      columns: [
+        {
+          title: "Prioritized use cases, estimated ROI",
+          body: "We map the use cases and quantify the expected gains with you. Your technical teams are only needed to extract the data.",
+        },
+        {
+          title: "From MVP to production",
+          body: "Mock-ups on real data in short cycles, then custom development through to deployment.",
+        },
+        {
+          title: "Rights, roles and audit",
+          body: "Our modules take over: Hexgate for authorization and traceability, Pascal, zeAgent and Fastprop for the rest.",
+        },
+      ],
+    },
     conseil: {
       eyebrow: "CONSULTING",
+      title: "Three ways to start.",
+      intro:
+        "Frame, upskill, prototype: your entry point depends on your maturity.",
       more: "Learn more",
       contenu: "What's included",
       livrables: "Deliverables",

@@ -56,7 +56,7 @@ export default async function NousRejoindrePage({
           eyebrow={t("reasons.eyebrow")}
           title={t("reasons.title")}
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div data-stagger className="mt-14 grid gap-6 md:grid-cols-2">
           {reasons.map((r) => (
             <div
               key={r.title}

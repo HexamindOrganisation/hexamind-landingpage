@@ -31,7 +31,7 @@ export function Clients() {
         eyebrow={t("eyebrow")}
         title={t("title")}
       />
-      <div className="mt-14 grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+      <div data-stagger className="mt-14 grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-12 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
         {clients.map((c) => (
           <div
             key={c.name}

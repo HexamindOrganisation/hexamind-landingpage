@@ -45,7 +45,7 @@ export default async function QuiSommesNousPage({
   return (
     <>
       {/* Intro */}
-      <Section>
+      <Section containerClassName="pb-12 pt-20 md:pb-16 md:pt-28">
         <Eyebrow>{t("eyebrow")}</Eyebrow>
         <h1 className="mt-4 max-w-[24ch] text-balance font-serif text-hero font-bold tracking-[-0.01em] text-foreground">
           {t("h1")}
@@ -55,30 +55,10 @@ export default async function QuiSommesNousPage({
         </p>
       </Section>
 
-      {/* Nos valeurs */}
-      <Section tone="ink">
-        <SectionHeader
-          tone="dark"
-          eyebrow={t("values.eyebrow")}
-          title={t("values.title")}
-        />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {values.map((v) => (
-            <div
-              key={v.title}
-              className="rounded-3xl border border-cream/10 bg-cream/5 p-10"
-            >
-              <h3 className="font-serif text-2xl text-cream">{v.title}</h3>
-              <p className="mt-4 leading-relaxed text-cream/80">{v.body}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
       {/* L'équipe */}
-      <Section>
+      <Section containerClassName="pt-4 pb-20 md:pt-6 md:pb-28">
         <SectionHeader eyebrow={t("team.eyebrow")} title={t("team.title")} />
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div data-stagger className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {members.map((mbr) => (
             <div
               key={mbr.name}
@@ -108,13 +88,33 @@ export default async function QuiSommesNousPage({
             </div>
           ))}
         </div>
-        <p className="mt-8 text-center text-sm text-muted-foreground">
+        <p className="mt-10 text-center text-body-lg text-muted-foreground">
           {t.rich("team.note", {
             b: (chunks: ReactNode) => (
               <span className="font-semibold text-foreground">{chunks}</span>
             ),
           })}
         </p>
+      </Section>
+
+      {/* Nos valeurs */}
+      <Section tone="ink">
+        <SectionHeader
+          tone="dark"
+          eyebrow={t("values.eyebrow")}
+          title={t("values.title")}
+        />
+        <div data-stagger className="mt-14 grid gap-6 md:grid-cols-2">
+          {values.map((v) => (
+            <div
+              key={v.title}
+              className="rounded-3xl border border-cream/10 bg-cream/5 p-10"
+            >
+              <h3 className="font-serif text-2xl text-cream">{v.title}</h3>
+              <p className="mt-4 leading-relaxed text-cream/80">{v.body}</p>
+            </div>
+          ))}
+        </div>
       </Section>
 
       <ContactCta />
