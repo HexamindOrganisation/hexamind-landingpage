@@ -162,10 +162,7 @@ const messages = {
     demoButton: "Demander une démo",
     dashboardAlt:
       "Hexgate — tableau de bord d'audit : chaque décision de politique (autorisée, refusée, validation requise)",
-    editorAlt:
-      "Hexgate — éditeur de politique : capabilities, contraintes sur les arguments et permissions résolues par rôle",
     pascalPreviewAlt: "Aperçu de Pascal, voir la vidéo de présentation",
-    codeComment: "↳ chaque appel d’outil est vérifié par votre politique avant de s’exécuter",
     hexgate: {
       name: "Hexgate",
       tagline: "La gouvernance open source des agents IA",
@@ -177,14 +174,6 @@ const messages = {
         "Dans l'agent : chaque appel d'outil est vérifié localement par une politique refusant tout par défaut, sans aller-retour réseau par appel",
         "Des règles qui comprennent le contexte : l'utilisateur et son rôle, l'outil et ses arguments, l'état de l'agent, l'heure et l'environnement",
         "Tout est tracé : chaque verdict dans un journal d'audit en ajout seul, avec détection d'anomalies et kill-switch",
-      ],
-      stepsTitle: "Les cinq mêmes étapes à chaque exécution",
-      steps: [
-        { name: "Définir", body: "Écrivez les règles de chaque agent, serveur MCP ou outil." },
-        { name: "Récupérer", body: "Le SDK charge un bundle de politique signé à l'exécution." },
-        { name: "Appliquer", body: "Chaque étape est vérifiée localement, avant l'appel d'outil." },
-        { name: "Remonter", body: "Chaque décision est renvoyée à la plateforme." },
-        { name: "Améliorer", body: "La plateforme signale les anomalies et propose des ajustements de politique." },
       ],
     },
     pascal: {

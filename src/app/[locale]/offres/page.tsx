@@ -7,7 +7,6 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Disclosure } from "@/components/ui/Disclosure";
 import { WorkflowDiagram } from "@/components/sections/WorkflowDiagram";
-import { HexgateShowcase } from "@/components/sections/HexgateShowcase";
 import { HexgateIcon } from "@/components/ui/icons";
 import { localizedAlternates } from "@/lib/metadata";
 import { site } from "@/lib/site";
@@ -135,6 +134,23 @@ export default async function OffresPage({
                       </a>
                     </div>
                   ) : null}
+                  {id === "hexgate" ? (
+                    <a
+                      href={site.hexgateUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={m("dashboardAlt")}
+                      className="group block overflow-hidden rounded-lg border border-cream/10"
+                    >
+                      <Image
+                        src="/hexgate/audit-dashboard.png"
+                        alt={m("dashboardAlt")}
+                        width={1256}
+                        height={1162}
+                        className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    </a>
+                  ) : null}
                   {id === "pascal" ? (
                     <a
                       href="https://youtu.be/7bV8kuzNmWg"
@@ -153,11 +169,6 @@ export default async function OffresPage({
                     </a>
                   ) : null}
                 </div>
-                {id === "hexgate" ? (
-                  <div className="lg:col-span-12">
-                    <HexgateShowcase />
-                  </div>
-                ) : null}
               </article>
             );
           })}
