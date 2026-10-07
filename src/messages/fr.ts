@@ -226,7 +226,7 @@ const messages = {
       eyebrow: "HEXGATE · PAR HEXAMIND",
       h1: "Reprenez le <hl>contrôle</hl> de vos agents IA.",
       lead:
-        "Laissez vos agents <b>en faire plus</b> : rien de ce qu'ils font n'échappe à votre contrôle. Chacun a les bons accès, rien ne se passe sans votre accord, et chaque action est tracée.",
+        "Laissez vos agents <b>en faire plus</b> : rien de ce qu'ils font n'échappe à votre contrôle. Chacun a les bons accès, rien ne se passe sans votre accord, et chaque action est tracée et analysée.",
       ctaHexgateLabel: "01 · PRODUIT",
       ctaHexgate: "Découvrir Hexgate",
       ctaHexgateHint:
