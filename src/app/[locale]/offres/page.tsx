@@ -7,6 +7,8 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Disclosure } from "@/components/ui/Disclosure";
 import { WorkflowDiagram } from "@/components/sections/WorkflowDiagram";
+import { HexgateShowcase } from "@/components/sections/HexgateShowcase";
+import { HexgateIcon } from "@/components/ui/icons";
 import { localizedAlternates } from "@/lib/metadata";
 import { site } from "@/lib/site";
 
@@ -86,7 +88,10 @@ export default async function OffresPage({
                 className="grid gap-8 border-t border-cream/15 pt-10 lg:grid-cols-12"
               >
                 <div className="lg:col-span-4">
-                  <div className="font-serif text-5xl text-cream">
+                  <div className="flex items-center gap-3 font-serif text-5xl text-cream">
+                    {id === "hexgate" ? (
+                      <HexgateIcon className="size-[0.9em] shrink-0 text-accent-bright" />
+                    ) : null}
                     {m(`${id}.name`)}
                   </div>
                   <p className="mt-2 text-sm uppercase tracking-wider text-accent-bright">
@@ -148,6 +153,11 @@ export default async function OffresPage({
                     </a>
                   ) : null}
                 </div>
+                {id === "hexgate" ? (
+                  <div className="lg:col-span-12">
+                    <HexgateShowcase />
+                  </div>
+                ) : null}
               </article>
             );
           })}

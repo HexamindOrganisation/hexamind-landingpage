@@ -178,6 +178,7 @@ const messages = {
         "Rules that understand context: the user and their role, the tool and its arguments, the agent's state, time and environment",
         "On the record: every verdict in an append-only audit log, with anomaly detection and a kill-switch",
       ],
+      stepsTitle: "The same five steps on each agent run",
       steps: [
         { name: "Define", body: "Write the rules for each agent, MCP server or tool." },
         { name: "Fetch", body: "The SDK pulls a signed policy bundle at runtime." },
@@ -236,11 +237,6 @@ const messages = {
       ctaServicesHint:
         "From scoping to production, accelerated by our AI modules.",
     },
-    hexgate: {
-      eyebrow: "OUR PRODUCT",
-      title: "Security that runs inside the agent, not around it.",
-      stepsTitle: "The same five steps on each agent run",
-    },
     team: {
       eyebrow: "THE TEAM",
       title: "Built by a team that ships AI to production.",
@@ -250,17 +246,6 @@ const messages = {
       statLabel: "engineers and researchers from top schools and universities",
       backgrounds: "BACKGROUNDS",
       more: "Meet the team",
-    },
-    beyond: {
-      eyebrow: "BEYOND HEXGATE",
-      title: "We also deliver your AI projects end to end.",
-      intro:
-        "Framing, custom development and other software building blocks: our team takes your use cases from idea to production.",
-      more: "See our offerings",
-      conseil: "Consulting",
-      developpement: "Custom development",
-      developpementBody: "Four ways to engage, from fixed price to staff augmentation.",
-      modules: "Other AI modules",
     },
     clients: {
       eyebrow: "REFERENCES",
