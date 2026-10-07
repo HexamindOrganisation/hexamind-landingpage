@@ -224,9 +224,9 @@ const messages = {
   home: {
     hero: {
       eyebrow: "HEXAMIND",
-      h1: "Faites <hl>travailler l'IA</hl> pour vous.",
+      h1: "We make <hl>AI work</hl> for you.",
       lead:
-        "Avec Hexgate, laissez vos agents <b>en faire plus</b> : rien de ce qu'ils font n'échappe à votre contrôle. Chacun a les bons accès, rien ne se passe sans votre accord, et chaque action est tracée et analysée. Nous menons aussi vos projets IA de bout en bout, du conseil au développement sur mesure : de l''<b>IA en production</b>, pas juste un prototype.",
+        "Nous vous accompagnons dans vos projets de transformation IA en conseil, en développement sur mesure et grâce à nos propres modules d'IA. De l''<b>IA déployée en production</b>, pas juste un prototype.",
       ctaHexgateLabel: "01 · PRODUIT",
       ctaHexgate: "Découvrir Hexgate",
       ctaHexgateHint:
@@ -235,9 +235,6 @@ const messages = {
       ctaServices: "Nos prestations",
       ctaServicesHint:
         "Du cadrage à la mise en production, accéléré par nos modules IA.",
-      worksWith: "COMPATIBLE AVEC",
-      frameworks: ["OpenAI Agents", "LangChain / LangGraph", "Google ADK", "Pydantic AI"],
-      license: "OPEN SOURCE · MIT",
     },
     hexgate: {
       eyebrow: "NOTRE PRODUIT",

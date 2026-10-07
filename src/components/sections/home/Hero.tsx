@@ -6,7 +6,6 @@ import { site } from "@/lib/site";
 
 export function Hero() {
   const t = useTranslations("home.hero");
-  const frameworks = t.raw("frameworks") as string[];
 
   return (
     <section
@@ -68,7 +67,9 @@ export function Hero() {
             style={{ fontSize: "clamp(40px,6.6vw,92px)", lineHeight: 1 }}
           >
             {t.rich("h1", {
-              hl: (chunks) => <span className="text-primary">{chunks}</span>,
+              hl: (chunks) => (
+                <span className="whitespace-nowrap text-primary">{chunks}</span>
+              ),
             })}
           </h1>
 
@@ -115,16 +116,6 @@ export function Hero() {
                 {t("ctaServicesHint")}
               </span>
             </Link>
-          </div>
-
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 font-mono text-[13px] text-dim">
-            <span className="text-muted-foreground">{t("worksWith")}</span>
-            {frameworks.map((f) => (
-              <span key={f}>{f}</span>
-            ))}
-            <span className="rounded-md border border-border px-2.5 py-[5px] text-[11px] tracking-[0.12em] text-muted-foreground">
-              {t("license")}
-            </span>
           </div>
         </div>
       </Container>

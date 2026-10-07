@@ -226,7 +226,7 @@ const messages = {
       eyebrow: "HEXAMIND",
       h1: "We make <hl>AI work</hl> for you.",
       lead:
-        "With Hexgate, let your agents <b>do more</b>, because nothing they do goes unchecked. Everyone gets the right access, nothing happens that shouldn't, and every action is recorded and analyzed. We also deliver your AI projects end to end, from consulting to custom development: <b>AI in production</b>, not just a prototype.",
+        "We help you deliver your AI transformation projects: consulting, custom development and our own AI modules. <b>AI deployed in production</b>, not just a prototype.",
       ctaHexgateLabel: "01 · PRODUCT",
       ctaHexgate: "Discover Hexgate",
       ctaHexgateHint:
@@ -235,9 +235,6 @@ const messages = {
       ctaServices: "Our services",
       ctaServicesHint:
         "From scoping to production, accelerated by our AI modules.",
-      worksWith: "WORKS WITH",
-      frameworks: ["OpenAI Agents", "LangChain / LangGraph", "Google ADK", "Pydantic AI"],
-      license: "OPEN SOURCE · MIT",
     },
     hexgate: {
       eyebrow: "OUR PRODUCT",
