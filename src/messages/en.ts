@@ -226,7 +226,7 @@ const messages = {
       eyebrow: "HEXGATE · BY HEXAMIND",
       h1: "Take back <hl>control</hl> of your AI agents.",
       lead:
-        "Hexgate sits inside your agents: it checks each tool call against your policy before it runs, using the identity of the user who asked. What they did is logged and analyzed, live and after the fact. Built by Hexamind, which also takes your <b>AI projects to production</b>.",
+        "Let your agents <b>do more</b>, because nothing they do goes unchecked. Everyone gets the right access, nothing happens that shouldn't, and every action is on the record.",
       ctaHexgateLabel: "01 · PRODUCT",
       ctaHexgate: "Discover Hexgate",
       ctaHexgateHint:

@@ -226,7 +226,7 @@ const messages = {
       eyebrow: "HEXGATE · PAR HEXAMIND",
       h1: "Reprenez le <hl>contrôle</hl> de vos agents IA.",
       lead:
-        "Hexgate s'exécute dans vos agents : il vérifie chaque appel d'outil par rapport à votre politique avant qu'il ne parte, avec l'identité de l'utilisateur à l'origine de la demande. Tout ce qu'ils font est journalisé et analysé, en direct et a posteriori. Conçu par Hexamind, qui mène aussi vos <b>projets IA jusqu'en production</b>.",
+        "Laissez vos agents <b>en faire plus</b> : rien de ce qu'ils font n'échappe à votre contrôle. Chacun a les bons accès, rien ne se passe sans votre accord, et chaque action est tracée.",
       ctaHexgateLabel: "01 · PRODUIT",
       ctaHexgate: "Découvrir Hexgate",
       ctaHexgateHint:
