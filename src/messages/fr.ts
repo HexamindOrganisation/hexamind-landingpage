@@ -11,9 +11,9 @@ const messages = {
         "L'IA, une promesse qui reste à réaliser ? Notre vision pour faire de l'IA un succès en entreprise.",
     },
     offres: {
-      title: "Nos offres",
+      title: "Nos prestations",
       description:
-        "Hexgate et nos modules IA, conseil et développement sur mesure : nos offres pour mettre l'IA en production dans votre organisation.",
+        "Hexgate et nos modules IA, conseil et développement sur mesure : nos prestations pour mettre l'IA en production dans votre organisation.",
     },
     qui: {
       title: "Qui sommes-nous",
@@ -39,7 +39,7 @@ const messages = {
 
   nav: {
     vision: "Vision",
-    offres: "Nos offres",
+    offres: "Nos prestations",
     qui: "Qui sommes-nous",
     rejoindre: "Nous rejoindre",
     hexgate: "Hexgate",
@@ -61,7 +61,7 @@ const messages = {
     contactTitle: "Contact",
     links: {
       vision: "Vision",
-      offres: "Nos offres",
+      offres: "Nos prestations",
       qui: "Qui sommes-nous",
       rejoindre: "Nous rejoindre",
       contact: "Nous contacter",
@@ -162,10 +162,7 @@ const messages = {
     demoButton: "Demander une démo",
     dashboardAlt:
       "Hexgate — tableau de bord d'audit : chaque décision de politique (autorisée, refusée, validation requise)",
-    editorAlt:
-      "Hexgate — éditeur de politique : capabilities, contraintes sur les arguments et permissions résolues par rôle",
     pascalPreviewAlt: "Aperçu de Pascal, voir la vidéo de présentation",
-    codeComment: "↳ chaque appel d’outil est vérifié par votre politique avant de s’exécuter",
     hexgate: {
       name: "Hexgate",
       tagline: "La gouvernance open source des agents IA",
@@ -177,14 +174,6 @@ const messages = {
         "Dans l'agent : chaque appel d'outil est vérifié localement par une politique refusant tout par défaut, sans aller-retour réseau par appel",
         "Des règles qui comprennent le contexte : l'utilisateur et son rôle, l'outil et ses arguments, l'état de l'agent, l'heure et l'environnement",
         "Tout est tracé : chaque verdict dans un journal d'audit en ajout seul, avec détection d'anomalies et kill-switch",
-      ],
-      stepsTitle: "Les cinq mêmes étapes à chaque exécution",
-      steps: [
-        { name: "Définir", body: "Écrivez les règles de chaque agent, serveur MCP ou outil." },
-        { name: "Récupérer", body: "Le SDK charge un bundle de politique signé à l'exécution." },
-        { name: "Appliquer", body: "Chaque étape est vérifiée localement, avant l'appel d'outil." },
-        { name: "Remonter", body: "Chaque décision est renvoyée à la plateforme." },
-        { name: "Améliorer", body: "La plateforme signale les anomalies et propose des ajustements de politique." },
       ],
     },
     pascal: {
@@ -349,18 +338,18 @@ const messages = {
         "Nous mettons en place les fondations transverses à partir de notre socle Pascal.",
         "Nous développons des agents spécifiques à vos cas d'usage. Le code devient votre propriété.",
       ],
-      link: "Voir toutes nos offres",
+      link: "Voir toutes nos prestations",
     },
   },
 
   offres: {
-    eyebrow: "NOS OFFRES",
+    eyebrow: "NOS PRESTATIONS",
     h1: "Nos modules IA, du conseil et du développement, jusqu'à la production.",
     intro:
-      "Trois familles d'offres complémentaires, à activer indépendamment ou en combinaison selon vos enjeux.",
+      "Trois familles de prestations complémentaires, à activer indépendamment ou en combinaison selon vos enjeux.",
     workflow: {
       eyebrow: "NOTRE FAÇON DE TRAVAILLER",
-      subtitle: "trois temps, sur vos données",
+      title: "Trois temps, sur vos données.",
       steps: [
         { n: "01", word: "CADRER" },
         { n: "02", word: "CONSTRUIRE" },

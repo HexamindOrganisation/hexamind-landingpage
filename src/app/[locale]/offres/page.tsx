@@ -7,7 +7,6 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { Disclosure } from "@/components/ui/Disclosure";
 import { WorkflowDiagram } from "@/components/sections/WorkflowDiagram";
-import { HexgateShowcase } from "@/components/sections/HexgateShowcase";
 import { HexgateIcon } from "@/components/ui/icons";
 import { localizedAlternates } from "@/lib/metadata";
 import { site } from "@/lib/site";
@@ -75,6 +74,9 @@ export default async function OffresPage({
         </p>
       </Section>
 
+      {/* Notre façon de travailler */}
+      <WorkflowDiagram />
+
       {/* Modules IA */}
       <Section id="modules" tone="ink">
         <SectionHeader tone="dark" eyebrow={m("eyebrow")} title={m("title")} />
@@ -135,6 +137,23 @@ export default async function OffresPage({
                       </a>
                     </div>
                   ) : null}
+                  {id === "hexgate" ? (
+                    <a
+                      href={site.hexgateUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={m("dashboardAlt")}
+                      className="group block overflow-hidden rounded-lg border border-cream/10"
+                    >
+                      <Image
+                        src="/hexgate/audit-dashboard.png"
+                        alt={m("dashboardAlt")}
+                        width={1256}
+                        height={1162}
+                        className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                      />
+                    </a>
+                  ) : null}
                   {id === "pascal" ? (
                     <a
                       href="https://youtu.be/7bV8kuzNmWg"
@@ -153,11 +172,6 @@ export default async function OffresPage({
                     </a>
                   ) : null}
                 </div>
-                {id === "hexgate" ? (
-                  <div className="lg:col-span-12">
-                    <HexgateShowcase />
-                  </div>
-                ) : null}
               </article>
             );
           })}
@@ -166,10 +180,6 @@ export default async function OffresPage({
           <Button href="/contact">{m("demoButton")} →</Button>
         </div>
       </Section>
-      {/* Notre façon de travailler */}
-      <div className="pt-20 md:pt-28">
-        <WorkflowDiagram />
-      </div>
 
       {/* Conseil */}
       <Section id="conseil">

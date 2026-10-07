@@ -11,9 +11,9 @@ const messages = {
         "AI, a promise still to be fulfilled? Our vision for making AI a success in the enterprise.",
     },
     offres: {
-      title: "Our offerings",
+      title: "Our services",
       description:
-        "Hexgate and our AI modules, consulting and custom development: our offerings to take AI to production in your organization.",
+        "Hexgate and our AI modules, consulting and custom development: our services to take AI to production in your organization.",
     },
     qui: {
       title: "About us",
@@ -39,7 +39,7 @@ const messages = {
 
   nav: {
     vision: "Vision",
-    offres: "Our offerings",
+    offres: "Our services",
     qui: "About us",
     rejoindre: "Join us",
     hexgate: "Hexgate",
@@ -61,7 +61,7 @@ const messages = {
     contactTitle: "Contact",
     links: {
       vision: "Vision",
-      offres: "Our offerings",
+      offres: "Our services",
       qui: "About us",
       rejoindre: "Join us",
       contact: "Get in touch",
@@ -162,10 +162,7 @@ const messages = {
     demoButton: "Request a demo",
     dashboardAlt:
       "Hexgate — audit dashboard: every policy decision (allowed, denied, approval required)",
-    editorAlt:
-      "Hexgate — policy editor: capabilities, argument constraints and permissions resolved by role",
     pascalPreviewAlt: "Pascal preview, watch the intro video",
-    codeComment: "↳ each tool call is checked against your policy before it runs",
     hexgate: {
       name: "Hexgate",
       tagline: "Open-source agent governance",
@@ -177,14 +174,6 @@ const messages = {
         "Inside the agent: each tool call is checked in-process against a deny-by-default policy, with no per-call round-trips",
         "Rules that understand context: the user and their role, the tool and its arguments, the agent's state, time and environment",
         "On the record: every verdict in an append-only audit log, with anomaly detection and a kill-switch",
-      ],
-      stepsTitle: "The same five steps on each agent run",
-      steps: [
-        { name: "Define", body: "Write the rules for each agent, MCP server or tool." },
-        { name: "Fetch", body: "The SDK pulls a signed policy bundle at runtime." },
-        { name: "Enforce", body: "Each step is checked in-process, before the tool call." },
-        { name: "Report", body: "Every decision goes back to the platform." },
-        { name: "Improve", body: "The platform flags anomalies and suggests policy changes." },
       ],
     },
     pascal: {
@@ -349,18 +338,18 @@ const messages = {
         "We put the cross-cutting foundations in place from our Pascal base.",
         "We build agents specific to your use cases. The code becomes your property.",
       ],
-      link: "See all our offerings",
+      link: "See all our services",
     },
   },
 
   offres: {
-    eyebrow: "OUR OFFERINGS",
+    eyebrow: "OUR SERVICES",
     h1: "Our AI modules, consulting and development, through to production.",
     intro:
-      "Three complementary families of offerings, to activate on their own or together depending on your needs.",
+      "Three complementary families of services, to activate on their own or together depending on your needs.",
     workflow: {
       eyebrow: "HOW WE WORK",
-      subtitle: "three steps, on your data",
+      title: "Three steps, on your data.",
       steps: [
         { n: "01", word: "FRAME" },
         { n: "02", word: "BUILD" },
