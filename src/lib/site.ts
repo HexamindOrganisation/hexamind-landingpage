@@ -11,6 +11,8 @@ export const site = {
   hexgateUrl: "https://hexgate.ai",
   hexgateRepoUrl: "https://github.com/HexamindOrganisation/hexgate",
   githubUrl: "https://github.com/HexamindOrganisation",
+  /** Google Tag Manager container, loaded in the root layout. */
+  gtmId: "GTM-TLHXZ5XR",
   linkedinUrl: "https://www.linkedin.com/company/hexamind-ai/posts/?feedView=all",
 } as const;
 
