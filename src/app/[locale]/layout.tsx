@@ -141,16 +141,16 @@ export default async function LocaleLayout({
           <Footer />
         </NextIntlClientProvider>
         <Analytics />
-        {/* Google Tag Manager */}
+        {/* Google tag (gtag.js) */}
         <Script
-          src={`https://www.googletagmanager.com/gtm.js?id=${site.gtmId}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${site.gaId}`}
           strategy="afterInteractive"
         />
-        <Script id="gtm-init" strategy="afterInteractive">
+        <Script id="gtag-init" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });`}
+gtag('config', '${site.gaId}');`}
         </Script>
       </body>
     </html>
